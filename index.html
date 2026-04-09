@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>罗   菲 Faye. | 作品集</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=League+Script&display=swap" rel="stylesheet">
+    <!-- 新增科技感等宽字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            color: #f5f5f5;
+            /* 优化AI行业背景色 */
+            background-color: #0F172A;
+            background-image: 
+                linear-gradient(to bottom, #0F172A, #1E293B),
+                linear-gradient(rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.98)),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2327374D' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            scroll-behavior: smooth;
+            /* 优化字体体系 */
+            font-family: "Inter", "JetBrains Mono", "微软雅黑", sans-serif;
+            overflow-x: hidden;
+            /* AI行业专属色彩体系 */
+            --primary-color: #3B82F6;      /* 基础科技蓝 - 稳重专业 */
+            --primary-light: #60A5FA;      /* 浅蓝 - 交互/高亮 */
+            --primary-dark: #2563EB;       /* 深蓝 - 按钮/重要强调 */
+            --accent-color: #8B5CF6;       /* 紫调点缀 - AI/智能感 */
+            --gradient-primary: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%); /* 渐变背景 */
+            --gradient-bright: linear-gradient(135deg, #60A5FA 0%, #A78BFA 100%); /* 更亮的渐变 */
+            --text-primary: #ffffff;
+            --text-secondary: #e0e0e0;
+            --text-tertiary: #ccc;
+            --text-muted: #999;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+        ul { list-style: none; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+        #fireflies {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.7;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 999;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.1); /* 匹配新主色 */
+        }
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            font-family: "Playfair Display", "华文宋体", serif;
+            color: var(--text-primary);
+            letter-spacing: 1px;
+        }
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+        }
+        .hamburger {
+            font-size: 24px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            color: var(--text-primary);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s ease;
+        }
+        .hamburger:hover { color: var(--primary-color); }
+        .download-resume {
+            padding: 8px 20px;
+            background: var(--gradient-primary);
+            color: #fff;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .download-resume:hover {
+            background: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%);
+            transform: translateY(-2px) rotate(1deg);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); /* 增强阴影效果 */
+        }
+        .menu-modal {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: auto;
+            height: auto;
+            background-color: #0F172A;
+            border: 1px solid rgba(59, 130, 246, 0.2); /* 匹配新主色 */
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            display: block;
+            transform: translateY(-20px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 998;
+            padding: 15px 0;
+            min-width: 150px;
+        }
+        .menu-modal.active {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+        .menu-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            text-align: left;
+        }
+        .menu-list li a {
+            font-size: 16px;
+            font-weight: 500;
+            font-family: "Inter", "微软雅黑", sans-serif;
+            color: var(--text-secondary);
+            padding: 10px 25px;
+            position: relative;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        .menu-list li a.active-menu {
+            color: var(--primary-color);
+            background-color: rgba(59, 130, 246, 0.1); /* 匹配新主色 */
+            border-left: 2px solid var(--primary-color);
+        }
+        .menu-list li a:hover {
+            color: var(--primary-light);
+            background-color: rgba(59, 130, 246, 0.05); /* 匹配新主色 */
+        }
+        /* 优化Hero区视觉效果 */
+        .intro {
+            margin-top: 100px;
+            padding: 120px 0 80px;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.1); /* 匹配新主色 */
+            position: relative;
+            overflow: hidden;
+        }
+        .intro::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0.05;
+            border-radius: 50% 0 0 50%;
+            z-index: 0;
+        }
+        .intro .container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            position: relative;
+            z-index: 1;
+        }
+        .intro-text { flex: 1; }
+        /* ========== 核心修改：修复渐变文字效果 ========== */
+        .intro-title {
+            font-size: clamp(2.5rem, 5vw, 4rem); /* 响应式字号 */
+            font-weight: 700;
+            font-family: "Playfair Display", "华文宋体", serif;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            letter-spacing: 0.5px;
+            /* 修复渐变文字核心属性 */
+            background: linear-gradient(135deg, #60A5FA 0%, #A78BFA 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-fill-color: transparent;
+            /* 增强文字发光效果 */
+            text-shadow: 0 0 15px rgba(96, 165, 250, 0.4), 
+                         0 0 30px rgba(167, 139, 250, 0.2);
+            /* 确保文字渲染层级 */
+            position: relative;
+            z-index: 1;
+        }
+        /* ========== 修改结束 ========== */
+        .intro-slogan {
+            font-size: 18px;
+            color: var(--primary-light);
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .intro-info, .intro-bio {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.85;
+            margin-bottom: 15px;
+        }
+        .intro-bio { margin-top: 10px; margin-bottom: 0; }
+        /* AI关键词高亮样式 */
+        .ai-keyword {
+            color: var(--primary-light);
+            font-weight: 600;
+        }
+        .intro-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+        .intro-tag {
+            padding: 8px 16px;
+            background-color: rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            font-size: 14px;
+            border: 1px solid rgba(96, 165, 250, 0.15); /* 匹配新主色 */
+        }
+        .intro-img {
+            flex: 0 0 200px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        .intro-img:hover { transform: scale(1.02); }
+        .intro-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            aspect-ratio: 3/4;
+        }
+        .section-title {
+            font-size: 26px;
+            font-weight: 700;
+            font-family: "Playfair Display", "华文宋体", serif;
+            text-align: left;
+            margin-bottom: 60px;
+            position: relative;
+            padding-left: 15px;
+            display: flex;
+            align-items: center;
+            height: 40px;
+            line-height: 40px;
+            letter-spacing: 0.5px;
+        }
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1.5px;
+            height: 75%;
+            background: var(--gradient-primary);
+            border-radius: 1px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 15px;
+            bottom: -10px;
+            width: 40px;
+            height: 2px;
+            background: var(--gradient-primary);
+            border-radius: 1px;
+            display: block;
+        }
+        .skills {
+            padding: 100px 0;
+            background-color: transparent;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.1); /* 匹配新主色 */
+        }
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 改为3列更合理 */
+            gap: 30px;
+        }
+        .skill-item {
+            background-color: transparent;
+            text-align: left;
+            padding: 0;
+            border-radius: 0;
+            transition: transform 0.3s ease;
+        }
+        .skill-item:hover { transform: translateY(-8px); }
+        .skill-number {
+            font-size: 20px;
+            font-weight: 900;
+            font-family: "League Script", "JetBrains Mono", cursive;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            display: block;
+        }
+        .skill-title {
+            font-size: 20px;
+            font-weight: 600;
+            font-family: "Playfair Display", "华文宋体", serif;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+        }
+        /* 技能数据指标样式 */
+        .skill-metric {
+            display: inline-block;
+            font-size: 12px;
+            color: var(--primary-light);
+            background: rgba(59, 130, 246, 0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            font-family: "JetBrains Mono", monospace;
+        }
+        .skill-desc {
+            font-size: 14px;
+            color: var(--text-tertiary);
+            line-height: 1.85;
+        }
+        .works {
+            padding: 100px 0;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.1); /* 匹配新主色 */
+        }
+        .work-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        .work-tab {
+            padding: 10px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            background: none;
+            cursor: pointer;
+            color: var(--text-tertiary);
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        .work-tab::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+        .work-tab.active { color: var(--primary-color); }
+        .work-tab.active::after {
+            width: 100%;
+            left: 0;
+        }
+        .work-tab:hover { color: var(--primary-light); }
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+        }
+        #layoutTab, #activityTab {
+            grid-template-columns: repeat(2, 1fr) !important;
+        }
+        .work-item {
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(4px);
+            transition: all 0.4s ease;
+            border: 1px solid transparent;
+        }
+        .work-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(59, 130, 246, 0.3); /* 匹配新主色 */
+        }
+        .work-img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background-color: #1e1e1e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .work-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            loading: lazy;
+        }
+        .work-item:hover .work-img img { transform: scale(1.05); }
+        .work-content { padding: 20px; }
+        .work-title {
+            font-size: 18px;
+            font-weight: 600;
+            font-family: "Playfair Display", "华文宋体", serif;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+        .work-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .research {
+            background-color: transparent;
+            padding: 100px 0;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.1); /* 匹配新主色 */
+        }
+        .research-category { margin-bottom: 40px; }
+        .research-category h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+            font-family: "Times New Roman", serif;
+            display: flex;
+            align-items: center;
+            line-height: 1;
+        }
+        /* AI核心项目标识 - 仅保留AI核心项目的标识，定量/定性研究不再显示 */
+        .research-category.ai-core h3::after {
+            content: "AI CORE";
+            font-size: 10px;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-left: 10px;
+            font-weight: normal;
+            font-family: "JetBrains Mono", monospace;
+        }
+        .research-number {
+            font-size: 20px;
+            font-weight: 900;
+            font-family: "League Script", "JetBrains Mono", cursive;
+            color: var(--primary-color);
+            margin-right: 10px;
+            display: inline-block;
+            line-height: 1;
+        }
+        .research-item {
+            display: flex;
+            gap: 40px; /* 增加间距让文字右移 */
+            background-color: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(4px);
+            padding: 30px 0;
+            border-radius: 0;
+            margin-bottom: 20px;
+            border: none;
+            border-left: 3px solid transparent;
+            transition: all 0.4s ease;
+            align-items: center;
+        }
+        .research-item:hover {
+            border-left: 3px solid var(--primary-color);
+            transform: translateX(8px);
+            background-color: rgba(30, 41, 59, 0.3);
+        }
+        .research-img {
+            flex: 0 0 420px; /* 放大图片宽度 */
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .research-img:hover { transform: scale(1.02) rotate(0.5deg); }
+        .research-img::after {
+            content: '点击查看详情';
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        .research-img:hover::after { opacity: 1; }
+        .research-img img {
+            width: 100%;
+            border-radius: 4px;
+            loading: lazy;
+        }
+        .research-img:active { transform: scale(0.98) rotate(0); }
+        .research-text { flex: 1; }
+        .research-text h4 {
+            font-size: 18px;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+            font-family: "Times New Roman", serif;
+        }
+        .research-text p {
+            font-size: 14px;
+            color: var(--text-tertiary);
+            line-height: 1.85;
+        }
+        /* 首行缩进样式 */
+        .text-indent {
+            text-indent: 2em; /* 首行缩进2字符 */
+            margin-bottom: 8px;
+        }
+        /* AI数据指标样式 */
+        .ai-metric {
+            font-family: "JetBrains Mono", monospace;
+            color: var(--primary-light);
+            font-weight: 600;
+        }
+        .honors {
+            padding: 100px 0;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.1); /* 匹配新主色 */
+        }
+        .honors-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .honor-item {
+            display: flex;
+            gap: 30px;
+            background-color: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(4px);
+            padding: 20px 0;
+            border-radius: 0;
+            border: none;
+            transition: all 0.3s;
+        }
+        .honor-item:hover {
+            border-color: transparent;
+            transform: translateX(5px);
+        }
+        .honor-img { flex: 0 0 150px; }
+        .honor-img img {
+            width: 100%;
+            border-radius: 4px;
+            loading: lazy;
+        }
+        .honor-text {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            color: var(--text-primary);
+        }
+        /* 实践成果核心描述间距样式 */
+        .honor-desc {
+            font-size:13px;
+            color:var(--text-muted);
+            margin-top:4px;
+            display:block;
+            /* 增加左侧间距，与主文本分隔 */
+            margin-left: 20px;
+        }
+        .footer {
+            padding: 100px 0 60px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            margin-top: 0;
+            position: relative;
+        }
+        .footer::before {
+            content: '心理学+AI，赋能产品与用户体验'; /* 优化标语 */
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 16px;
+            font-family: "Playfair Display", serif;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+        .footer-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 20px;
+        }
+        .footer-left .logo { 
+            margin-bottom: 20px; 
+            font-size: 28px;
+            background: var(--gradient-bright); /* 使用更亮的渐变 */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 10px rgba(96, 165, 250, 0.3);
+        }
+        .contact-info { 
+            font-size: 14px; 
+            color: var(--text-secondary); 
+            line-height: 1.8;
+        }
+        .copyright { 
+            font-size: 12px; 
+            color: var(--text-muted); 
+            margin-top: 40px; 
+            font-family: "JetBrains Mono", monospace;
+        }
+
+        /* 优化AI项目亮点标签样式 */
+        .ai-highlight {
+            display: inline-block;
+            padding: 4px 10px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
+            color: #93C5FD;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        /* 滚动渐入动画 */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 992px) {
+            .skills-list { grid-template-columns: repeat(2, 1fr); }
+            .work-grid { grid-template-columns: repeat(2, 1fr); }
+            #layoutTab, #activityTab { grid-template-columns: repeat(1, 1fr) !important; }
+            .intro-title { font-size: clamp(2rem, 5vw, 3.5rem); }
+            .section-title { font-size: 24px; height: 36px; line-height: 36px; }
+            .research-img { flex: 0 0 320px; } /* 响应式调整图片大小 */
+        }
+        @media (max-width: 768px) {
+            .intro .container { flex-direction: column; text-align: center; }
+            .intro-tags { justify-content: center; }
+            .intro-title { font-size: clamp(1.8rem, 5vw, 3rem); }
+            .intro-slogan { font-size: 16px; }
+            .intro-img { flex: 0 0 180px; }
+            .skills-list { grid-template-columns: 1fr; }
+            .work-grid { grid-template-columns: 1fr; }
+            .menu-list li a { font-size: 14px; padding: 8px 20px; }
+            .section-title {
+                font-size: 20px;
+                text-align: left;
+                height: 32px;
+                line-height: 32px;
+                padding-left: 12px;
+            }
+            .section-title::before { width: 1.5px; height: 60%; }
+            .section-title::after { width: 30px; left: 12px; }
+            .intro-info, .intro-bio { font-size: 13px; }
+            .research-item {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px 0;
+                align-items: flex-start;
+            }
+            .research-item:hover {
+                transform: translateX(0);
+            }
+            .research-img { flex: 0 0 auto; width: 100%; }
+            .honor-item { flex-direction: column; gap: 15px; }
+            .honor-img { flex: 0 0 auto; width: 100%; }
+            /* 移动端调整实践成果间距 */
+            .honor-desc {
+                margin-left: 0;
+                margin-top: 8px;
+            }
+            .menu-modal {
+                position: fixed;
+                top: 70px;
+                right: 10px;
+                left: auto;
+            }
+        }
+        @media (max-width: 375px) {
+            .section-title { font-size: 18px; height: 28px; line-height: 28px; }
+            .intro-title { font-size: clamp(1.5rem, 5vw, 2.5rem); }
+            .skill-title, .work-title, .research-text h4 { font-size: 16px; }
+            .skill-desc, .work-desc, .research-text p, .honor-text { font-size: 13px; }
+            .footer::before { font-size: 14px; content: '心理学+AI，赋能产品体验'; } /* 移动端简化标语 */
+        }
+    </style>
+</head>
+<body>
+    <canvas id="fireflies"></canvas>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">罗   菲 Faye.</div>
+            <div class="nav-buttons">
+                <button class="hamburger" id="hamburgerBtn">☰</button>
+                <a href="你的简历PDF链接.pdf" class="download-resume">简历 / Resume</a>
+                <div class="menu-modal" id="menuModal">
+                    <ul class="menu-list">
+                        <li><a href="#intro" class="menu-link">个人简介</a></li>
+                        <li><a href="#ai-project" class="menu-link">核心AI项目</a></li>
+                        <li><a href="#skills" class="menu-link">核心能力</a></li>
+                        <li><a href="#works" class="menu-link">作品展示</a></li>
+                        <li><a href="#research" class="menu-link">用户研究能力</a></li>
+                        <li><a href="#honors" class="menu-link">实践成果</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="intro fade-in" id="intro">
+        <div class="container">
+            <div class="intro-text">
+                <h1 class="intro-title">罗   菲  Faye.</h1>
+                <p class="intro-slogan">应用心理专业硕士 | 心理学+AI双视角解决方案</p>
+                <div class="intro-tags">
+                    <span class="intro-tag">AI产品设计</span>
+                    <span class="intro-tag">内容策略运营</span>
+                    <span class="intro-tag">用户心理研究</span>
+                    <span class="intro-tag">AI工作流搭建</span>
+                </div>
+                <p class="intro-info">电话：13144401070 | 邮箱：TILAPIA1007@163.COM</p>
+                <p class="intro-bio">专注<span class="ai-keyword">AI产品落地</span>与运营，擅长结合用户心理洞察设计<span class="ai-keyword">AI产品功能</span>、搭建高效<span class="ai-keyword">AI内容生产体系</span>，将心理学理论转化为可落地的AI产品解决方案。</p>
+            </div>
+            <div class="intro-img">
+                <img src="https://user4707.cn.imgto.link/public/20260316/segment.avif" alt="罗  菲 Faye">
+            </div>
+        </div>
+    </section>
+
+    <section class="research fade-in section" id="ai-project">
+        <div class="container">
+            <h2 class="section-title">核心AI项目（产品运营视角）</h2>
+            <!-- 添加ai-core类，保留AI CORE标识 -->
+            <div class="research-category ai-core">
+                <h3><span class="research-number">01.</span>AI内容生成助手（基于Coze）</h3>
+                <div class="research-item">
+                    <div class="research-img" onclick="window.open('https://www.notion.so/25dc5a4fd40c404192ce76e93648510d?v=dd0ce7a042b445b792680b729254208c&source=copy_link', '_blank')">
+                        <img src="https://user7063.cn.imgto.link/public/20260408/369b8c2a107d233d42d7ba57bdd02f9f.avif" alt="AI驱动的小红书账号运营项目总览">
+                    </div>
+                    <div class="research-text">
+                        <h4>AI内容生产产品化 | 小红书笔记生成自动化全流程</h4>
+                        <div style="margin-bottom: 12px;">
+                            <span class="ai-highlight">产品设计</span>
+                            <span class="ai-highlight">流程优化</span>
+                            <span class="ai-highlight">效率提升</span>
+                            <span class="ai-highlight">数据验证</span>
+                        </div>
+                        <p><strong>产品定位：</strong>解决内容运营效率低、产出不稳定痛点的AI辅助工具</p>
+                        <p><strong>核心工作（产品视角）：</strong></p>
+                        <p class="text-indent">1. 需求分析：梳理内容运营全流程痛点，定义AI工具核心功能与边界</p>
+                        <p class="text-indent">2. 功能设计：设计"输入-生成-优化-输出"自动化流程，配置定制化Agent</p>
+                        <p class="text-indent">3. 多端适配：接入微信公众号/飞书/豆包，实现多平台一键分发</p>
+                        <p class="text-indent">4. 效果验证：建立"效率+质量"双维度评估体系，笔记生成效率提升<span class="ai-metric">70%</span>，内容采纳率<span class="ai-metric">80%</span></p>
+                        <p><strong>核心成果：</strong>
+                            <span class="ai-metric">效率提升70%</span> | 
+                            <span class="ai-metric">内容采纳率80%</span> | 
+                            <span class="ai-metric">人力成本降低50%</span>
+                        </p>
+                        <p><strong>产品思考：</strong>平衡AI自动化与人工干预，在保证效率的同时控制内容质量风险</p>
+                        <p>完整文档：点击左侧图片，查看产品规划/工作流设计/效果数据全记录</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills fade-in" id="skills">
+        <div class="container">
+            <h2 class="section-title">核心能力</h2>
+            <div class="skills-list">
+                <div class="skill-item">
+                    <span class="skill-number">01.</span>
+                    <h3 class="skill-title">用户研究与洞察</h3>
+                    <span class="skill-metric">样本量 900</span>
+                    <p class="skill-desc">定量/定性研究 | 用户心理分析 | 调研问卷设计 | 数据分析与解读</p>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-number">02.</span>
+                    <h3 class="skill-title">AI工具应用与落地</h3>
+                    <span class="skill-metric">效率提升 70%</span>
+                    <p class="skill-desc">Coze/飞书助手配置 | AI内容生产 | Prompt优化 | 工作流搭建</p>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-number">03.</span>
+                    <h3 class="skill-title">内容策略与创作</h3>
+                    <span class="skill-metric">采纳率 80%</span>
+                    <p class="skill-desc">科普内容创作 | 多平台内容适配 | 心理学知识转译 | 内容效果分析</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="works fade-in" id="works">
+        <div class="container">
+            <h2 class="section-title">作品展示</h2>
+            <div class="work-tabs">
+                <button class="work-tab active" data-tab="text">内容创作</button>
+                <button class="work-tab" data-tab="layout">视觉设计</button>
+                <button class="work-tab" data-tab="video">视频制作</button>
+                <button class="work-tab" data-tab="activity">活动策划</button>
+            </div>
+
+            <div class="work-grid" id="textTab">
+                <a href="https://mp.weixin.qq.com/s/iiOStOP40H5JUsfOwK5nQg" class="work-item">
+                    <div class="work-img">
+                        <img src="https://user4707.cn.imgto.link/public/20260316/707116e95bc895f290a9a7245611dc53.avif" alt="糖衣炮弹之「女士优先」">
+                    </div>
+                    <div class="work-content">
+                        <h3 class="work-title">糖衣炮弹之「女士优先」</h3>
+                        <div style="margin-bottom: 8px;">
+                            <span class="ai-highlight">用户洞察</span>
+                            <span class="ai-highlight">内容优化</span>
+                        </div>
+                        <p class="work-desc">2023/02/26</p>
+                        <p class="work-desc">项目背景：引入矛盾性别偏见理论，剖析日常生活中的善意性别歧视现象，面向公众普及心理学知识。</p>
+                        <p class="work-desc">我的角色：独立完成理论查阅、案例收集、撰稿、配图。</p>
+                        <p class="work-desc">成果数据：阅读量<span class="ai-metric">450+</span>，成为公众号当月热门推文。</p>
+                        <p class="work-desc">能力体现：心理学理论通俗化转译能力、社会热点敏感度、公众科普写作能力。</p>
+                    </div>
+                </a>
+                <a href="https://mp.weixin.qq.com/s/iiOStOP40H5JUsfOwK5nQg" class="work-item">
+                    <div class="work-img">
+                        <img src="https://user4707.cn.imgto.link/public/20260316/630448936122d2d2add66215f65d7d5a.avif" alt="《百年孤独》的欲与爱">
+                    </div>
+                    <div class="work-content">
+                        <h3 class="work-title">《百年孤独》的欲与爱</h3>
+                        <div style="margin-bottom: 8px;">
+                            <span class="ai-highlight">文本分析</span>
+                            <span class="ai-highlight">选题策划</span>
+                        </div>
+                        <p class="work-desc">2022/08/16</p>
+                        <p class="work-desc">项目背景：为“性健康研究与教育”公众号撰写文学视角的性别议题推文，面向大学生及公众，探讨文学中的情感与性。</p>
+                        <p class="work-desc">我的角色：独立完成选题策划、撰稿、配图选择。</p>
+                        <p class="work-desc">成果数据：阅读量<span class="ai-metric">220+</span>，引发读者对文学与性教育的讨论。</p>
+                        <p class="work-desc">能力体现：文学与心理学跨学科写作能力、情感议题深度挖掘能力。</p>
+                    </div>
+                </a>
+                <a href="https://mp.weixin.qq.com/s/y0aT7O6jfF_PciiIQcLz0g" class="work-item">
+                    <div class="work-img">
+                        <img src="https://user4707.cn.imgto.link/public/20260316/86a7c743bdf40abafc48736228eac13b.avif" alt="“你不是我，却又像另一个我”">
+                    </div>
+                    <div class="work-content">
+                        <h3 class="work-title">“你不是我，却又像另一个我”</h3>
+                        <div style="margin-bottom: 8px;">
+                            <span class="ai-highlight">用户洞察</span>
+                            <span class="ai-highlight">情感分析</span>
+                        </div>
+                        <p class="work-desc">2023/04/01</p>
+                        <p class="work-desc">项目背景：结合女性主义视角，解读文学作品中的女性友谊与生存困境，旨在提升公众对女性议题的关注。</p>
+                        <p class="work-desc">我的角色：独立完成资料查阅、撰稿、配图。</p>
+                        <p class="work-desc">成果数据：阅读量<span class="ai-metric">280+</span>，获多位女性读者共鸣。</p>
+                        <p class="work-desc">能力体现：女性主义视角分析能力、情感共鸣式写作能力。</p>
+                    </div>
+                </a>
+                <a href="https://mp.weixin.qq.com/s/3EbpVRngICu7gLJQt5lJQA" class="work-item">
+                    <div class="work-img">
+                        <img src="https://user4707.cn.imgto.link/public/20260316/16f10244f02bf18437e2292ab87ee370.avif" alt="摩西奶奶效应">
+                    </div>
+                    <div class="work-content">
+                        <h3 class="work-title">摩西奶奶效应</h3>
+                        <div style="margin-bottom: 8px;">
+                            <span class="ai-highlight">知识转译</span>
+                            <span class="ai-highlight">内容结构化</span>
+                        </div>
+                        <p class="work-desc">2022/11</p>
+                        <p class="work-desc">项目背景：基于公众号定位进行心理知识科普，选题涉及具有正向意义的心理效应以向大众科普。</p>
+                        <p class="work-desc">我的角色：独立完成资料查阅、撰稿。</p>
+                        <p class="work-desc">成果数据：阅读量<span class="ai-metric">280+</span>，获多位读者共鸣。</p>
+                        <p class="work-desc">能力体现：查阅专业知识，整理案例，并转化为大众语言。</p>
+                    </div>
+                </a>
+                <a href="https://user4707.cn.imgto.link/public/20260318/c31c70e736e1dd8ec9e85cf8b3904217.avif" class="work-item">
+                    <div class="work-img">
+                        <img src="https://user4707.cn.imgto.link/public/20260316/244d6a37cc1e22a8d53e848dd43adcd0.avif" alt="「羊了个羊」背后的心理学">
+                    </div>
+                    <div class="work-content">
+                        <h3 class="work-title">「羊了个羊」背后的心理学</h3>
+                        <div style="margin-bottom: 8px;">
+                            <span class="ai-highlight">热点分析</span>
+                            <span class="ai-highlight">用户行为洞察</span>
+                        </div>
+                        <p class="work-desc">2022/10</p>
+                        <p class="work-desc">项目背景：基于公众号定位进行心理知识科普，选题涉及对时事热点从心理视角进行解读。</p>
+                        <p class="work-desc">我的角色：独立完成资料查阅，负责背景介绍、引言部分撰写。</p>
+                        <p class="work-desc">能力体现：查阅专业知识，整理案例，用生动语言描述热点事件引人代入。</p>
+                    </div>
+                </a>
+                <a href="https://mp.weixin.qq.com/s/6uQTPsmw2VfZCgagF_WcQA" class="work-item">
+                    <div class="work-img">
+                        <img src="https://user4707.cn.imgto.link/public/20260316/23343a00ec49bc239f24c76915afadcf.avif" alt="青春的烦恼">
+                    </div>
+                    <div class="work-content">
+                        <h3 class="work-title">性教育剧本《青春的烦恼》</h3>
+                        <div style="margin-bottom: 8px;">
+                            <span class="ai-highlight">AI剧本创作</span>
+                            <span class="ai-highlight">用户适配</span>
+                        </div>
+                        <p class="work-desc">2024/01/25</p>
+                        <p class="work-desc">项目背景：针对小学六年级女生，创作性教育短剧，帮助青少年应对青春期身体变化与同伴言语骚扰。</p>
+                        <p class="work-desc">我的角色：独立完成剧本构思、角色设定、对白撰写、场景设计；AI辅助剧本结构设计、角色对话优化、目标用户语言适配。</p>
+                        <p class="work-desc">成果数据：基于小学生认知特点设计教育内容，平衡教育性和趣味性，剧本被纳入课题组性教育资源库，用于社区青春期教育活动。</p>
+                        <p class="work-desc">能力体现：青少年心理理解能力、教育内容创作能力、剧本写作能力</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="work-grid" id="layoutTab" style="display: none;">
+                <a href="https://user4707.cn.imgto.link/public/20260318/029e6ca9e02f8d938795a2685b4b5b07.avif" class="work-item">
+                    <div class="work-img">
+                        <img src="https://user4707.cn.imgto.link/public/20260318/640-1.avif" alt="Avoice 海外华人女性保护项目排版">
+                    </div>
+                    <div class="work-content">
+                        <h3 class="work-title">Avoice 海外华人女性保护项目排版</h3>
+                        <div style="margin-bottom: 8px;">
+                            <span class="ai-highlight">视觉优化</span>
+                        </div>
+                        <p class="work-desc">2023/04-12 · <span class="ai-metric">8 篇</span>推文+封面设计，获评优秀志愿者</p>
+                    </div>
+                </a>
+                <a href="https://user4707.cn.imgto.link/public/20260316/0a5d96e39a0dfd75d1dcccc27f0549e8.avif" class="work-item">
+                    <div class="work-img">
+                        <img src="https://user4707.cn.imgto.link/public/20260316/0a5d96e39a0dfd75d1dcccc27f0549e8.avif" alt="丁香之火解谜游戏宣传海报">
+                    </div>
+                    <div class="work-content">
+                        <h3 class="work-title">丁香之火解谜游戏宣传海报</h3>
+                        <div style="margin-bottom: 8px;">
+                            <span class="ai-highlight">视觉传达</span>
+                        </div>
+                        <p class="work-desc">2023/04-05 · 校园心理月核心视觉，吸引 <span class="ai-metric">89 人</span>参与</p>
+                    </div>
+                </a>
+                <a href="https://user4707.cn.imgto.link/public/20260316/820de9a886034e089168f60bb21e7ea2.avif" class="work-item">
+                    <div class="work-img">
+                        <img src="https://user4707.cn.imgto.link/public/20260316/820de9a886034e089168f60bb21e7ea2.avif" alt="《共克歧视 关爱相随》性教育会议海报">
+                    </div>
+                    <div class="work-content">
+                        <h3 class="work-title">《共克歧视 关爱相随》性教育会议海报</h3>
+                        <div style="margin-bottom: 8px;">
+                            <span class="ai-highlight">视觉设计</span>
+                        </div>
+                        <p class="work-desc">2023/10 · 高校性教育会议视觉设计</p>
+                    </div>
+                </a>
+                <a href="https://user4707.cn.imgto.link/public/20260316/018222773d2303aac0ddc0bf76595f68.avif" class="work-item">
+                    <div class="work-img">
+                        <img src="https://user4707.cn.imgto.link/public/20260316/018222773d2303aac0ddc0bf76595f68.avif" alt="科研汇报 PPT 设计">
+                    </div>
+                    <div class="work-content">
+                        <h3 class="work-title">科研汇报 PPT 设计</h3>
+                        <div style="margin-bottom: 8px;">
+                            <span class="ai-highlight">信息可视化</span>
+                        </div>
+                        <p class="work-desc">2017-2025 · 课题组学术汇报，结构清晰获好评</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="work-grid" id="videoTab" style="display: none;">
+                <a href="https://mp.weixin.qq.com/s/gDB4aC5Pwafr6PDDLzedjw" class="work-item">
+                    <div class="work-img">
+                        <img src="https://user4707.cn.imgto.link/public/20260316/3661afe1243fa56c4f5d1b54ab9a7b8c.avif" alt="Equalize（世界艾滋病日宣传）">
+                    </div>
+                    <div class="work-content">
+                        <h3 class="work-title">Equalize（世界艾滋病日宣传）</h3>
+                        <div style="margin-bottom: 8px;">
+                            <span class="ai-highlight">脚本创作</span>
+                            <span class="ai-highlight">动画辅助</span>
+                        </div>
+                        <p class="work-desc">2022/11-12 · 独立脚本+手绘动画+剪辑，第四届高校艾滋病预防研讨会发言展示</p>
+                    </div>
+                </a>
+                <a href="https://www.canva.cn/design/DAHEIFq67gQ/ELAfDqTYnH8RCcJgpfP1jQ/edit?utm_content=DAHEIFq67gQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="work-item">
+                    <div class="work-img">
+                        <img src="https://user4707.cn.imgto.link/public/20260316/f8fb4da699c2387007d638813af48b20.avif" alt="乐观偏差心理科普微视频">
+                    </div>
+                    <div class="work-content">
+                        <h3 class="work-title">乐观偏差心理科普微视频</h3>
+                        <div style="margin-bottom: 8px;">
+                            <span class="ai-highlight">视频制作</span>
+                            <span class="ai-highlight">内容简化</span>
+                        </div>
+                        <p class="work-desc">2022/09-11 · 独立脚本+白板动画+拍摄统筹，上海市应用心理研究生实践技能大赛全国决赛入围</p>
+                    </div>
+                </a>
+                <a href="https://mp.weixin.qq.com/s/7R3rwRPGoA1VQsh5wpqyAA" class="work-item">
+                    <div class="work-img">
+                        <img src="https://user4707.cn.imgto.link/public/20260316/2b5764acd6f61130effc4adb3a5d8b50.avif" alt="RECSG 课题组宣传视频">
+                    </div>
+                    <div class="work-content">
+                        <h3 class="work-title">RECSG 课题组宣传视频</h3>
+                        <div style="margin-bottom: 8px;">
+                            <span class="ai-highlight">创意策划</span>
+                            <span class="ai-highlight">剪辑辅助</span>
+                        </div>
+                        <p class="work-desc">2024/09 · 参与构思+脚本+拍摄，用于课题组公众号宣传</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="work-grid" id="activityTab" style="display: none;">
+                <a href="https://user4707.cn.imgto.link/public/20260316/534a534a534a534a534a534a534a534a.avif" class="work-item">
+                    <div class="work-img">
+                        <img src="https://user4707.cn.imgto.link/public/20260316/e97e849c9fff2a46314292732df648f1.avif" alt="丁香之火解谜游戏">
+                    </div>
+                    <div class="work-content">
+                        <h3 class="work-title">《丁香之火》解谜游戏</h3>
+                        <div style="margin-bottom: 8px;">
+                            <span class="ai-highlight">活动策划</span>
+                            <span class="ai-highlight">用户体验</span>
+                        </div>
+                        <p class="work-desc">2023/04-05 · 主导创意+剧情+谜题+海报制作，校园心理月标志性活动，<span class="ai-metric">89 人</span>参与</p>
+                    </div>
+                </a>
+                <a href="https://user4707.cn.imgto.link/public/20260318/4c0067b85d61c48502462002cc4fbd02.avif" class="work-item">
+                    <div class="work-img">
+                        <img src="https://user4707.cn.imgto.link/public/20260316/3f6e3bc083494788b32942f07be11a28.avif" alt="「爱之初体验」恋爱沙龙">
+                    </div>
+                    <div class="work-content">
+                        <h3 class="work-title">「爱之初体验」恋爱沙龙</h3>
+                        <div style="margin-bottom: 8px;">
+                            <span class="ai-highlight">用户调研</span>
+                            <span class="ai-highlight">活动设计</span>
+                        </div>
+                        <p class="work-desc">2023/05 · 策划+招募+主持+PPT 制作，<span class="ai-metric">22 人</span>参与，参与者反馈积极</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="research fade-in section" id="research">
+        <div class="container">
+            <h2 class="section-title">用户研究能力</h2>
+            <!-- 定量/定性研究不再添加ai-core类，不再显示AI CORE标识 -->
+            <div class="research-category">
+                <h3><span class="research-number">01.</span>定性研究</h3>
+                <div class="research-item">
+                    <div class="research-img" onclick="window.open('https://user4707.cn.imgto.link/public/20260316/153d6187d0276fb625696d317ba7aa58.avif', '_blank')">
+                        <img src="https://user4707.cn.imgto.link/public/20260316/153d6187d0276fb625696d317ba7aa58.avif" alt="文献筛选流程、编码结果">
+                    </div>
+                    <div class="research-text">
+                        <h4>性自我效能与性健康行为关系综述研究</h4>
+                        <div style="margin-bottom: 8px;">
+                            <span class="ai-highlight">文本分析</span>
+                            <span class="ai-highlight">用户洞察</span>
+                        </div>
+                        <p>工具：Endnote / MAXQDA</p>
+                        <p>流程：文献检索（n=<span class="ai-metric">61</span>）→ 筛选（最终 n=<span class="ai-metric">15</span>）→ 文本编码分析</p>
+                        <p>核心结果：性自我效能与性健康行为呈显著正向关联，受社会文化、性别角色等因素调节</p>
+                    </div>
+                </div>
+                <div class="research-item">
+                    <div class="research-img" onclick="window.open('https://user4707.cn.imgto.link/public/20260316/39994139fb853e8d8e17c6f133992de5.avif', '_blank')">
+                        <img src="https://user4707.cn.imgto.link/public/20260316/39994139fb853e8d8e17c6f133992de5.avif" alt="文献筛选流程、编码结果">
+                    </div>
+                    <div class="research-text">
+                        <h4>青少年性自我效能质性研究综述分析</h4>
+                        <div style="margin-bottom: 8px;">
+                            <span class="ai-highlight">主题编码</span>
+                            <span class="ai-highlight">用户分层</span>
+                        </div>
+                        <p>工具：Endnote / MAXQDA</p>
+                        <p>流程：文献检索（n=<span class="ai-metric">184</span>）→ 筛选（最终 n=<span class="ai-metric">50</span>）→ 主题编码</p>
+                        <p>核心结果：青少年性自我效能受知识获取、权力结构、家庭氛围等多维度影响，需综合干预提升</p>
+                    </div>
+                </div>
+            </div>
+            <div class="research-category">
+                <h3><span class="research-number">02.</span>定量研究</h3>
+                <div class="research-item">
+                    <div class="research-img" onclick="window.open('https://user4707.cn.imgto.link/public/20260316/c4b43ad3ac405e0a30c314971c7cd461.avif', '_blank')">
+                        <img src="https://user4707.cn.imgto.link/public/20260316/c4b43ad3ac405e0a30c314971c7cd461.avif" alt="结构方程模型图">
+                    </div>
+                    <div class="research-text">
+                        <h4>青少年社交媒体使用对性保护自我效能的影响（多重中介效应）</h4>
+                        <div style="margin-bottom: 8px;">
+                            <span class="ai-highlight">数据分析</span>
+                            <span class="ai-highlight">产品验证</span>
+                        </div>
+                        <p>工具：问卷星 / SPSS / MPLUS</p>
+                        <p>流程：问卷设计 → 样本调研（n=<span class="ai-metric">900</span>）→ 信效度检验 → 结构方程模型分析</p>
+                        <p>核心结果：社交媒体使用通过心理资本、性宽容态度两条路径显著提升青少年性保护自我效能</p>
+                        <p>研究价值：为青少年性健康教育干预提供实证依据与实践参考</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="honors fade-in section" id="honors">
+        <div class="container">
+            <h2 class="section-title">实践成果</h2>
+            <div class="honors-list">
+                <div class="honor-item">
+                    <div class="honor-img">
+                        <img src="https://user4707.cn.imgto.link/public/20260316/0a6f71e1384635979cafce3022119037.avif" alt="Avoice实习证明">
+                    </div>
+                    <div class="honor-text">2023 年度 Avoice 海外华人女性保护项目 优秀志愿者
+                        <span class="honor-desc">核心贡献：内容生产与用户触达策略优化</span>
+                    </div>
+                </div>
+                <div class="honor-item">
+                    <div class="honor-img">
+                        <img src="https://user4707.cn.imgto.link/public/20260316/1c765356d0f39a30c0cfae7cc25766b4.avif" alt="实践技能大赛入围证书">
+                    </div>
+                    <div class="honor-text">上海市应用心理专业学位研究生实践技能大赛 全国决赛入围
+                        <span class="honor-desc">核心成果：心理科普产品设计与落地展示</span>
+                    </div>
+                </div>
+                <div class="honor-item">
+                    <div class="honor-img">
+                        <img src="https://user4707.cn.imgto.link/public/20260316/3b21c3f7f9d87c1a3df42d9aab28b7e.avif" alt="艾滋病预防研讨会参会证明">
+                    </div>
+                    <div class="honor-text">第四届高校艾滋病预防研讨会 发言展示
+                        <span class="honor-desc">核心内容：艾滋病防治科普内容生产与应用</span>
+                    </div>
+                </div>
+                <div class="honor-item">
+                    <div class="honor-img">
+                        <img src="https://user4707.cn.imgto.link/public/20260316/7b35ec8a108a4c09a4fb22d2e39ab442.avif" alt="爱智行杯优秀作品奖">
+                    </div>
+                    <div class="honor-text">首届「爱智行杯」高校性教育创意作品大赛优秀作品奖
+                        <span class="honor-desc">核心创新：性教育视觉设计与内容创作</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer container fade-in">
+        <div class="footer-wrap">
+            <div class="footer-left">
+                <div class="logo">罗   菲   Faye.</div>
+                <div class="contact-info">
+                    TILAPIA1007@163.COM<br>
+                    +86 131 4440 1070
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="copyright">© 2025 LUO FEI. ALL RIGHTS RESERVED.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 汉堡菜单交互
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const menuModal = document.getElementById('menuModal');
+        const menuLinks = document.querySelectorAll('.menu-link');
+
+        hamburgerBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menuModal.classList.toggle('active');
+            document.body.style.overflow = menuModal.classList.contains('active') ? 'hidden' : 'auto';
+        });
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                menuModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (menuModal.classList.contains('active') && !menuModal.contains(e.target) && e.target !== hamburgerBtn) {
+                menuModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // 作品标签切换
+        const workTabs = document.querySelectorAll('.work-tab');
+        const workTabContents = {
+            text: document.getElementById('textTab'),
+            layout: document.getElementById('layoutTab'),
+            video: document.getElementById('videoTab'),
+            activity: document.getElementById('activityTab')
+        };
+
+        workTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                workTabs.forEach(t => t.classList.remove('active'));
+                Object.values(workTabContents).forEach(content => content.style.display = 'none');
+                tab.classList.add('active');
+                workTabContents[tab.getAttribute('data-tab')].style.display = 'grid';
+            });
+        });
+
+        // 优化版萤火虫粒子效果 - AI科技风格
+        class Fireflies {
+            constructor(canvas) {
+                this.canvas = canvas;
+                this.ctx = canvas.getContext('2d');
+                this.particles = [];
+                this.mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+                this.maxParticles = 60;
+                this.init();
+            }
+
+            init() {
+                this.resizeCanvas();
+                window.addEventListener('resize', () => this.resizeCanvas());
+                document.addEventListener('mousemove', (e) => {
+                    this.mouse.x = e.clientX;
+                    this.mouse.y = e.clientY;
+                });
+
+                for (let i = 0; i < this.maxParticles; i++) {
+                    this.particles.push(this.createParticle());
+                }
+                setTimeout(() => this.animate(), 1000);
+            }
+
+            resizeCanvas() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+            }
+
+            createParticle() {
+                // AI科技感配色：蓝/紫/青
+                const colors = ['#3B82F6', '#8B5CF6', '#22D3EE'];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                
+                return {
+                    x: Math.random() * this.canvas.width,
+                    y: Math.random() * this.canvas.height,
+                    size: Math.random() * 3 + 1, // 更大的粒子
+                    speedX: Math.random() * 0.8 - 0.4, // 更快的移动
+                    speedY: Math.random() * 0.8 - 0.4,
+                    alpha: Math.random() * 0.6 + 0.2,
+                    alphaSpeed: Math.random() * 0.008 - 0.004,
+                    color: color,
+                    avoidDistance: 200 // 更大的避让范围
+                };
+            }
+
+            updateParticles() {
+                this.particles.forEach((p, i) => {
+                    const dx = p.x - this.mouse.x;
+                    const dy = p.y - this.mouse.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < p.avoidDistance) {
+                        const angle = Math.atan2(dy, dx);
+                        p.x += Math.cos(angle) * 2;
+                        p.y += Math.sin(angle) * 2;
+                    }
+
+                    p.x += p.speedX;
+                    p.y += p.speedY;
+                    p.alpha += p.alphaSpeed;
+
+                    if (p.alpha > 0.7) p.alphaSpeed = -Math.abs(p.alphaSpeed);
+                    if (p.alpha < 0.2) p.alphaSpeed = Math.abs(p.alphaSpeed);
+
+                    if (p.x < 0 || p.x > this.canvas.width || p.y < 0 || p.y > this.canvas.height) {
+                        this.particles[i] = this.createParticle();
+                    }
+                });
+            }
+
+            drawParticles() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                this.particles.forEach(p => {
+                    this.ctx.beginPath();
+                    this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    this.ctx.fillStyle = `rgba(${parseInt(p.color.slice(1,3),16)}, ${parseInt(p.color.slice(3,5),16)}, ${parseInt(p.color.slice(5,7),16)}, ${p.alpha})`;
+                    this.ctx.fill();
+                });
+            }
+
+            animate() {
+                this.updateParticles();
+                this.drawParticles();
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+
+        // 导航菜单高亮
+        function highlightMenu() {
+            const sections = ['intro', 'ai-project', 'skills', 'works', 'research', 'honors'];
+            const scrollPosition = window.scrollY + 100;
+
+            sections.forEach(sectionId => {
+                const section = document.getElementById(sectionId);
+                const menuLink = document.querySelector(`.menu-link[href="#${sectionId}"]`);
+                
+                if (section && section.offsetTop <= scrollPosition && section.offsetTop + section.offsetHeight > scrollPosition) {
+                    menuLinks.forEach(link => link.classList.remove('active-menu'));
+                    menuLink.classList.add('active-menu');
+                }
+            });
+        }
+
+        // 滚动渐入动画
+        function checkFadeElements() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const isVisible = rect.top < window.innerHeight - 100 && rect.bottom > 0;
+                if (isVisible) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+
+        // 初始化
+        window.addEventListener('load', () => {
+            // 初始化粒子效果
+            new Fireflies(document.getElementById('fireflies'));
+            
+            // 初始化动画
+            checkFadeElements();
+            
+            // 绑定滚动事件
+            window.addEventListener('scroll', () => {
+                highlightMenu();
+                checkFadeElements();
+            });
+            
+            // 初始高亮菜单
+            highlightMenu();
+        });
+    </script>
+</body>
+</html>
