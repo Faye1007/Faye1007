@@ -11,29 +11,35 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            /* 粉紫奶油配色主题 */
-            --bg-primary: #FDF8F6;
-            --bg-secondary: #FFF5F2;
-            --bg-warm: #FFF8F2;
+            /* 明亮创意：心理学温度 + AI实验感 */
+            --bg-primary: #FBFDFF;
+            --bg-secondary: #F3F7FF;
+            --bg-warm: #FFF8E9;
             --bg-card: #FFFFFF;
-            --text-primary: #2D1F1F;
-            --text-secondary: #6B5B5B;
-            --text-muted: #9B8B8B;
-            --accent-pink: #F472B6;
-            --accent-purple: #A78BFA;
-            --accent-rose: #FB7185;
-            --accent-violet: #8B5CF6;
-            --accent-coral: #FF6B6B;
-            --line-edu: #F472B6;
-            --line-project: #A78BFA;
-            --line-work: #FB7185;
-            --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
-            --shadow-hover: 0 20px 40px -15px rgba(244, 114, 182, 0.25);
+            --text-primary: #172033;
+            --text-secondary: #526070;
+            --text-muted: #8490A3;
+            --accent-pink: #FF5FA2;
+            --accent-purple: #7C5CFF;
+            --accent-rose: #FF6F8E;
+            --accent-violet: #6B4DFF;
+            --accent-coral: #FF8A5B;
+            --accent-cyan: #18C7C9;
+            --accent-blue: #3B82F6;
+            --accent-yellow: #F8C84E;
+            --line-edu: #18C7C9;
+            --line-project: #7C5CFF;
+            --line-work: #FF8A5B;
+            --shadow-soft: 0 14px 34px -24px rgba(23, 32, 51, 0.32);
+            --shadow-hover: 0 24px 54px -28px rgba(124, 92, 255, 0.34);
         }
 
         body {
             color: var(--text-primary);
-            background-color: var(--bg-primary);
+            background:
+                linear-gradient(135deg, rgba(24, 199, 201, 0.05), transparent 34%),
+                linear-gradient(225deg, rgba(255, 95, 162, 0.06), transparent 32%),
+                var(--bg-primary);
             font-family: "Inter", "微软雅黑", sans-serif;
             overflow-x: hidden;
             line-height: 1.6;
@@ -56,14 +62,14 @@
             width: 600px;
             height: 600px;
             border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.12;
+            filter: blur(90px);
+            opacity: 0.09;
             transition: all 0.8s ease-out;
         }
 
-        .blob-1 { background: linear-gradient(135deg, var(--accent-pink), var(--accent-rose)); top: -200px; left: -100px; }
-        .blob-2 { background: linear-gradient(135deg, var(--accent-purple), var(--accent-violet)); bottom: -200px; right: -100px; }
-        .blob-3 { background: linear-gradient(135deg, var(--accent-coral), var(--accent-pink)); top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .blob-1 { background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue)); top: -220px; left: -120px; }
+        .blob-2 { background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink)); bottom: -220px; right: -120px; }
+        .blob-3 { background: linear-gradient(135deg, var(--accent-yellow), var(--accent-coral)); top: 48%; left: 52%; transform: translate(-50%, -50%); }
 
         .container {
             max-width: 1200px;
@@ -85,16 +91,29 @@
             position: relative;
         }
 
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 8% 8% auto;
+            height: 62%;
+            background:
+                linear-gradient(90deg, rgba(24, 199, 201, 0.08) 1px, transparent 1px),
+                linear-gradient(0deg, rgba(124, 92, 255, 0.07) 1px, transparent 1px);
+            background-size: 54px 54px;
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), transparent);
+            pointer-events: none;
+        }
+
         .hero-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
             padding: 10px 20px;
-            background: rgba(244, 114, 182, 0.1);
-            border: 1px solid rgba(244, 114, 182, 0.3);
+            background: rgba(24, 199, 201, 0.1);
+            border: 1px solid rgba(24, 199, 201, 0.28);
             border-radius: 30px;
             font-size: 13px;
-            color: var(--accent-pink);
+            color: #0F8E91;
             margin-bottom: 30px;
             animation: pulse 2s ease-in-out infinite;
         }
@@ -116,11 +135,43 @@
         }
 
         .hero-slogan {
-            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-size: clamp(0.92rem, 1.45vw, 1.05rem);
             color: var(--text-secondary);
-            max-width: 600px;
-            margin-bottom: 40px;
-            line-height: 1.8;
+            max-width: 620px;
+            margin-bottom: 28px;
+            line-height: 1.75;
+        }
+
+        .hero-proof {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 34px;
+        }
+
+        .hero-proof-item {
+            min-width: 142px;
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.78);
+            border: 1px solid rgba(124, 92, 255, 0.14);
+            border-radius: 18px;
+            box-shadow: var(--shadow-soft);
+            backdrop-filter: blur(12px);
+        }
+
+        .hero-proof-item strong {
+            display: block;
+            font-size: 20px;
+            line-height: 1.2;
+            color: var(--accent-violet);
+            margin-bottom: 4px;
+        }
+
+        .hero-proof-item span {
+            display: block;
+            font-size: 12px;
+            color: var(--text-secondary);
         }
 
         .hero-tags {
@@ -142,9 +193,9 @@
             cursor: default;
         }
 
-        .hero-tag:nth-child(1) { color: var(--accent-pink); border: 2px solid var(--accent-pink); }
+        .hero-tag:nth-child(1) { color: #0F8E91; border: 2px solid var(--accent-cyan); }
         .hero-tag:nth-child(2) { color: var(--accent-purple); border: 2px solid var(--accent-purple); }
-        .hero-tag:nth-child(3) { color: var(--accent-rose); border: 2px solid var(--accent-rose); }
+        .hero-tag:nth-child(3) { color: #D94F70; border: 2px solid var(--accent-rose); }
 
         .hero-tag:hover {
             transform: translateY(-3px);
@@ -178,7 +229,9 @@
         /* Timeline Section */
         .timeline-section {
             padding: 100px 0;
-            background: var(--bg-secondary);
+            background:
+                linear-gradient(180deg, rgba(243, 247, 255, 0.92), rgba(255, 248, 233, 0.52)),
+                var(--bg-secondary);
             position: relative;
         }
 
@@ -205,67 +258,51 @@
             margin-bottom: 40px;
         }
 
-        /* Legend */
-        .timeline-legend {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 13px;
-            color: var(--text-secondary);
-            padding: 6px 14px;
-            background: var(--bg-card);
-            border-radius: 20px;
-            box-shadow: var(--shadow-soft);
-        }
-
-        .legend-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-        }
-
-        .legend-dot.edu { background: var(--line-edu); }
-        .legend-dot.project { background: var(--line-project); }
-        .legend-dot.work { background: var(--line-work); }
-
-        /* Timeline Container - 竖向布局 */
+        /* Timeline Container - 星图网络 */
         .timeline-container {
             position: relative;
-            padding: 40px 30px;
+            padding: 34px 24px;
             overflow-x: hidden;
             background:
-                radial-gradient(circle at 24% 12%, rgba(244, 114, 182, 0.12), transparent 28%),
-                radial-gradient(circle at 72% 42%, rgba(167, 139, 250, 0.14), transparent 30%),
-                linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 248, 242, 0.96));
-            border-radius: 24px;
+                linear-gradient(90deg, rgba(24, 199, 201, 0.08) 1px, transparent 1px),
+                linear-gradient(0deg, rgba(124, 92, 255, 0.07) 1px, transparent 1px),
+                radial-gradient(circle at 50% 48%, rgba(255, 255, 255, 0.98), rgba(251, 253, 255, 0.92) 48%, rgba(255, 248, 233, 0.78));
+            background-size: 42px 42px, 42px 42px, 100% 100%;
+            border-radius: 28px;
             box-shadow: var(--shadow-soft);
-            border: 1px solid rgba(244, 114, 182, 0.12);
+            border: 1px solid rgba(24, 199, 201, 0.16);
         }
 
         .timeline-svg {
             width: 100%;
-            height: 900px;
+            height: 760px;
             display: block;
         }
 
         .timeline-main-label {
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 600;
             fill: var(--text-primary);
-            text-anchor: end;
+            text-anchor: middle;
         }
 
         .timeline-branch-label {
             font-size: 12px;
             font-weight: 500;
+            fill: var(--text-secondary);
+            text-anchor: middle;
+        }
+
+        .timeline-core-label {
+            font-size: 18px;
+            font-weight: 800;
+            fill: var(--text-primary);
+            text-anchor: middle;
+        }
+
+        .timeline-core-subtitle {
+            font-size: 12px;
+            font-weight: 600;
             fill: var(--text-secondary);
             text-anchor: middle;
         }
@@ -278,13 +315,17 @@
         .node-circle {
             transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
             transform-origin: center;
-            filter: drop-shadow(0 6px 14px rgba(244, 114, 182, 0.18));
+            filter: drop-shadow(0 10px 18px rgba(23, 32, 51, 0.15));
         }
 
         .timeline-node:hover .node-circle {
-            filter: drop-shadow(0 8px 18px rgba(244, 114, 182, 0.35));
+            filter: drop-shadow(0 12px 24px rgba(124, 92, 255, 0.34));
             stroke: white;
             stroke-width: 3px;
+        }
+
+        .timeline-node:hover text {
+            fill: var(--accent-violet);
         }
 
         .node-label {
@@ -307,25 +348,38 @@
             transition: all 0.3s ease;
         }
 
-        .timeline-path.main-vine {
-            stroke-width: 8;
+        .timeline-path.main-vine,
+        .timeline-path.branch-vine {
+            stroke-width: 4;
             filter: url(#timelineGlow);
-            stroke-dasharray: 18 14;
-            animation: timeline-flow 12s linear infinite;
+            stroke-dasharray: 10 12;
+            animation: timeline-flow 10s linear infinite;
+        }
+
+        .timeline-path.main-axis {
+            stroke-width: 5;
+            stroke-dasharray: none;
+            animation: none;
+            filter: url(#timelineGlowSoft);
         }
 
         .timeline-path.branch-vine {
-            stroke-width: 5;
+            stroke-width: 3.5;
             filter: url(#timelineGlowSoft);
-            stroke-dasharray: 12 10;
-            animation: timeline-flow 9s linear infinite;
         }
 
         .timeline-path.nerve-thread {
-            stroke-width: 2;
-            opacity: 0.42;
-            stroke-dasharray: 2 12;
-            animation: timeline-flow 6s linear infinite;
+            stroke-width: 1.6;
+            opacity: 0.32;
+            stroke-dasharray: 3 14;
+            animation: timeline-flow 8s linear infinite;
+        }
+
+        .timeline-orbit {
+            fill: none;
+            stroke: rgba(124, 92, 255, 0.16);
+            stroke-width: 1.4;
+            stroke-dasharray: 8 12;
         }
 
         .timeline-signal {
@@ -342,28 +396,76 @@
 
         /* Capability Planets */
         .planets-section {
-            padding: 100px 0;
-            background: var(--bg-primary);
+            padding: 110px 0;
+            background:
+                linear-gradient(180deg, rgba(251, 253, 255, 0.96), rgba(243, 247, 255, 0.92)),
+                var(--bg-primary);
         }
 
         .planets-grid {
+            position: relative;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+            min-height: auto;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 32px;
+            background:
+                radial-gradient(ellipse at center, rgba(124, 92, 255, 0.1), transparent 34%),
+                linear-gradient(90deg, rgba(24, 199, 201, 0.07) 1px, transparent 1px),
+                linear-gradient(0deg, rgba(255, 95, 162, 0.05) 1px, transparent 1px);
+            background-size: 100% 100%, 48px 48px, 48px 48px;
+            border: 1px solid rgba(124, 92, 255, 0.14);
+            box-shadow: var(--shadow-soft);
+            overflow: visible;
+            align-items: stretch;
+        }
+
+        .planets-grid::before,
+        .planets-grid::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(-8deg);
+            width: min(82%, 840px);
+            aspect-ratio: 1 / 0.58;
+            border: 1px dashed rgba(124, 92, 255, 0.2);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .planets-grid::after {
+            width: min(62%, 640px);
+            transform: translate(-50%, -50%) rotate(16deg);
+            border-color: rgba(24, 199, 201, 0.22);
+        }
+
+        .planet-connection {
+            display: none;
         }
 
         .planet-card {
+            --tilt: 0deg;
+            --offset-y: 0px;
             background: var(--bg-card);
-            border-radius: 24px;
-            padding: 35px;
+            border-radius: 26px;
+            padding: 24px;
             box-shadow: var(--shadow-soft);
             transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             cursor: pointer;
             position: relative;
+            width: 100%;
             overflow: hidden;
-            border: 1px solid rgba(244, 114, 182, 0.1);
+            border: 1px solid rgba(124, 92, 255, 0.13);
             display: flex;
             flex-direction: column;
+            min-height: 285px;
+            backdrop-filter: blur(14px);
+            z-index: 1;
+            animation: planet-float 8s ease-in-out infinite;
+            transform: translateY(var(--offset-y)) rotate(var(--tilt));
         }
 
         .planet-card::before {
@@ -372,16 +474,16 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
-            background: linear-gradient(to right, var(--accent-pink), var(--accent-purple));
+            height: 5px;
+            background: linear-gradient(to right, var(--accent-cyan), var(--accent-purple), var(--accent-pink));
             transform: scaleX(0);
             transition: transform 0.3s ease;
         }
 
         .planet-card:hover {
-            transform: translateY(-10px) rotate(1deg);
-            box-shadow: 0 20px 40px -15px rgba(244, 114, 182, 0.2);
-            border-color: rgba(244, 114, 182, 0.2);
+            transform: translateY(calc(var(--offset-y) - 10px)) rotate(var(--tilt)) scale(1.02);
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(124, 92, 255, 0.28);
         }
 
         .planet-card:hover::before {
@@ -389,8 +491,8 @@
         }
 
         .planet-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
+            font-size: 40px;
+            margin-bottom: 14px;
             display: block;
         }
 
@@ -405,8 +507,8 @@
         .planet-desc {
             font-size: 14px;
             color: var(--text-secondary);
-            line-height: 1.7;
-            margin-bottom: 20px;
+            line-height: 1.65;
+            margin-bottom: 18px;
         }
 
         .planet-stats {
@@ -418,18 +520,54 @@
 
         .planet-stat {
             padding: 6px 14px;
-            background: rgba(244, 114, 182, 0.1);
-            color: var(--accent-pink);
+            background: rgba(24, 199, 201, 0.1);
+            color: #0F8E91;
             border-radius: 20px;
             font-size: 12px;
             font-weight: 600;
         }
 
-        .planet-card:nth-child(2) .planet-stat { background: rgba(167, 139, 250, 0.1); color: var(--accent-purple); }
-        .planet-card:nth-child(3) .planet-stat { background: rgba(251, 113, 133, 0.1); color: var(--accent-rose); }
-        .planet-card:nth-child(4) .planet-stat { background: rgba(139, 92, 246, 0.1); color: var(--accent-violet); }
-        .planet-card:nth-child(5) .planet-stat { background: rgba(255, 107, 107, 0.1); color: var(--accent-coral); }
-        .planet-card:nth-child(6) .planet-stat { background: rgba(244, 114, 182, 0.08); color: var(--accent-pink); }
+        .planet-card[data-planet="ai"] {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(243, 247, 255, 0.96));
+            border-color: rgba(124, 92, 255, 0.24);
+        }
+
+        .planet-card[data-planet="ai"] .planet-icon {
+            font-size: 40px;
+        }
+
+        .planet-card[data-planet="ai"] .planet-title {
+            font-size: 20px;
+        }
+
+        .planet-card[data-planet="content"] { animation-duration: 8s; }
+        .planet-card[data-planet="video"] { animation-duration: 7s; animation-direction: reverse; }
+        .planet-card[data-planet="design"] { animation-duration: 9s; }
+        .planet-card[data-planet="event"] { animation-duration: 7.5s; animation-direction: reverse; }
+        .planet-card[data-planet="research"] { animation-duration: 8.5s; }
+
+        .planet-card[data-planet="ai"] { --tilt: -1.4deg; --offset-y: 8px; }
+        .planet-card[data-planet="content"] { --tilt: 1.8deg; --offset-y: -8px; }
+        .planet-card[data-planet="video"] { --tilt: -2deg; --offset-y: 16px; }
+        .planet-card[data-planet="design"] { --tilt: 1.2deg; --offset-y: -4px; }
+        .planet-card[data-planet="event"] { --tilt: -1deg; --offset-y: 14px; }
+        .planet-card[data-planet="research"] { --tilt: 2deg; --offset-y: -12px; }
+
+        .planet-card[data-planet="content"] .planet-stat { background: rgba(167, 139, 250, 0.1); color: var(--accent-purple); }
+        .planet-card[data-planet="video"] .planet-stat { background: rgba(255, 111, 142, 0.12); color: var(--accent-rose); }
+        .planet-card[data-planet="design"] .planet-stat { background: rgba(139, 92, 246, 0.1); color: var(--accent-violet); }
+        .planet-card[data-planet="event"] .planet-stat { background: rgba(255, 138, 91, 0.12); color: var(--accent-coral); }
+        .planet-card[data-planet="research"] .planet-stat { background: rgba(24, 199, 201, 0.1); color: #0F8E91; }
+
+        @keyframes planet-core-float {
+            0%, 100% { margin-top: 0; }
+            50% { margin-top: -8px; }
+        }
+
+        @keyframes planet-float {
+            0%, 100% { margin-top: 0; }
+            50% { margin-top: -12px; }
+        }
 
         /* Modal */
         .modal-overlay {
@@ -662,7 +800,7 @@
             top: 0;
             left: 0;
             height: 3px;
-            background: linear-gradient(to right, var(--accent-pink), var(--accent-purple));
+            background: linear-gradient(to right, var(--accent-cyan), var(--accent-purple), var(--accent-pink));
             z-index: 10000;
             transition: width 0.1s ease;
         }
@@ -822,7 +960,8 @@
         /* Personality Test */
         .test-section {
             padding: 100px 0;
-            background: linear-gradient(135deg, var(--bg-warm) 0%, #FFF0F5 50%, var(--bg-secondary) 100%);
+            background:
+                linear-gradient(135deg, var(--bg-warm) 0%, #F3F7FF 48%, #F7F2FF 100%);
             position: relative;
             overflow: hidden;
         }
@@ -850,8 +989,8 @@
             padding: 6px 16px;
             margin-bottom: 16px;
             border-radius: 999px;
-            background: rgba(244, 114, 182, 0.12);
-            color: var(--accent-pink);
+            background: rgba(24, 199, 201, 0.12);
+            color: #0F8E91;
             font-size: 13px;
             font-weight: 600;
             letter-spacing: 0;
@@ -878,7 +1017,7 @@
             right: -20%;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(244, 114, 182, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(24, 199, 201, 0.12) 0%, transparent 70%);
             pointer-events: none;
         }
 
@@ -889,7 +1028,7 @@
             left: -10%;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(167, 139, 250, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(124, 92, 255, 0.1) 0%, transparent 70%);
             pointer-events: none;
         }
 
@@ -940,7 +1079,7 @@
         }
 
         .test-btn {
-            background: linear-gradient(135deg, var(--accent-pink) 0%, var(--accent-purple) 100%);
+            background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 55%, var(--accent-pink) 100%);
             color: white;
             border: none;
             padding: 16px 48px;
@@ -949,12 +1088,12 @@
             border-radius: 30px;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(244, 114, 182, 0.3);
+            box-shadow: 0 4px 15px rgba(124, 92, 255, 0.26);
         }
 
         .test-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(244, 114, 182, 0.4);
+            box-shadow: 0 6px 20px rgba(124, 92, 255, 0.34);
         }
 
         .test-btn.secondary {
@@ -966,7 +1105,7 @@
         }
 
         .test-btn.secondary:hover {
-            background: var(--border-color);
+            background: rgba(24, 199, 201, 0.1);
         }
 
         .progress-bar {
@@ -980,7 +1119,7 @@
 
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, var(--accent-pink) 0%, var(--accent-purple) 100%);
+            background: linear-gradient(90deg, var(--accent-cyan) 0%, var(--accent-purple) 55%, var(--accent-pink) 100%);
             border-radius: 3px;
             transition: width 0.5s ease;
             width: 0%;
@@ -1026,9 +1165,9 @@
         }
 
         .option-btn:hover {
-            border-color: var(--accent-pink);
+            border-color: var(--accent-cyan);
             transform: translateX(8px);
-            box-shadow: 0 4px 20px rgba(244, 114, 182, 0.2);
+            box-shadow: 0 4px 20px rgba(24, 199, 201, 0.18);
         }
 
         .option-btn::before {
@@ -1038,7 +1177,7 @@
             top: 0;
             bottom: 0;
             width: 4px;
-            background: linear-gradient(180deg, var(--accent-pink) 0%, var(--accent-purple) 100%);
+            background: linear-gradient(180deg, var(--accent-cyan) 0%, var(--accent-purple) 100%);
             opacity: 0;
             transition: opacity 0.3s ease;
         }
@@ -1068,7 +1207,7 @@
             font-weight: 700;
             margin-bottom: 16px;
             font-family: "Playfair Display", serif;
-            background: linear-gradient(135deg, var(--accent-pink) 0%, var(--accent-purple) 100%);
+            background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 60%, var(--accent-pink) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -1114,7 +1253,7 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: var(--accent-pink);
+            color: #0F8E91;
             font-weight: 700;
         }
 
@@ -1148,19 +1287,63 @@
 
         /* Responsive */
         @media (max-width: 992px) {
-            .planets-grid { grid-template-columns: repeat(2, 1fr); }
+            .planets-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                padding: 30px;
+            }
+            .planet-card { min-height: 255px; }
             .works-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
             .hero { min-height: auto; padding: 80px 20px; }
             .hero-title { font-size: 2rem; }
-            .planets-grid { grid-template-columns: 1fr; }
+            .hero-slogan { max-width: 100%; }
+            .hero-proof { margin-bottom: 28px; }
+            .hero-proof-item { min-width: 0; width: calc(50% - 8px); }
+            .timeline-svg { height: 620px; }
+            .timeline-container { padding: 20px 10px; }
+            .timeline-main-label { font-size: 12px; }
+            .timeline-branch-label, .timeline-core-subtitle { font-size: 10px; }
+            .timeline-core-label { font-size: 14px; }
+            .planets-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 18px;
+                min-height: auto;
+                padding: 20px;
+                overflow: visible;
+            }
+            .planets-grid::before,
+            .planets-grid::after,
+            .planet-connection {
+                display: none;
+            }
+            .planet-card,
+            .planet-card[data-planet="ai"],
+            .planet-card[data-planet="content"],
+            .planet-card[data-planet="video"],
+            .planet-card[data-planet="design"],
+            .planet-card[data-planet="event"],
+            .planet-card[data-planet="research"] {
+                --tilt: 0deg;
+                --offset-y: 0px;
+                position: relative;
+                left: auto;
+                right: auto;
+                top: auto;
+                bottom: auto;
+                width: 100%;
+                min-height: auto;
+                animation: none;
+                text-align: left;
+            }
+            .planet-card[data-planet="ai"] {
+                order: -1;
+            }
             .scroll-hint { display: none; }
             .footer-contact { flex-direction: column; gap: 15px; }
             .modal-content { max-height: 80vh; }
-            .timeline-legend { gap: 10px; }
-            .legend-item { font-size: 12px; padding: 5px 10px; }
             .test-section { padding: 72px 0; }
             .test-section .section-container { width: min(100% - 32px, 1100px); }
             .test-section .section-header { margin-bottom: 32px; }
@@ -1197,56 +1380,53 @@
             <span>✨</span> 正在寻找新的产品/运营机会
         </div>
         <h1 class="hero-title" id="heroTitle"></h1>
-        <p class="hero-slogan">不只是AI工具的使用者，而是懂用户心理的AI产品实践者</p>
+        <p class="hero-slogan">用心理学理解用户，用AI提升内容与产品效率；<br>把研究洞察、内容创作和流程落地连接成可验证的产品运营实践。</p>
+        <div class="hero-proof">
+            <div class="hero-proof-item">
+                <strong>70%</strong>
+                <span>AI内容工作流效率提升</span>
+            </div>
+            <div class="hero-proof-item">
+                <strong>900+</strong>
+                <span>用户研究样本经验</span>
+            </div>
+            <div class="hero-proof-item">
+                <strong>80%</strong>
+                <span>AI生成内容采纳率</span>
+            </div>
+        </div>
         <div class="hero-tags">
             <span class="hero-tag">🤖 AI产品实践</span>
             <span class="hero-tag">🧠 用户心理研究</span>
-            <span class="hero-tag">✍️ 内容策略创作</span>
+            <span class="hero-tag">✍️ 内容运营转化</span>
         </div>
-        <div class="scroll-hint">探索我的成长轨迹</div>
+        <div class="scroll-hint">探索我的能力星图</div>
     </section>
 
     <!-- Timeline Section -->
     <section class="timeline-section" id="timeline">
         <div class="container">
             <h2 class="section-title">我的<span>成长轨迹</span></h2>
-            <p class="timeline-subtitle">点击时间节点查看详细经历</p>
-
-            <!-- Legend -->
-            <div class="timeline-legend">
-                <div class="legend-item">
-                    <div class="legend-dot edu"></div>
-                    <span>教育经历</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-dot project"></div>
-                    <span>项目/实习</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-dot work"></div>
-                    <span>工作经历</span>
-                </div>
-            </div>
+            <p class="timeline-subtitle">点击星图节点，查看每段经历如何迁移成AI产品/运营能力</p>
 
             <div class="timeline-container">
-                <svg class="timeline-svg" viewBox="0 0 900 900">
+                <svg class="timeline-svg" viewBox="0 0 900 700">
                     <defs>
-                        <linearGradient id="gradMain" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" style="stop-color:#F472B6"/>
-                            <stop offset="50%" style="stop-color:#A78BFA"/>
-                            <stop offset="100%" style="stop-color:#8B5CF6"/>
+                        <linearGradient id="gradMain" x1="18%" y1="10%" x2="82%" y2="90%">
+                            <stop offset="0%" style="stop-color:#7C5CFF"/>
+                            <stop offset="100%" style="stop-color:#7C5CFF"/>
                         </linearGradient>
                         <linearGradient id="gradResearch" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" style="stop-color:#FB7185"/>
-                            <stop offset="100%" style="stop-color:#A78BFA"/>
+                            <stop offset="0%" style="stop-color:#18C7C9"/>
+                            <stop offset="100%" style="stop-color:#7C5CFF"/>
                         </linearGradient>
                         <linearGradient id="gradCreation" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" style="stop-color:#F472B6"/>
-                            <stop offset="100%" style="stop-color:#8B5CF6"/>
+                            <stop offset="0%" style="stop-color:#FF5FA2"/>
+                            <stop offset="100%" style="stop-color:#F8C84E"/>
                         </linearGradient>
                         <linearGradient id="gradFuture" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" style="stop-color:#A78BFA"/>
-                            <stop offset="100%" style="stop-color:#8B5CF6"/>
+                            <stop offset="0%" style="stop-color:#7C5CFF"/>
+                            <stop offset="100%" style="stop-color:#18C7C9"/>
                         </linearGradient>
                         <filter id="timelineGlow" x="-40%" y="-40%" width="180%" height="180%">
                             <feGaussianBlur stdDeviation="4" result="blur"/>
@@ -1264,122 +1444,103 @@
                         </filter>
                     </defs>
 
-                    <!-- 主线 - 生命脉络 -->
-                    <path id="timeline-main-vine" class="timeline-path main-vine" d="M200 80 C175 165 236 220 200 280 C164 345 230 470 200 560 C168 650 226 700 200 820" stroke="url(#gradMain)"/>
-                    <path class="timeline-path nerve-thread" d="M235 104 C285 190 248 258 300 330 C338 383 286 470 332 540 C370 596 332 690 388 770" stroke="#A78BFA"/>
-                    <path class="timeline-path nerve-thread" d="M165 140 C108 220 146 308 110 390 C78 466 134 578 98 668" stroke="#F472B6"/>
+                    <ellipse class="timeline-orbit" cx="450" cy="350" rx="315" ry="205"/>
+                    <ellipse class="timeline-orbit" cx="450" cy="350" rx="225" ry="145" transform="rotate(18 450 350)"/>
+                    <path class="timeline-path nerve-thread" d="M150 170 C300 92 510 118 735 470" stroke="#18C7C9"/>
+                    <path class="timeline-path nerve-thread" d="M320 300 C205 378 194 470 210 548 C305 586 438 574 560 512" stroke="#FF5FA2"/>
 
-                    <!-- 流动信号 -->
-                    <circle class="timeline-signal" r="5" fill="#FFFFFF">
-                        <animateMotion dur="8s" repeatCount="indefinite">
-                            <mpath href="#timeline-main-vine"/>
+                    <path id="path-main-axis" class="timeline-path main-axis" d="M150 170 C218 202 260 260 320 300 C398 350 438 356 505 360 C585 366 650 412 735 470" stroke="url(#gradMain)"/>
+                    <path id="path-harbin-research" class="timeline-path branch-vine" d="M320 300 C260 342 222 402 210 470" stroke="#18C7C9"/>
+                    <path id="path-harbin-hotline" class="timeline-path branch-vine" d="M320 300 C350 402 410 468 455 520" stroke="#3B82F6"/>
+                    <path id="path-harbin-hospital" class="timeline-path branch-vine" d="M320 300 C390 392 502 520 610 575" stroke="#22C55E"/>
+                    <path id="path-harbin-activities" class="timeline-path branch-vine" d="M320 300 C364 214 420 170 485 135" stroke="#F8C84E"/>
+                    <path id="path-harbin-avoice" class="timeline-path branch-vine" d="M320 300 C452 244 558 196 690 175" stroke="#FF5FA2"/>
+                    <path id="path-future-ai" class="timeline-path branch-vine" d="M505 360 C532 300 578 264 640 250" stroke="url(#gradFuture)"/>
+
+                    <circle class="timeline-signal" r="4.5" fill="#FFFFFF">
+                        <animateMotion dur="9s" repeatCount="indefinite">
+                            <mpath href="#path-main-axis"/>
                         </animateMotion>
                     </circle>
-                    <circle class="timeline-signal" r="4" fill="#F472B6">
-                        <animateMotion dur="10s" begin="-3s" repeatCount="indefinite">
-                            <mpath href="#timeline-main-vine"/>
-                        </animateMotion>
-                    </circle>
-
-                    <!-- 贵州大学 - 主节点 -->
-                    <g class="timeline-node" data-node="guizhou">
-                        <circle class="node-circle" cx="200" cy="120" r="18" fill="#F472B6"/>
-                        <text x="180" y="125" class="timeline-main-label">贵州大学</text>
-                        <text x="180" y="108" class="timeline-main-label" style="font-size:11px;fill:#9B8B8B;">2017-2021</text>
-                    </g>
-
-                    <!-- 哈尔滨医科大学 - 主节点（有分支） -->
-                    <g class="timeline-node" data-node="harbin">
-                        <circle class="node-circle" cx="200" cy="280" r="22" fill="#FB7185"/>
-                        <text x="180" y="285" class="timeline-main-label">哈尔滨医科大学</text>
-                        <text x="180" y="268" class="timeline-main-label" style="font-size:11px;fill:#9B8B8B;">2022-2025</text>
-                    </g>
-
-                    <!-- 分支线：研究与咨询经验 -->
-                    <path id="research-branch" class="timeline-path branch-vine" d="M200 280 C258 238 306 242 350 280 C412 334 536 232 620 280" stroke="url(#gradResearch)"/>
-                    <circle class="timeline-signal" r="3.5" fill="#A78BFA">
+                    <circle class="timeline-signal" r="4" fill="#18C7C9">
                         <animateMotion dur="6s" repeatCount="indefinite">
-                            <mpath href="#research-branch"/>
+                            <mpath href="#path-future-ai"/>
                         </animateMotion>
                     </circle>
-
-                    <!-- 分支节点1：性健康课题组 -->
-                    <g class="timeline-node" data-node="research-group">
-                        <circle class="node-circle" cx="380" cy="280" r="14" fill="#A78BFA"/>
-                        <text x="380" y="310" class="timeline-branch-label">性健康课题组</text>
-                        <text x="380" y="325" class="timeline-branch-label" style="font-size:10px;fill:#9B8B8B;">2022-2025</text>
-                    </g>
-
-                    <!-- 分支节点2：12355热线 -->
-                    <g class="timeline-node" data-node="hotline">
-                        <circle class="node-circle" cx="500" cy="280" r="12" fill="#A78BFA"/>
-                        <text x="500" y="310" class="timeline-branch-label">12355心理热线</text>
-                        <text x="500" y="325" class="timeline-branch-label" style="font-size:10px;fill:#9B8B8B;">2023</text>
-                    </g>
-
-                    <!-- 分支节点3：医院实习 -->
-                    <g class="timeline-node" data-node="hospital">
-                        <circle class="node-circle" cx="620" cy="280" r="12" fill="#A78BFA"/>
-                        <text x="620" y="310" class="timeline-branch-label">第一专科医院</text>
-                        <text x="620" y="325" class="timeline-branch-label" style="font-size:10px;fill:#9B8B8B;">2024</text>
-                    </g>
-
-                    <!-- 分支线：校园创作与公益项目 -->
-                    <path id="creation-branch" class="timeline-path branch-vine" d="M200 280 C180 348 244 396 350 400 C406 402 448 398 500 400" stroke="url(#gradCreation)"/>
-                    <circle class="timeline-signal" r="3.5" fill="#8B5CF6">
+                    <circle class="timeline-signal" r="4" fill="#F8C84E">
                         <animateMotion dur="7s" begin="-2s" repeatCount="indefinite">
-                            <mpath href="#creation-branch"/>
+                            <mpath href="#path-harbin-activities"/>
+                        </animateMotion>
+                    </circle>
+                    <circle class="timeline-signal" r="4" fill="#FF5FA2">
+                        <animateMotion dur="8s" begin="-3s" repeatCount="indefinite">
+                            <mpath href="#path-harbin-avoice"/>
                         </animateMotion>
                     </circle>
 
-                    <!-- 分支节点：校园活动 -->
-                    <g class="timeline-node" data-node="activities">
-                        <circle class="node-circle" cx="380" cy="400" r="14" fill="#8B5CF6"/>
-                        <text x="380" y="430" class="timeline-branch-label">校园活动</text>
-                        <text x="380" y="445" class="timeline-branch-label" style="font-size:10px;fill:#9B8B8B;">丁香之火/恋爱沙龙</text>
-                    </g>
-
-                    <!-- 分支节点：Avoice -->
-                    <g class="timeline-node" data-node="avoice">
-                        <circle class="node-circle" cx="500" cy="400" r="12" fill="#8B5CF6"/>
-                        <text x="500" y="430" class="timeline-branch-label">Avoice项目</text>
-                        <text x="500" y="445" class="timeline-branch-label" style="font-size:10px;fill:#9B8B8B;">2023-2025</text>
-                    </g>
-
-                    <!-- 天奥医药 - 主节点 -->
-                    <g class="timeline-node" data-node="tianao">
-                        <circle class="node-circle" cx="200" cy="560" r="20" fill="#FF6B6B"/>
-                        <text x="180" y="565" class="timeline-main-label">云南天奥医药</text>
-                        <text x="180" y="548" class="timeline-main-label" style="font-size:11px;fill:#9B8B8B;">2025.10-2026.03</text>
-                    </g>
-
-                    <!-- 寻找新的机会 - 主节点 -->
                     <g class="timeline-node" data-node="future">
-                        <circle class="node-circle" cx="200" cy="760" r="18" fill="#8B5CF6"/>
-                        <text x="180" y="765" class="timeline-main-label">寻找新的机会</text>
-                        <text x="180" y="748" class="timeline-main-label" style="font-size:11px;fill:#9B8B8B;">AI产品/运营方向</text>
+                        <circle class="node-circle" cx="505" cy="360" r="38" fill="#7C5CFF"/>
+                        <circle cx="505" cy="360" r="52" fill="none" stroke="#7C5CFF" stroke-width="2" opacity="0.35">
+                            <animate attributeName="r" values="48;62;48" dur="2.4s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values="0.35;0;0.35" dur="2.4s" repeatCount="indefinite"/>
+                        </circle>
+                        <text x="505" y="428" class="timeline-core-label">正在寻找新机会</text>
+                        <text x="505" y="448" class="timeline-core-subtitle">AI产品/运营方向</text>
                     </g>
 
-                    <!-- 分支线：AI项目（从寻找新机会分出） -->
-                    <path id="future-branch" class="timeline-path branch-vine" d="M200 760 C248 720 306 716 350 760" stroke="url(#gradFuture)"/>
-                    <circle class="timeline-signal" r="3.5" fill="#8B5CF6">
-                        <animateMotion dur="5s" repeatCount="indefinite">
-                            <mpath href="#future-branch"/>
-                        </animateMotion>
-                    </circle>
+                    <g class="timeline-node" data-node="guizhou">
+                        <circle class="node-circle" cx="150" cy="170" r="22" fill="#7C5CFF"/>
+                        <text x="150" y="132" class="timeline-main-label">贵州大学</text>
+                        <text x="150" y="150" class="timeline-branch-label">2017-2021 生物科学</text>
+                    </g>
 
-                    <!-- 分支节点：AI项目 -->
+                    <g class="timeline-node" data-node="harbin">
+                        <circle class="node-circle" cx="320" cy="300" r="22" fill="#7C5CFF"/>
+                        <text x="320" y="262" class="timeline-main-label">哈尔滨医科大学</text>
+                        <text x="320" y="282" class="timeline-branch-label">2022-2025 应用心理</text>
+                    </g>
+
+                    <g class="timeline-node" data-node="research-group">
+                        <circle class="node-circle" cx="210" cy="470" r="17" fill="#18C7C9"/>
+                        <text x="210" y="512" class="timeline-main-label">性健康课题组</text>
+                        <text x="210" y="532" class="timeline-branch-label">研究与教育转化</text>
+                    </g>
+
+                    <g class="timeline-node" data-node="hotline">
+                        <circle class="node-circle" cx="455" cy="520" r="15" fill="#3B82F6"/>
+                        <text x="455" y="562" class="timeline-main-label">12355心理热线</text>
+                        <text x="455" y="582" class="timeline-branch-label">用户倾听与危机干预</text>
+                    </g>
+
+                    <g class="timeline-node" data-node="hospital">
+                        <circle class="node-circle" cx="610" cy="575" r="15" fill="#22C55E"/>
+                        <text x="610" y="617" class="timeline-main-label">第一专科医院</text>
+                        <text x="610" y="637" class="timeline-branch-label">临床观察与咨询实践</text>
+                    </g>
+
+                    <g class="timeline-node" data-node="activities">
+                        <circle class="node-circle" cx="485" cy="135" r="17" fill="#F8C84E"/>
+                        <text x="485" y="96" class="timeline-main-label">校园活动</text>
+                        <text x="485" y="115" class="timeline-branch-label">体验设计与执行</text>
+                    </g>
+
+                    <g class="timeline-node" data-node="avoice">
+                        <circle class="node-circle" cx="690" cy="175" r="15" fill="#FF5FA2"/>
+                        <text x="690" y="136" class="timeline-main-label">Avoice项目</text>
+                        <text x="690" y="155" class="timeline-branch-label">内容协作与视觉呈现</text>
+                    </g>
+
                     <g class="timeline-node" data-node="ai-project">
-                        <circle class="node-circle" cx="380" cy="760" r="16" fill="#8B5CF6"/>
-                        <text x="380" y="790" class="timeline-branch-label">AI内容运营</text>
-                        <text x="380" y="805" class="timeline-branch-label" style="font-size:10px;fill:#9B8B8B;">Coze搭建</text>
+                        <circle class="node-circle" cx="640" cy="250" r="20" fill="#18C7C9"/>
+                        <text x="640" y="212" class="timeline-main-label">AI内容运营</text>
+                        <text x="640" y="232" class="timeline-branch-label">Coze工作流搭建</text>
                     </g>
 
-                    <!-- 脉冲动画效果 -->
-                    <circle cx="200" cy="760" r="25" fill="none" stroke="#8B5CF6" stroke-width="2" opacity="0.5">
-                        <animate attributeName="r" values="25;35;25" dur="2s" repeatCount="indefinite"/>
-                        <animate attributeName="opacity" values="0.5;0;0.5" dur="2s" repeatCount="indefinite"/>
-                    </circle>
+                    <g class="timeline-node" data-node="tianao">
+                        <circle class="node-circle" cx="735" cy="470" r="22" fill="#7C5CFF"/>
+                        <text x="735" y="516" class="timeline-main-label">云南天奥医药</text>
+                        <text x="735" y="536" class="timeline-branch-label">市场内容与流程管理</text>
+                    </g>
                 </svg>
             </div>
         </div>
@@ -1389,8 +1550,13 @@
     <section class="planets-section" id="planets">
         <div class="container">
             <h2 class="section-title">我的<span>能力星球</span></h2>
-            <p class="timeline-subtitle" style="margin-bottom: 50px;">点击星球查看详细作品</p>
+            <p class="timeline-subtitle" style="margin-bottom: 50px;">以AI产品运营为核心，点击轨道星球查看作品证据</p>
             <div class="planets-grid">
+                <span class="planet-connection"></span>
+                <span class="planet-connection"></span>
+                <span class="planet-connection"></span>
+                <span class="planet-connection"></span>
+                <span class="planet-connection"></span>
                 <!-- AI Product -->
                 <div class="planet-card" data-planet="ai">
                     <span class="planet-icon">🤖</span>
@@ -1469,9 +1635,9 @@
 
         <div class="section-container">
             <div class="section-header">
-                <span class="section-tag">趣味互动</span>
-                <h2 class="section-title">你需要我是什么样的人？</h2>
-                <p class="section-subtitle">8道题，测测哪种特质最适合你的需求</p>
+                <span class="section-tag">招聘者匹配测试</span>
+                <h2 class="section-title">你正在寻找哪种 AI 产品协作者？</h2>
+                <p class="section-subtitle">8道题，匹配我最适合发挥价值的合作场景</p>
             </div>
 
             <div class="test-container">
@@ -1479,8 +1645,8 @@
                 <div id="testStart" class="test-screen active">
                     <div class="test-intro">
                         <div class="test-icon">🎲</div>
-                        <h3>发现最适合你的协作者</h3>
-                        <p>基于我的真实经历设计的趣味测试<br>看看你最需要我发挥哪方面的能力</p>
+                        <h3>发现最适合你的协作模式</h3>
+                        <p>基于我的真实经历设计的互动测试<br>看看我能优先为你的团队补上哪块能力</p>
                         <button class="test-btn" onclick="startTest()">开始测试</button>
                     </div>
                 </div>
@@ -1508,7 +1674,7 @@
                         </div>
 
                         <div class="result-scenario">
-                            <h4>🎯 适合场景</h4>
+                            <h4>🎯 适合岗位/合作场景</h4>
                             <p id="resultScenario"></p>
                         </div>
 
@@ -1594,7 +1760,7 @@
                 particle.style.animationDelay = Math.random() * 15 + 's';
                 particle.style.animationDuration = (15 + Math.random() * 10) + 's';
 
-                const colors = ['#F472B6', '#A78BFA', '#FB7185', '#8B5CF6'];
+                const colors = ['#18C7C9', '#7C5CFF', '#FF5FA2', '#F8C84E'];
                 particle.style.background = colors[Math.floor(Math.random() * colors.length)];
 
                 container.appendChild(particle);
@@ -2225,11 +2391,11 @@
                 const centerY = rect.height / 2;
                 const rotateX = (y - centerY) / 10;
                 const rotateY = (centerX - x) / 10;
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
+                card.style.transform = `translateY(calc(var(--offset-y) - 10px)) rotate(var(--tilt)) perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
             });
 
             card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+                card.style.transform = 'translateY(var(--offset-y)) rotate(var(--tilt))';
             });
         });
 
@@ -2253,7 +2419,7 @@
         window.addEventListener('load', () => {
             const heroTitle = document.getElementById('heroTitle');
             if (heroTitle) {
-                typeWriter(heroTitle, '罗 菲 Faye.', 200);
+                typeWriter(heroTitle, '罗  菲 Faye.', 160);
             }
         });
 
