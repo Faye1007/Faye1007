@@ -1285,6 +1285,219 @@
             50% { transform: translateY(-14px) rotate(8deg); }
         }
 
+        /* 页面加载动画 */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-primary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+
+        .page-loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-icon {
+            font-size: 48px;
+            animation: loader-bounce 1s ease-in-out infinite;
+            margin-bottom: 20px;
+        }
+
+        .loader-text {
+            font-family: "Playfair Display", serif;
+            font-size: 18px;
+            color: var(--text-secondary);
+            letter-spacing: 2px;
+        }
+
+        .loader-bar {
+            width: 120px;
+            height: 3px;
+            background: var(--bg-secondary);
+            border-radius: 3px;
+            margin-top: 16px;
+            overflow: hidden;
+        }
+
+        .loader-bar-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple), var(--accent-pink));
+            border-radius: 3px;
+            animation: loader-progress 1.5s ease-in-out forwards;
+        }
+
+        @keyframes loader-bounce {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-12px) scale(1.1); }
+        }
+
+        @keyframes loader-progress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        /* 滚动入场动画 */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animate-on-scroll.from-left {
+            transform: translateX(-40px);
+        }
+
+        .animate-on-scroll.from-left.visible {
+            transform: translateX(0);
+        }
+
+        .animate-on-scroll.from-right {
+            transform: translateX(40px);
+        }
+
+        .animate-on-scroll.from-right.visible {
+            transform: translateX(0);
+        }
+
+        .animate-on-scroll.scale-in {
+            transform: scale(0.9);
+        }
+
+        .animate-on-scroll.scale-in.visible {
+            transform: scale(1);
+        }
+
+        .planet-card.animate-on-scroll {
+            transition-delay: calc(var(--card-index, 0) * 0.1s);
+        }
+
+        /* 时间线节点点击反馈 */
+        .timeline-node.clicked .node-circle {
+            filter: drop-shadow(0 0 20px rgba(124, 92, 255, 0.6));
+        }
+
+        .timeline-node.clicked .node-label {
+            fill: var(--accent-violet);
+            font-weight: 700;
+        }
+
+        .node-pulse {
+            animation: node-click-pulse 0.8s ease-out forwards;
+            pointer-events: none;
+        }
+
+        @keyframes node-click-pulse {
+            0% {
+                r: 22;
+                opacity: 0.6;
+            }
+            100% {
+                r: 60;
+                opacity: 0;
+            }
+        }
+
+        /* 复制成功提示 */
+        .copy-toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: var(--text-primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 10001;
+            pointer-events: none;
+        }
+
+        .copy-toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* 联系方式高亮 */
+        .contact-highlight {
+            background: linear-gradient(135deg, rgba(24, 199, 201, 0.12), rgba(124, 92, 255, 0.12));
+            border-radius: 16px;
+            padding: 20px 24px;
+            border: 1px solid rgba(24, 199, 201, 0.25);
+            animation: contact-pulse 2s ease-in-out 0.5s;
+        }
+
+        @keyframes contact-pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(24, 199, 201, 0); }
+            50% { box-shadow: 0 0 20px 5px rgba(24, 199, 201, 0.15); }
+        }
+
+        /* Notion链接样式 */
+        .notion-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 12px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #2D2D2D, #404040);
+            color: #FFFFFF;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .notion-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+            background: linear-gradient(135deg, #404040, #525252);
+        }
+
+        .notion-link::before {
+            content: '📄';
+        }
+
+        /* 复制按钮样式 - 与再测一次按钮保持一致 */
+        .copy-result-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            color: white;
+            border: none;
+            padding: 14px 36px;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(124, 92, 255, 0.26);
+        }
+
+        .copy-result-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(124, 92, 255, 0.34);
+        }
+
         /* Responsive */
         @media (max-width: 992px) {
             .planets-grid {
@@ -1358,6 +1571,18 @@
     </style>
 </head>
 <body>
+    <!-- 页面加载动画 -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-icon">✨</div>
+        <div class="loader-text">Faye's Portfolio</div>
+        <div class="loader-bar">
+            <div class="loader-bar-fill"></div>
+        </div>
+    </div>
+
+    <!-- 复制成功提示 -->
+    <div class="copy-toast" id="copyToast">已复制到剪贴板</div>
+
     <!-- 滚动进度条 -->
     <div class="scroll-progress" id="scrollProgress"></div>
 
@@ -1376,12 +1601,12 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-badge">
+        <div class="hero-badge animate-on-scroll">
             <span>✨</span> 正在寻找新的产品/运营机会
         </div>
-        <h1 class="hero-title" id="heroTitle"></h1>
-        <p class="hero-slogan">用心理学理解用户，用AI提升内容与产品效率；<br>把研究洞察、内容创作和流程落地连接成可验证的产品运营实践。</p>
-        <div class="hero-proof">
+        <h1 class="hero-title animate-on-scroll" id="heroTitle"></h1>
+        <p class="hero-slogan animate-on-scroll">用心理学理解用户，用AI提升内容与产品效率；<br>把研究洞察、内容创作和流程落地连接成可验证的产品运营实践。</p>
+        <div class="hero-proof animate-on-scroll">
             <div class="hero-proof-item">
                 <strong>70%</strong>
                 <span>AI内容工作流效率提升</span>
@@ -1395,21 +1620,21 @@
                 <span>AI生成内容采纳率</span>
             </div>
         </div>
-        <div class="hero-tags">
+        <div class="hero-tags animate-on-scroll">
             <span class="hero-tag">🤖 AI产品实践</span>
             <span class="hero-tag">🧠 用户心理研究</span>
             <span class="hero-tag">✍️ 内容运营转化</span>
         </div>
-        <div class="scroll-hint">探索我的能力星图</div>
+        <div class="scroll-hint animate-on-scroll">探索我的能力星图</div>
     </section>
 
     <!-- Timeline Section -->
     <section class="timeline-section" id="timeline">
         <div class="container">
-            <h2 class="section-title">我的<span>成长轨迹</span></h2>
-            <p class="timeline-subtitle">点击星图节点，查看每段经历如何迁移成AI产品/运营能力</p>
+            <h2 class="section-title animate-on-scroll">我的<span>成长轨迹</span></h2>
+            <p class="timeline-subtitle animate-on-scroll">点击星图节点，查看每段经历如何迁移成AI产品/运营能力</p>
 
-            <div class="timeline-container">
+            <div class="timeline-container animate-on-scroll scale-in">
                 <svg class="timeline-svg" viewBox="0 0 900 700">
                     <defs>
                         <linearGradient id="gradMain" x1="18%" y1="10%" x2="82%" y2="90%">
@@ -1549,8 +1774,8 @@
     <!-- Capability Planets Section -->
     <section class="planets-section" id="planets">
         <div class="container">
-            <h2 class="section-title">我的<span>能力星球</span></h2>
-            <p class="timeline-subtitle" style="margin-bottom: 50px;">以AI产品运营为核心，点击轨道星球查看作品证据</p>
+            <h2 class="section-title animate-on-scroll">我的<span>能力星球</span></h2>
+            <p class="timeline-subtitle animate-on-scroll" style="margin-bottom: 50px;">以AI产品运营为核心，点击轨道星球查看作品证据</p>
             <div class="planets-grid">
                 <span class="planet-connection"></span>
                 <span class="planet-connection"></span>
@@ -1558,7 +1783,7 @@
                 <span class="planet-connection"></span>
                 <span class="planet-connection"></span>
                 <!-- AI Product -->
-                <div class="planet-card" data-planet="ai">
+                <div class="planet-card animate-on-scroll" data-planet="ai" style="--card-index: 0">
                     <span class="planet-icon">🤖</span>
                     <h3 class="planet-title">AI产品运营</h3>
                     <p class="planet-desc">基于Coze搭建AI内容生产工作流，实现从采集到生成的自动化闭环，验证AI在产品运营中的实际价值</p>
@@ -1569,7 +1794,7 @@
                 </div>
 
                 <!-- Content Strategy -->
-                <div class="planet-card" data-planet="content">
+                <div class="planet-card animate-on-scroll" data-planet="content" style="--card-index: 1">
                     <span class="planet-icon">✍️</span>
                     <h3 class="planet-title">内容策略创作</h3>
                     <p class="planet-desc">围绕心理学科普、性别议题与社会热点进行选题策划，把专业理论转译成大众可读、有情绪共鸣的公众号推文和教育剧本；能完成结构设计、角色对白、用户语言适配与内容效果复盘。</p>
@@ -1580,7 +1805,7 @@
                 </div>
 
                 <!-- Video Production -->
-                <div class="planet-card" data-planet="video">
+                <div class="planet-card animate-on-scroll" data-planet="video" style="--card-index: 2">
                     <span class="planet-icon">🎬</span>
                     <h3 class="planet-title">影像创作</h3>
                     <p class="planet-desc">具备从资料查阅、脚本创作、分镜设计到拍摄统筹、白板动画和后期剪辑的完整视频制作经验，作品覆盖艾滋病防治宣传、心理科普微视频和课题组宣传片，兼顾知识准确性与传播节奏。</p>
@@ -1591,7 +1816,7 @@
                 </div>
 
                 <!-- Visual Design -->
-                <div class="planet-card" data-planet="design">
+                <div class="planet-card animate-on-scroll" data-planet="design" style="--card-index: 3">
                     <span class="planet-icon">🎨</span>
                     <h3 class="planet-title">视觉设计</h3>
                     <p class="planet-desc">负责 Avoice 海外华人女性保护项目 8 篇推文与封面排版，也完成校园心理月海报、性教育会议海报和科研汇报 PPT 设计；强调信息层级、视觉秩序与传播场景适配。</p>
@@ -1602,7 +1827,7 @@
                 </div>
 
                 <!-- Event Planning -->
-                <div class="planet-card" data-planet="event">
+                <div class="planet-card animate-on-scroll" data-planet="event" style="--card-index: 4">
                     <span class="planet-icon">🎯</span>
                     <h3 class="planet-title">活动策划</h3>
                     <p class="planet-desc">从创意构思到现场执行的全流程活动运营，擅长解谜游戏设计、心理活动策划与用户体验优化</p>
@@ -1613,7 +1838,7 @@
                 </div>
 
                 <!-- User Research -->
-                <div class="planet-card" data-planet="research">
+                <div class="planet-card animate-on-scroll" data-planet="research" style="--card-index: 5">
                     <span class="planet-icon">🔬</span>
                     <h3 class="planet-title">用户研究</h3>
                     <p class="planet-desc">定性与定量研究方法结合，从问卷设计到数据分析的全流程研究经验，深入理解用户需求</p>
@@ -1634,13 +1859,13 @@
         <div class="floating-emoji" style="bottom: 25%; right: 8%;">📊</div>
 
         <div class="section-container">
-            <div class="section-header">
+            <div class="section-header animate-on-scroll">
                 <span class="section-tag">招聘者匹配测试</span>
                 <h2 class="section-title">你正在寻找哪种 AI 产品协作者？</h2>
                 <p class="section-subtitle">8道题，匹配我最适合发挥价值的合作场景</p>
             </div>
 
-            <div class="test-container">
+            <div class="test-container animate-on-scroll">
                 <!-- Start Screen -->
                 <div id="testStart" class="test-screen active">
                     <div class="test-intro">
@@ -1678,7 +1903,12 @@
                             <p id="resultScenario"></p>
                         </div>
 
-                        <button class="test-btn secondary" onclick="restartTest()">再测一次</button>
+                        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                            <button class="test-btn secondary" onclick="restartTest()">再测一次</button>
+                            <button class="copy-result-btn" onclick="copyResult()">
+                                <span>📋</span> 复制结果
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1688,9 +1918,9 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p class="footer-slogan" style="font-size: 18px; font-weight: 600; color: var(--text-primary); margin-bottom: 10px;">罗菲 Faye</p>
-            <p class="footer-slogan">还在学习中，期待与您交流</p>
-            <div class="footer-contact">
+            <p class="footer-slogan animate-on-scroll" style="font-size: 18px; font-weight: 600; color: var(--text-primary); margin-bottom: 10px;">罗菲 Faye</p>
+            <p class="footer-slogan animate-on-scroll">还在学习中，期待与您交流</p>
+            <div class="footer-contact animate-on-scroll">
                 <div class="footer-contact-item">
                     <span>📧</span>
                     <a href="mailto:TILAPIA1007@163.COM">TILAPIA1007@163.COM</a>
@@ -1700,7 +1930,7 @@
                     <span>+86 131 4440 1070</span>
                 </div>
             </div>
-            <p class="footer-copyright">© 2026 罗菲 Faye. All Rights Reserved.</p>
+            <p class="footer-copyright animate-on-scroll">© 2026 罗菲 Faye. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -1717,6 +1947,45 @@
     </div>
 
     <script>
+        // 页面加载动画
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('pageLoader');
+            setTimeout(() => {
+                loader.classList.add('hidden');
+                // 加载完成后触发Hero区域动画
+                setTimeout(() => {
+                    document.querySelectorAll('.hero .animate-on-scroll').forEach((el, i) => {
+                        setTimeout(() => el.classList.add('visible'), i * 150);
+                    });
+                    // 启动打字机效果
+                    const heroTitle = document.getElementById('heroTitle');
+                    if (heroTitle) {
+                        setTimeout(() => typeWriter(heroTitle, '罗  菲 Faye.', 160), 300);
+                    }
+                }, 200);
+            }, 1800);
+        });
+
+        // 滚动入场动画 - Intersection Observer
+        function initScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        // 对于星球卡片，不需要重复触发
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            // 观察所有需要动画的元素（排除hero区域，hero区域由加载动画触发）
+            document.querySelectorAll('.animate-on-scroll:not(.hero .animate-on-scroll)').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
         // 滚动进度条
         window.addEventListener('scroll', () => {
             const scrollTop = window.scrollY;
@@ -1799,7 +2068,66 @@
         document.addEventListener('DOMContentLoaded', () => {
             createParticles();
             createFloatingEmojis();
+            initScrollAnimations();
         });
+
+        // 时间线节点点击反馈
+        function addTimelineNodeFeedback(node) {
+            // 移除其他节点的点击状态
+            document.querySelectorAll('.timeline-node.clicked').forEach(n => {
+                n.classList.remove('clicked');
+            });
+
+            // 添加当前节点的点击状态
+            node.classList.add('clicked');
+
+            // 创建脉冲光圈
+            const circle = node.querySelector('.node-circle');
+            if (circle) {
+                const cx = parseFloat(circle.getAttribute('cx'));
+                const cy = parseFloat(circle.getAttribute('cy'));
+                const r = parseFloat(circle.getAttribute('r'));
+
+                const pulse = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                pulse.setAttribute('cx', cx);
+                pulse.setAttribute('cy', cy);
+                pulse.setAttribute('r', r);
+                pulse.setAttribute('fill', 'none');
+                pulse.setAttribute('stroke', circle.getAttribute('fill') || '#7C5CFF');
+                pulse.setAttribute('stroke-width', '3');
+                pulse.classList.add('node-pulse');
+
+                node.appendChild(pulse);
+                setTimeout(() => pulse.remove(), 800);
+            }
+        }
+
+        // 复制测试结果
+        function copyResult() {
+            const resultType = document.getElementById('resultType').textContent;
+            const resultDesc = document.getElementById('resultDesc').textContent;
+            const resultScenario = document.getElementById('resultScenario').textContent;
+
+            const text = `我在Faye的作品集做了个测试！\n\n我的协作类型：${resultType}\n${resultDesc}\n\n适合场景：${resultScenario}\n\n来试试看你的类型 → `;
+
+            navigator.clipboard.writeText(text).then(() => {
+                const toast = document.getElementById('copyToast');
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 2000);
+            }).catch(() => {
+                // 降级方案
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+
+                const toast = document.getElementById('copyToast');
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 2000);
+            });
+        }
 
         // Timeline node data
         const nodeData = {
@@ -2028,7 +2356,7 @@
                     </div>
                     <div class="achievement-tag">效率提升 70%</div>
                     <div class="achievement-tag">采纳率 80%</div>
-                    <a href="https://www.notion.so/AI-335a21715ff180aca1a9eb7feb995e3f" target="_blank" class="achievement-tag" style="text-decoration:none;">查看Notion分析 →</a>
+                    <a href="https://www.notion.so/AI-335a21715ff180aca1a9eb7feb995e3f" target="_blank" class="notion-link">查看完整Notion分析</a>
                 `
             },
             'future': {
@@ -2048,7 +2376,7 @@
                             <li>从0到1的项目经验，具备独立解决问题能力</li>
                         </ul>
                     </div>
-                    <div class="modal-section">
+                    <div class="modal-section contact-highlight">
                         <h4>📮 联系方式</h4>
                         <p>邮箱：TILAPIA1007@163.COM</p>
                         <p>电话：+86 131 4440 1070</p>
@@ -2086,7 +2414,7 @@
                         <div class="achievement-tag">内容采纳率 80%</div>
                         <div class="achievement-tag">单篇创作时间 1h → 15-20min</div>
                     </div>
-                    <a href="https://www.notion.so/AI-335a21715ff180aca1a9eb7feb995e3f" target="_blank" style="display:inline-block;margin-top:10px;color:#F472B6;text-decoration:none;font-weight:600;">查看完整Notion分析 →</a>
+                    <a href="https://www.notion.so/AI-335a21715ff180aca1a9eb7feb995e3f" target="_blank" class="notion-link">查看完整Notion分析</a>
                 `
             },
             'content': {
@@ -2371,6 +2699,7 @@
         document.querySelectorAll('.timeline-node').forEach(node => {
             node.addEventListener('click', () => {
                 const nodeId = node.getAttribute('data-node');
+                addTimelineNodeFeedback(node);
                 openModal(nodeId, false);
             });
         });
@@ -2415,13 +2744,7 @@
             type();
         }
 
-        // 页面加载完成后启动打字机
-        window.addEventListener('load', () => {
-            const heroTitle = document.getElementById('heroTitle');
-            if (heroTitle) {
-                typeWriter(heroTitle, '罗  菲 Faye.', 160);
-            }
-        });
+        // 打字机效果在加载动画完成后触发（见上方加载动画代码）
 
         // Close modal on overlay click
         document.getElementById('modal').addEventListener('click', (e) => {
