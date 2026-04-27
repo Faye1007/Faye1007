@@ -1475,6 +1475,49 @@
             content: '📄';
         }
 
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .project-links + .modal-section {
+            margin-top: 32px;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #2D2D2D, #404040);
+            color: #FFFFFF;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+            background: linear-gradient(135deg, #404040, #525252);
+        }
+
+        .project-link.notion-link-alt::before {
+            content: '📄';
+        }
+
+        .project-link.demo-link::before {
+            content: '🔗';
+        }
+
+        .project-link.github-link::before {
+            content: '💻';
+        }
+
         /* 复制按钮样式 - 与再测一次按钮保持一致 */
         .copy-result-btn {
             display: inline-flex;
@@ -1681,6 +1724,7 @@
                     <path id="path-harbin-activities" class="timeline-path branch-vine" d="M320 300 C364 214 420 170 485 135" stroke="#F8C84E"/>
                     <path id="path-harbin-avoice" class="timeline-path branch-vine" d="M320 300 C452 244 558 196 690 175" stroke="#FF5FA2"/>
                     <path id="path-future-ai" class="timeline-path branch-vine" d="M505 360 C532 300 578 264 640 250" stroke="url(#gradFuture)"/>
+                    <path id="path-future-haoshijia" class="timeline-path branch-vine" d="M505 360 C580 396 660 385 735 330" stroke="#22C55E"/>
 
                     <circle class="timeline-signal" r="4.5" fill="#FFFFFF">
                         <animateMotion dur="9s" repeatCount="indefinite">
@@ -1695,6 +1739,11 @@
                     <circle class="timeline-signal" r="4" fill="#F8C84E">
                         <animateMotion dur="7s" begin="-2s" repeatCount="indefinite">
                             <mpath href="#path-harbin-activities"/>
+                        </animateMotion>
+                    </circle>
+                    <circle class="timeline-signal" r="4" fill="#22C55E">
+                        <animateMotion dur="7s" begin="-1s" repeatCount="indefinite">
+                            <mpath href="#path-future-haoshijia"/>
                         </animateMotion>
                     </circle>
                     <circle class="timeline-signal" r="4" fill="#FF5FA2">
@@ -1761,6 +1810,12 @@
                         <text x="640" y="232" class="timeline-branch-label">Coze工作流搭建</text>
                     </g>
 
+                    <g class="timeline-node" data-node="haoshijia">
+                        <circle class="node-circle" cx="735" cy="330" r="20" fill="#22C55E"/>
+                        <text x="735" y="292" class="timeline-main-label">好食家</text>
+                        <text x="735" y="312" class="timeline-branch-label">减脂记录与复盘产品</text>
+                    </g>
+
                     <g class="timeline-node" data-node="tianao">
                         <circle class="node-circle" cx="735" cy="470" r="22" fill="#7C5CFF"/>
                         <text x="735" y="516" class="timeline-main-label">云南天奥医药</text>
@@ -1786,10 +1841,10 @@
                 <div class="planet-card animate-on-scroll" data-planet="ai" style="--card-index: 0">
                     <span class="planet-icon">🤖</span>
                     <h3 class="planet-title">AI产品运营</h3>
-                    <p class="planet-desc">基于Coze搭建AI内容生产工作流，实现从采集到生成的自动化闭环，验证AI在产品运营中的实际价值</p>
+                    <p class="planet-desc">围绕AI内容生产与个人健康管理两个真实场景，完成从需求分析、流程设计、工具搭建到产品上线的完整实践</p>
                     <div class="planet-stats">
-                        <span class="planet-stat">效率提升 70%</span>
-                        <span class="planet-stat">采纳率 80%</span>
+                        <span class="planet-stat">2个产品项目</span>
+                        <span class="planet-stat">完整上线闭环</span>
                     </div>
                 </div>
 
@@ -2359,6 +2414,50 @@
                     <a href="https://www.notion.so/AI-335a21715ff180aca1a9eb7feb995e3f" target="_blank" class="notion-link">查看完整Notion分析</a>
                 `
             },
+            'haoshijia': {
+                title: '好食家 | 减脂记录与复盘 Web App',
+                date: '2026年4月 - 持续迭代',
+                content: `
+                    <div class="modal-section">
+                        <h4>🎯 产品定位</h4>
+                        <p>好食家是一个围绕“记录 -> 复盘 -> 下周计划”的减脂记录与复盘产品，不只记录体重、饮食和运动，而是帮助用户看见情绪、场景和行为之间的关系，并把复盘结果转化为下一周可以执行的饮食安排。</p>
+                    </div>
+                    <div class="modal-section">
+                        <h4>👥 用户洞察</h4>
+                        <p>减脂失败往往不是因为用户不知道要少吃多动，而是因为记录成本高、复盘缺失、情绪性进食难以被看见。产品因此把饮食记录扩展到饥饿程度、触发原因和情绪状态，让后续复盘有依据。</p>
+                    </div>
+                    <div class="modal-section">
+                        <h4>🧩 核心功能</h4>
+                        <ul>
+                            <li>仪表盘任务面板：聚合称重、饮食、运动和复盘任务，降低每日使用门槛</li>
+                            <li>体重与围度记录：支持目标体重、最新体重、身体围度和 BMI 参考</li>
+                            <li>饮食与运动记录：记录食物、份量、运动类型，同时补充情绪和触发原因</li>
+                            <li>日复盘与周复盘：根据记录生成执行度、高风险场景和下周策略</li>
+                            <li>食材库存与菜谱生成：根据库存、可用顿数、身体资料和基础搭配规则生成一周菜单</li>
+                            <li>账号与数据管理：支持注册登录、清除历史数据和注销账号</li>
+                        </ul>
+                    </div>
+                    <div class="modal-section">
+                        <h4>⚖️ 产品取舍</h4>
+                        <p>第一版没有追求医疗级营养计算或 AI 图像识别，而是优先验证核心闭环：用户能否持续记录、能否形成复盘、能否得到下一步计划。菜谱生成只使用用户录入的库存食材，库存不足时直接提示补货方向，避免生成不可执行的方案。</p>
+                    </div>
+                    <div class="modal-section">
+                        <h4>🙋 我的角色</h4>
+                        <p>独立完成需求定义、功能拆解、信息架构、交互流程、前端实现、Firebase 数据接入、Vercel 部署和持续迭代。项目体现了我从真实需求出发，设计 MVP、验证闭环并持续优化产品体验的能力。</p>
+                    </div>
+                    <div class="modal-section">
+                        <h4>📈 项目成果</h4>
+                        <p>完成一个可公开访问、可注册体验的完整 Web App，覆盖记录、复盘、计划生成和数据管理闭环。</p>
+                        <div class="achievement-tag">公开上线</div>
+                        <div class="achievement-tag">完整产品闭环</div>
+                        <div class="achievement-tag">持续迭代</div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://haoshijia-iota.vercel.app/" target="_blank" class="project-link demo-link">公开体验</a>
+                        <a href="https://github.com/Faye1007/haoshijia" target="_blank" class="project-link github-link">GitHub 仓库</a>
+                    </div>
+                `
+            },
             'future': {
                 title: '寻找新的机会',
                 date: '期待与你连接',
@@ -2389,32 +2488,64 @@
         const planetData = {
             'ai': {
                 title: '🤖 AI产品运营',
-                subtitle: '基于Coze搭建自动化内容工作流',
+                subtitle: 'AI内容生产与个人健康管理产品实践',
                 content: `
                     <div class="modal-section">
-                        <h4>🎯 项目概述</h4>
-                        <p>解决内容运营效率低、产出不稳定痛点的AI辅助工具，验证AI在内容生产与运营中的实际价值。</p>
+                        <h4>🤖 项目一：AI驱动的小红书内容运营项目</h4>
+                        <p><strong>项目定位：</strong>面向内容运营中选题分散、素材整理耗时、产出不稳定的问题，基于 Coze 搭建 AI 辅助内容生产流程。</p>
                     </div>
                     <div class="modal-section">
-                        <h4>🔧 核心功能设计</h4>
+                        <h4>🔧 核心动作</h4>
                         <ul>
-                            <li>内容采集工作流：自动抓取热点话题与参考素材</li>
-                            <li>内容生成工作流：基于模板自动生成结构化内容</li>
-                            <li>Agent配置：定制化人设与输出风格</li>
-                            <li>多端适配：微信公众号/飞书/豆包一键分发</li>
+                            <li>拆解选题、素材采集、生成、优化和分发链路，定义 AI 介入边界</li>
+                            <li>搭建内容采集与内容生成双工作流，配置 Agent 人设和 Prompt 结构</li>
+                            <li>从 Coze 1.0 迭代到 2.5，并接入飞书多维表格提升流程稳定性</li>
                         </ul>
                     </div>
                     <div class="modal-section">
-                        <h4>📈 迭代升级</h4>
-                        <p>从Coze 1.0升级至2.5，通过Agent + Skill重构流程，实现与飞书多维表格联动，系统稳定性提升，可跨平台迁移使用。</p>
-                    </div>
-                    <div class="modal-section">
-                        <h4>✅ 效果验证</h4>
+                        <h4>📈 项目成果</h4>
+                        <p>将单篇内容创作时间由约 1 小时缩短至 15-20 分钟，效率提升约 70%；内容采纳率约 80%。</p>
                         <div class="achievement-tag">效率提升 70%</div>
                         <div class="achievement-tag">内容采纳率 80%</div>
-                        <div class="achievement-tag">单篇创作时间 1h → 15-20min</div>
                     </div>
-                    <a href="https://www.notion.so/AI-335a21715ff180aca1a9eb7feb995e3f" target="_blank" class="notion-link">查看完整Notion分析</a>
+                    <div class="project-links">
+                        <a href="https://www.notion.so/AI-335a21715ff180aca1a9eb7feb995e3f" target="_blank" class="project-link notion-link-alt">查看完整 Notion 分析</a>
+                    </div>
+                    <div class="modal-section">
+                        <h4>🍱 项目二：好食家减脂记录与复盘产品</h4>
+                        <p><strong>项目定位：</strong>围绕“记录 -> 复盘 -> 下周计划”搭建减脂记录与复盘 Web App，帮助用户看见情绪、场景和行为之间的关系。</p>
+                    </div>
+                    <div class="modal-section">
+                        <h4>🧩 核心设计</h4>
+                        <ul>
+                            <li>把称重、饮食、运动和复盘收敛为仪表盘任务，降低每日使用门槛</li>
+                            <li>在饮食记录中加入饥饿程度、触发原因和情绪状态，为复盘提供依据</li>
+                            <li>基于记录生成日复盘、周复盘，并用食材库存生成可执行的一周菜单</li>
+                        </ul>
+                    </div>
+                    <div class="modal-section">
+                        <h4>⚖️ 产品取舍</h4>
+                        <p>第一版没有追求医疗级营养计算或 AI 图像识别，而是优先验证“持续记录、形成复盘、得到下一步计划”的核心闭环。</p>
+                    </div>
+                    <div class="modal-section">
+                        <h4>🙋 我的角色</h4>
+                        <p>独立完成需求定义、功能拆解、信息架构、交互流程、前端实现、Firebase 数据接入、Vercel 部署和持续迭代。</p>
+                        <div class="achievement-tag">公开上线</div>
+                        <div class="achievement-tag">完整产品闭环</div>
+                        <div class="achievement-tag">持续迭代</div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://haoshijia-iota.vercel.app/" target="_blank" class="project-link demo-link">公开体验</a>
+                        <a href="https://github.com/Faye1007/haoshijia" target="_blank" class="project-link github-link">GitHub 仓库</a>
+                    </div>
+                    <div class="modal-section">
+                        <h4>💡 共性能力总结</h4>
+                        <ul>
+                            <li>从真实使用场景出发，先定义问题和用户路径，再选择工具和技术方案</li>
+                            <li>能把复杂流程拆成可执行的产品闭环，并通过数据或真实使用反馈验证效果</li>
+                            <li>理解 AI 更适合承担结构化生成、效率放大和决策辅助，关键节点仍需要人工判断</li>
+                        </ul>
+                    </div>
                 `
             },
             'content': {
