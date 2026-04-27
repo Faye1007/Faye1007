@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>罗 菲 Faye. | 作品集</title>
+    <title>罗  菲 Faye. | 作品集</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=League+Script&display=swap" rel="stylesheet">
@@ -11,35 +11,32 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            /* 明亮创意：心理学温度 + AI实验感 */
-            --bg-primary: #FBFDFF;
-            --bg-secondary: #F3F7FF;
-            --bg-warm: #FFF8E9;
+            /* 温暖高级：玫瑰紫双色系 + 暖米白基底 */
+            --bg-primary: #FDF8F3;
+            --bg-secondary: #F5F0EB;
+            --bg-warm: #FFF3E6;
             --bg-card: #FFFFFF;
-            --text-primary: #172033;
-            --text-secondary: #526070;
-            --text-muted: #8490A3;
-            --accent-pink: #FF5FA2;
-            --accent-purple: #7C5CFF;
-            --accent-rose: #FF6F8E;
-            --accent-violet: #6B4DFF;
-            --accent-coral: #FF8A5B;
-            --accent-cyan: #18C7C9;
-            --accent-blue: #3B82F6;
-            --accent-yellow: #F8C84E;
-            --line-edu: #18C7C9;
-            --line-project: #7C5CFF;
-            --line-work: #FF8A5B;
-            --shadow-soft: 0 14px 34px -24px rgba(23, 32, 51, 0.32);
-            --shadow-hover: 0 24px 54px -28px rgba(124, 92, 255, 0.34);
+            --text-primary: #1E1A17;
+            --text-secondary: #6B6560;
+            --text-muted: #A39E99;
+            --accent-rose: #E06B8A;
+            --accent-violet: #8B7FD4;
+            --accent-gold: #D4A574;
+            --main-axis: #8B7FD4;
+            --branch-research: #D4A574;
+            --branch-hotline: #E06B8A;
+            --branch-hospital: #C9965E;
+            --branch-activities: #D4A574;
+            --branch-avoice: #E06B8A;
+            --branch-ai: #D67A9A;
+            --branch-haoshijia: #D4A574;
+            --shadow-soft: 0 14px 34px -24px rgba(30, 26, 23, 0.12);
+            --shadow-hover: 0 24px 54px -28px rgba(139, 127, 212, 0.22);
         }
 
         body {
             color: var(--text-primary);
-            background:
-                linear-gradient(135deg, rgba(24, 199, 201, 0.05), transparent 34%),
-                linear-gradient(225deg, rgba(255, 95, 162, 0.06), transparent 32%),
-                var(--bg-primary);
+            background: var(--bg-primary);
             font-family: "Inter", "微软雅黑", sans-serif;
             overflow-x: hidden;
             line-height: 1.6;
@@ -67,9 +64,9 @@
             transition: all 0.8s ease-out;
         }
 
-        .blob-1 { background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue)); top: -220px; left: -120px; }
-        .blob-2 { background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink)); bottom: -220px; right: -120px; }
-        .blob-3 { background: linear-gradient(135deg, var(--accent-yellow), var(--accent-coral)); top: 48%; left: 52%; transform: translate(-50%, -50%); }
+        .blob-1 { background: linear-gradient(135deg, var(--accent-violet), var(--accent-rose)); top: -220px; left: -120px; opacity: 0.06; }
+        .blob-2 { background: linear-gradient(135deg, var(--accent-rose), var(--accent-violet)); bottom: -220px; right: -120px; opacity: 0.06; }
+        .blob-3 { background: linear-gradient(135deg, var(--accent-gold), var(--accent-rose)); top: 48%; left: 52%; transform: translate(-50%, -50%); opacity: 0.05; }
 
         .container {
             max-width: 1200px;
@@ -97,7 +94,7 @@
             inset: 8% 8% auto;
             height: 62%;
             background:
-                linear-gradient(90deg, rgba(24, 199, 201, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(139, 127, 212, 0.08) 1px, transparent 1px),
                 linear-gradient(0deg, rgba(124, 92, 255, 0.07) 1px, transparent 1px);
             background-size: 54px 54px;
             mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), transparent);
@@ -109,11 +106,11 @@
             align-items: center;
             gap: 8px;
             padding: 10px 20px;
-            background: rgba(24, 199, 201, 0.1);
-            border: 1px solid rgba(24, 199, 201, 0.28);
+            background: rgba(139, 127, 212, 0.1);
+            border: 1px solid rgba(139, 127, 212, 0.28);
             border-radius: 30px;
             font-size: 13px;
-            color: #0F8E91;
+            color: #8B7FD4;
             margin-bottom: 30px;
             animation: pulse 2s ease-in-out infinite;
         }
@@ -128,7 +125,7 @@
             font-weight: 700;
             font-family: "Playfair Display", serif;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple));
+            background: linear-gradient(135deg, var(--accent-rose), var(--accent-violet));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -140,6 +137,33 @@
             max-width: 620px;
             margin-bottom: 28px;
             line-height: 1.75;
+        }
+
+        /* Hero标题字符微浮动 */
+        .hero-title .char {
+            display: inline-block;
+            animation: char-float 4s ease-in-out infinite;
+            animation-delay: calc(var(--char-index) * 0.08s);
+            background: linear-gradient(135deg, var(--accent-rose), var(--accent-violet));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        @keyframes char-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+
+        /* 鼠标光迹Canvas */
+        #heroCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
         }
 
         .hero-proof {
@@ -193,9 +217,9 @@
             cursor: default;
         }
 
-        .hero-tag:nth-child(1) { color: #0F8E91; border: 2px solid var(--accent-cyan); }
-        .hero-tag:nth-child(2) { color: var(--accent-purple); border: 2px solid var(--accent-purple); }
-        .hero-tag:nth-child(3) { color: #D94F70; border: 2px solid var(--accent-rose); }
+        .hero-tag:nth-child(1) { color: #8B7FD4; border: 2px solid var(--accent-violet); }
+        .hero-tag:nth-child(2) { color: var(--accent-violet); border: 2px solid var(--accent-violet); }
+        .hero-tag:nth-child(3) { color: var(--accent-rose); border: 2px solid var(--accent-rose); }
 
         .hero-tag:hover {
             transform: translateY(-3px);
@@ -230,7 +254,7 @@
         .timeline-section {
             padding: 100px 0;
             background:
-                linear-gradient(180deg, rgba(243, 247, 255, 0.92), rgba(255, 248, 233, 0.52)),
+                linear-gradient(180deg, rgba(245, 240, 235, 0.92), rgba(255, 248, 233, 0.52)),
                 var(--bg-secondary);
             position: relative;
         }
@@ -245,7 +269,7 @@
         }
 
         .section-title span {
-            background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple));
+            background: linear-gradient(135deg, var(--accent-rose), var(--accent-violet));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -264,19 +288,26 @@
             padding: 34px 24px;
             overflow-x: hidden;
             background:
-                linear-gradient(90deg, rgba(24, 199, 201, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(139, 127, 212, 0.08) 1px, transparent 1px),
                 linear-gradient(0deg, rgba(124, 92, 255, 0.07) 1px, transparent 1px),
                 radial-gradient(circle at 50% 48%, rgba(255, 255, 255, 0.98), rgba(251, 253, 255, 0.92) 48%, rgba(255, 248, 233, 0.78));
             background-size: 42px 42px, 42px 42px, 100% 100%;
             border-radius: 28px;
             box-shadow: var(--shadow-soft);
-            border: 1px solid rgba(24, 199, 201, 0.16);
+            border: 1px solid rgba(139, 127, 212, 0.16);
         }
 
         .timeline-svg {
             width: 100%;
             height: 760px;
             display: block;
+            cursor: grab;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .timeline-svg:active {
+            cursor: grabbing;
         }
 
         .timeline-main-label {
@@ -307,9 +338,93 @@
             text-anchor: middle;
         }
 
-        /* Timeline Nodes - 修复闪烁问题 */
+        .timeline-signal {
+            filter: url(#timelineGlow);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .timeline-signal.active {
+            opacity: 1;
+        }
+
+        /* 时间线渐进揭示系统 */
+        .timeline-path {
+            fill: none;
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: all 0.3s ease;
+            stroke-dasharray: 2000;
+            stroke-dashoffset: 2000;
+        }
+
+        .timeline-path.revealed {
+            animation: draw-line 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .timeline-path.main-axis {
+            stroke-width: 5;
+            filter: url(#timelineGlowSoft);
+        }
+
+        .timeline-path.branch-vine {
+            stroke-width: 3.5;
+            filter: url(#timelineGlowSoft);
+        }
+
+        .timeline-path.branch-vine.revealed {
+            animation: draw-line 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .timeline-path.nerve-thread {
+            stroke-width: 1.6;
+            opacity: 0.32;
+            stroke-dasharray: 3 14;
+            stroke-dashoffset: 0;
+        }
+
+        .timeline-path.nerve-thread.revealed {
+            animation: none;
+            opacity: 0.32;
+        }
+
+        .timeline-orbit {
+            fill: none;
+            stroke: rgba(124, 92, 255, 0.16);
+            stroke-width: 1.4;
+            stroke-dasharray: 8 12;
+            opacity: 0;
+            transition: opacity 1.5s ease;
+        }
+
+        .timeline-orbit.revealed {
+            opacity: 1;
+        }
+
         .timeline-node {
             cursor: pointer;
+            opacity: 0.12;
+            transform-origin: center;
+            transform-box: fill-box;
+            transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .timeline-node.revealed {
+            opacity: 1;
+        }
+
+        .timeline-node-branch.revealed {
+            opacity: 0.65;
+        }
+
+        .timeline-node.hover-focus {
+            opacity: 1;
+            transform: scale(1.15);
+        }
+
+        .timeline-node.hover-dim {
+            opacity: 0.2;
         }
 
         .node-circle {
@@ -328,77 +443,166 @@
             fill: var(--accent-violet);
         }
 
-        .node-label {
-            font-size: 13px;
-            font-weight: 600;
-            fill: var(--text-primary);
-            transition: all 0.2s ease;
-        }
-
-        .node-date {
-            font-size: 11px;
-            fill: var(--text-muted);
-        }
-
-        .timeline-path {
+        /* 节点脉冲光环 */
+        .node-pulse-ring {
             fill: none;
-            stroke-width: 3;
-            stroke-linecap: round;
-            stroke-linejoin: round;
+            stroke: var(--accent-violet);
+            stroke-width: 2;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .timeline-node.revealed .node-pulse-ring {
+            animation: node-glow-pulse 1s ease-out forwards;
+        }
+
+        /* 时间线 tooltip */
+        .timeline-tooltip {
+            position: absolute;
+            background: rgba(30, 26, 23, 0.92);
+            color: #fff;
+            padding: 10px 16px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 500;
+            pointer-events: none;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: all 0.25s ease;
+            z-index: 100;
+            white-space: nowrap;
+            backdrop-filter: blur(12px);
+        }
+
+        .timeline-tooltip.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 移动端垂直时间线 */
+        .timeline-mobile {
+            display: none;
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline-mobile-line {
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent-violet), var(--accent-rose));
+            border-radius: 2px;
+            transform-origin: top center;
+            transform: scaleY(0);
+            transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .timeline-mobile-line.revealed {
+            transform: scaleY(1);
+        }
+
+        .timeline-mobile-items {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .timeline-mobile-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            opacity: 0;
+            transform: translateX(20px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .timeline-mobile-item.revealed {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .timeline-mobile-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--dot-color, var(--accent-violet));
+            border: 3px solid var(--bg-card);
+            box-shadow: 0 0 0 2px var(--dot-color, var(--accent-violet)), 0 4px 12px rgba(139, 127, 212, 0.25);
+            flex-shrink: 0;
+            margin-top: 6px;
+            margin-left: 18px;
+            transform: scale(0);
+            transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.1s;
+        }
+
+        .timeline-mobile-item.revealed .timeline-mobile-dot {
+            transform: scale(1);
+        }
+
+        .timeline-mobile-dot.core {
+            width: 20px;
+            height: 20px;
+            margin-left: 15px;
+            margin-top: 3px;
+            box-shadow: 0 0 0 3px var(--dot-color, var(--accent-violet)), 0 6px 20px rgba(139, 127, 212, 0.35);
+        }
+
+        .timeline-mobile-content {
+            flex: 1;
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 16px 20px;
+            border: 1px solid rgba(139, 127, 212, 0.12);
+            box-shadow: var(--shadow-soft);
             transition: all 0.3s ease;
         }
 
-        .timeline-path.main-vine,
-        .timeline-path.branch-vine {
-            stroke-width: 4;
-            filter: url(#timelineGlow);
-            stroke-dasharray: 10 12;
-            animation: timeline-flow 10s linear infinite;
+        .timeline-mobile-item:active .timeline-mobile-content {
+            transform: scale(0.98);
+            box-shadow: 0 2px 8px rgba(139, 127, 212, 0.15);
         }
 
-        .timeline-path.main-axis {
-            stroke-width: 5;
-            stroke-dasharray: none;
-            animation: none;
-            filter: url(#timelineGlowSoft);
+        .timeline-mobile-content h4 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
         }
 
-        .timeline-path.branch-vine {
-            stroke-width: 3.5;
-            filter: url(#timelineGlowSoft);
+        .timeline-mobile-content span {
+            font-size: 13px;
+            color: var(--text-secondary);
         }
 
-        .timeline-path.nerve-thread {
-            stroke-width: 1.6;
-            opacity: 0.32;
-            stroke-dasharray: 3 14;
-            animation: timeline-flow 8s linear infinite;
+        @keyframes draw-line {
+            to { stroke-dashoffset: 0; }
         }
 
-        .timeline-orbit {
-            fill: none;
-            stroke: rgba(124, 92, 255, 0.16);
-            stroke-width: 1.4;
-            stroke-dasharray: 8 12;
+        @keyframes node-glow-pulse {
+            0% {
+                r: var(--pulse-start, 22);
+                opacity: 0.5;
+                stroke-width: 3;
+            }
+            100% {
+                r: var(--pulse-end, 55);
+                opacity: 0;
+                stroke-width: 0;
+            }
         }
 
-        .timeline-signal {
-            filter: url(#timelineGlow);
+        @keyframes branch-dash-flow {
+            to { stroke-dashoffset: -140; }
         }
-
-        @keyframes timeline-flow {
-            to { stroke-dashoffset: -220; }
-        }
-
-        .path-edu { stroke: var(--line-edu); }
-        .path-project { stroke: var(--line-project); }
-        .path-work { stroke: var(--line-work); }
 
         /* Capability Planets */
         .planets-section {
             padding: 110px 0;
             background:
-                linear-gradient(180deg, rgba(251, 253, 255, 0.96), rgba(243, 247, 255, 0.92)),
+                linear-gradient(180deg, rgba(251, 253, 255, 0.96), rgba(245, 240, 235, 0.92)),
                 var(--bg-primary);
         }
 
@@ -413,7 +617,7 @@
             border-radius: 32px;
             background:
                 radial-gradient(ellipse at center, rgba(124, 92, 255, 0.1), transparent 34%),
-                linear-gradient(90deg, rgba(24, 199, 201, 0.07) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(139, 127, 212, 0.07) 1px, transparent 1px),
                 linear-gradient(0deg, rgba(255, 95, 162, 0.05) 1px, transparent 1px);
             background-size: 100% 100%, 48px 48px, 48px 48px;
             border: 1px solid rgba(124, 92, 255, 0.14);
@@ -431,7 +635,7 @@
             transform: translate(-50%, -50%) rotate(-8deg);
             width: min(82%, 840px);
             aspect-ratio: 1 / 0.58;
-            border: 1px dashed rgba(124, 92, 255, 0.2);
+            border: 1px dashed rgba(124, 92, 255, 0.50);
             border-radius: 50%;
             pointer-events: none;
         }
@@ -439,7 +643,7 @@
         .planets-grid::after {
             width: min(62%, 640px);
             transform: translate(-50%, -50%) rotate(16deg);
-            border-color: rgba(24, 199, 201, 0.22);
+            border-color: rgba(139, 127, 212, 0.55);
         }
 
         .planet-connection {
@@ -475,7 +679,7 @@
             left: 0;
             right: 0;
             height: 5px;
-            background: linear-gradient(to right, var(--accent-cyan), var(--accent-purple), var(--accent-pink));
+            background: linear-gradient(to right, var(--accent-violet), var(--accent-violet), var(--accent-rose));
             transform: scaleX(0);
             transition: transform 0.3s ease;
         }
@@ -520,15 +724,15 @@
 
         .planet-stat {
             padding: 6px 14px;
-            background: rgba(24, 199, 201, 0.1);
-            color: #0F8E91;
+            background: rgba(139, 127, 212, 0.1);
+            color: #8B7FD4;
             border-radius: 20px;
             font-size: 12px;
             font-weight: 600;
         }
 
         .planet-card[data-planet="ai"] {
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(243, 247, 255, 0.96));
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(245, 240, 235, 0.96));
             border-color: rgba(124, 92, 255, 0.24);
         }
 
@@ -553,20 +757,313 @@
         .planet-card[data-planet="event"] { --tilt: -1deg; --offset-y: 14px; }
         .planet-card[data-planet="research"] { --tilt: 2deg; --offset-y: -12px; }
 
-        .planet-card[data-planet="content"] .planet-stat { background: rgba(167, 139, 250, 0.1); color: var(--accent-purple); }
+        .planet-card[data-planet="content"] .planet-stat { background: rgba(139, 127, 212, 0.1); color: var(--accent-violet); }
         .planet-card[data-planet="video"] .planet-stat { background: rgba(255, 111, 142, 0.12); color: var(--accent-rose); }
         .planet-card[data-planet="design"] .planet-stat { background: rgba(139, 92, 246, 0.1); color: var(--accent-violet); }
-        .planet-card[data-planet="event"] .planet-stat { background: rgba(255, 138, 91, 0.12); color: var(--accent-coral); }
-        .planet-card[data-planet="research"] .planet-stat { background: rgba(24, 199, 201, 0.1); color: #0F8E91; }
-
-        @keyframes planet-core-float {
-            0%, 100% { margin-top: 0; }
-            50% { margin-top: -8px; }
-        }
+        .planet-card[data-planet="event"] .planet-stat { background: rgba(255, 138, 91, 0.12); color: var(--accent-gold); }
+        .planet-card[data-planet="research"] .planet-stat { background: rgba(139, 127, 212, 0.1); color: #8B7FD4; }
 
         @keyframes planet-float {
             0%, 100% { margin-top: 0; }
             50% { margin-top: -12px; }
+        }
+
+        /* 能力星球轨道系统（桌面端） */
+        .planets-orbit {
+            display: block;
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            height: 720px;
+            margin: 0 auto;
+        }
+
+        .orbit-tracks {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .orbit-track {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: 1.5px dashed rgba(124, 92, 255, 0.45);
+            border-radius: 50%;
+        }
+
+        .orbit-inner {
+            width: 280px;
+            height: 280px;
+        }
+
+        .orbit-middle {
+            width: 440px;
+            height: 440px;
+        }
+
+        .orbit-outer {
+            width: 600px;
+            height: 600px;
+        }
+
+        /* 轨道运行动画 */
+        @keyframes orbit-move {
+            from {
+                transform: rotate(0deg) translateX(var(--orbit-radius)) rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg) translateX(var(--orbit-radius)) rotate(-360deg);
+            }
+        }
+
+        .orbit-planet {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 0;
+            height: 0;
+            pointer-events: none;
+            z-index: 5;
+            animation: orbit-move var(--orbit-duration, 50s) linear infinite;
+            animation-direction: var(--orbit-direction, normal);
+            animation-delay: calc(-1 * var(--orbit-start, 0deg) / 360deg * var(--orbit-duration, 50s));
+            animation-play-state: running;
+        }
+
+        .planets-orbit.paused .orbit-planet {
+            animation-play-state: paused;
+        }
+
+        .orbit-planet-card {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 130px;
+            height: 130px;
+            margin-left: -65px;
+            margin-top: -65px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, rgba(255,255,255,0.98), rgba(245,240,235,0.96));
+            border: 1px solid rgba(124, 92, 255, 0.18);
+            box-shadow: 0 6px 24px rgba(139, 127, 212, 0.15), 0 2px 8px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            cursor: pointer;
+            pointer-events: auto;
+            transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), box-shadow 0.4s ease;
+            overflow: visible;
+        }
+
+        .orbit-planet-card:hover {
+            transform: scale(1.25);
+            box-shadow: 0 12px 40px rgba(139, 127, 212, 0.3), 0 4px 12px rgba(0,0,0,0.08);
+            z-index: 20;
+        }
+
+        .orbit-planet-card .planet-icon {
+            font-size: 32px;
+            margin-bottom: 4px;
+        }
+
+        .orbit-planet-card .planet-title {
+            font-size: 13px;
+            font-weight: 700;
+            font-family: "Inter", sans-serif;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .tooltip-desc {
+            margin-bottom: 8px;
+        }
+
+        .tooltip-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid rgba(139, 127, 212, 0.12);
+        }
+
+        .tooltip-tag {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--accent-violet);
+            background: rgba(139, 127, 212, 0.1);
+            padding: 3px 10px;
+            border-radius: 12px;
+            white-space: nowrap;
+        }
+
+        .planet-desc-tooltip {
+            position: absolute;
+            top: 110%;
+            left: 50%;
+            transform: translateX(-50%) translateY(8px);
+            width: max-content;
+            max-width: 220px;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 16px;
+            padding: 12px 16px;
+            box-shadow: 0 8px 24px rgba(30, 26, 23, 0.12);
+            font-size: 13px;
+            line-height: 1.5;
+            color: var(--text-secondary);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 30;
+            text-align: center;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 127, 212, 0.12);
+        }
+
+        .orbit-planet-card:hover .planet-desc-tooltip,
+        .core-card:hover .planet-desc-tooltip {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* 中心核心 */
+        .orbit-core {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            pointer-events: auto;
+            cursor: pointer;
+        }
+
+        .core-card {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, rgba(255,255,255,0.99), rgba(245,240,235,0.98));
+            border: 2px solid rgba(124, 92, 255, 0.25);
+            box-shadow: 0 8px 32px rgba(139, 127, 212, 0.22), 0 0 80px rgba(139, 127, 212, 0.12);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .core-card:hover {
+            transform: scale(1.08);
+            box-shadow: 0 12px 40px rgba(139, 127, 212, 0.3), 0 0 100px rgba(139, 127, 212, 0.18);
+        }
+
+        /* 星球底色区分 */
+        .orbit-core[data-planet="ai"] .core-card {
+            background: linear-gradient(145deg, #F3F0FF, #EDE8FF);
+            border-color: rgba(139, 127, 212, 0.35);
+        }
+        .orbit-planet[data-planet="content"] .orbit-planet-card {
+            background: linear-gradient(145deg, #FFF0F5, #FFE4ED);
+            border-color: rgba(224, 107, 138, 0.25);
+        }
+        .orbit-planet[data-planet="research"] .orbit-planet-card {
+            background: linear-gradient(145deg, #F0F4FF, #E8EEFF);
+            border-color: rgba(107, 142, 255, 0.25);
+        }
+        .orbit-planet[data-planet="design"] .orbit-planet-card {
+            background: linear-gradient(145deg, #F8F0FF, #F0E4FF);
+            border-color: rgba(167, 107, 255, 0.25);
+        }
+        .orbit-planet[data-planet="event"] .orbit-planet-card {
+            background: linear-gradient(145deg, #FFF8F0, #FFF0E0);
+            border-color: rgba(212, 165, 116, 0.35);
+        }
+        .orbit-planet[data-planet="video"] .orbit-planet-card {
+            background: linear-gradient(145deg, #FFF0F3, #FFE8EE);
+            border-color: rgba(224, 107, 138, 0.25);
+        }
+
+        .core-card .planet-icon {
+            font-size: 44px;
+            margin-bottom: 6px;
+        }
+
+        .core-card .planet-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .planet-core-glow {
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(139, 127, 212, 0.15), transparent 70%);
+            animation: core-pulse 3s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes core-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.15); opacity: 0.3; }
+        }
+
+        /* 悬停时其他星球变暗 */
+        .planets-orbit.has-hover .orbit-planet {
+            opacity: 0.35;
+            transition: opacity 0.3s ease;
+        }
+
+        .planets-orbit.has-hover .orbit-planet:hover {
+            opacity: 1;
+        }
+
+        .planets-orbit.has-hover .orbit-core {
+            opacity: 0.35;
+            transition: opacity 0.3s ease;
+        }
+
+        .planets-orbit.has-hover .orbit-planet:hover ~ .orbit-core,
+        .planets-orbit.has-hover .orbit-core:hover {
+            opacity: 1;
+        }
+
+        /* 桌面端/平板：显示轨道，隐藏网格 */
+        @media (min-width: 769px) {
+            .planets-grid { display: none !important; }
+            .planets-orbit { display: block; }
+        }
+
+        /* 平板：轨道缩小 */
+        @media (max-width: 992px) {
+            .planets-orbit {
+                height: 560px;
+                max-width: 700px;
+            }
+            .orbit-outer { width: 460px; height: 460px; }
+            .orbit-middle { width: 340px; height: 340px; }
+            .orbit-inner { width: 220px; height: 220px; }
+            .orbit-planet-card {
+                width: 110px;
+                height: 110px;
+                margin-left: -55px;
+                margin-top: -55px;
+            }
+            .orbit-planet-card .planet-icon { font-size: 28px; }
+            .orbit-planet-card .planet-title { font-size: 12px; }
+            .core-card {
+                width: 130px;
+                height: 130px;
+            }
+            .core-card .planet-icon { font-size: 38px; }
+            .core-card .planet-title { font-size: 14px; }
         }
 
         /* Modal */
@@ -632,7 +1129,7 @@
         }
 
         .modal-close:hover {
-            background: var(--accent-pink);
+            background: var(--accent-rose);
             color: white;
             transform: rotate(90deg);
         }
@@ -662,7 +1159,7 @@
         .modal-section h4 {
             font-size: 16px;
             font-weight: 600;
-            color: var(--accent-pink);
+            color: var(--accent-rose);
             margin-bottom: 12px;
             display: flex;
             align-items: center;
@@ -694,14 +1191,14 @@
             content: '▸';
             position: absolute;
             left: 0;
-            color: var(--accent-pink);
+            color: var(--accent-rose);
         }
 
         .achievement-tag {
             display: inline-block;
             padding: 6px 14px;
-            background: linear-gradient(135deg, rgba(244, 114, 182, 0.15), rgba(167, 139, 250, 0.15));
-            color: var(--accent-pink);
+            background: linear-gradient(135deg, rgba(244, 114, 182, 0.15), rgba(139, 127, 212, 0.15));
+            color: var(--accent-rose);
             border-radius: 20px;
             font-size: 12px;
             font-weight: 600;
@@ -719,7 +1216,7 @@
         .typing-cursor::after {
             content: '|';
             animation: blink 1s infinite;
-            color: var(--accent-pink);
+            color: var(--accent-rose);
             margin-left: 2px;
         }
 
@@ -732,10 +1229,6 @@
         .planet-card {
             transform-style: preserve-3d;
             perspective: 1000px;
-        }
-
-        .planet-card:hover {
-            transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
         }
 
         /* 粒子背景容器 */
@@ -752,12 +1245,12 @@
 
         .particle {
             position: absolute;
-            width: 4px;
-            height: 4px;
-            background: var(--accent-pink);
+            width: 3px;
+            height: 3px;
+            background: var(--accent-violet);
             border-radius: 50%;
-            opacity: 0.3;
-            animation: float-particle 15s infinite;
+            opacity: 0.15;
+            animation: float-particle 25s infinite;
         }
 
         @keyframes float-particle {
@@ -766,13 +1259,13 @@
                 opacity: 0;
             }
             10% {
-                opacity: 0.3;
+                opacity: 0.15;
             }
             90% {
-                opacity: 0.3;
+                opacity: 0.15;
             }
             100% {
-                transform: translateY(-100vh) rotate(720deg);
+                transform: translateY(-100vh) rotate(360deg);
                 opacity: 0;
             }
         }
@@ -800,19 +1293,19 @@
             top: 0;
             left: 0;
             height: 3px;
-            background: linear-gradient(to right, var(--accent-cyan), var(--accent-purple), var(--accent-pink));
+            background: linear-gradient(to right, var(--accent-violet), var(--accent-violet), var(--accent-rose));
             z-index: 10000;
             transition: width 0.1s ease;
         }
 
-        /* 浮动表情 */
+        /* 浮动表情 - 极淡，仅氛围 */
         .floating-emoji-bg {
             position: fixed;
             font-size: 20px;
-            opacity: 0.08;
+            opacity: 0.03;
             pointer-events: none;
             z-index: 0;
-            animation: float-emoji 20s infinite ease-in-out;
+            animation: float-emoji 25s infinite ease-in-out;
         }
 
         @keyframes float-emoji {
@@ -833,31 +1326,6 @@
         /* 视差滚动效果 */
         .parallax-layer {
             will-change: transform;
-        }
-
-        /* 脉冲动画 */
-        @keyframes pulse-glow {
-            0%, 100% {
-                box-shadow: 0 0 0 0 rgba(244, 114, 182, 0.4);
-            }
-            50% {
-                box-shadow: 0 0 20px 10px rgba(244, 114, 182, 0);
-            }
-        }
-
-        .pulse-glow {
-            animation: pulse-glow 2s infinite;
-        }
-
-        /* 摇晃动画 - 用于吸引注意 */
-        @keyframes wiggle {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(-5deg); }
-            75% { transform: rotate(5deg); }
-        }
-
-        .wiggle:hover {
-            animation: wiggle 0.5s ease-in-out;
         }
 
         /* Works Grid in Modal */
@@ -943,7 +1411,7 @@
         }
 
         .footer-contact-item a {
-            color: var(--accent-pink);
+            color: var(--accent-rose);
             text-decoration: none;
             transition: all 0.3s ease;
         }
@@ -961,7 +1429,7 @@
         .test-section {
             padding: 100px 0;
             background:
-                linear-gradient(135deg, var(--bg-warm) 0%, #F3F7FF 48%, #F7F2FF 100%);
+                linear-gradient(135deg, var(--bg-warm) 0%, #F5F0EB 48%, #F5F0EB 100%);
             position: relative;
             overflow: hidden;
         }
@@ -989,8 +1457,8 @@
             padding: 6px 16px;
             margin-bottom: 16px;
             border-radius: 999px;
-            background: rgba(24, 199, 201, 0.12);
-            color: #0F8E91;
+            background: rgba(139, 127, 212, 0.12);
+            color: #8B7FD4;
             font-size: 13px;
             font-weight: 600;
             letter-spacing: 0;
@@ -1017,7 +1485,7 @@
             right: -20%;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(24, 199, 201, 0.12) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(139, 127, 212, 0.12) 0%, transparent 70%);
             pointer-events: none;
         }
 
@@ -1046,6 +1514,11 @@
 
         .test-screen.active {
             display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .test-intro {
@@ -1079,7 +1552,7 @@
         }
 
         .test-btn {
-            background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 55%, var(--accent-pink) 100%);
+            background: linear-gradient(135deg, var(--accent-violet) 0%, var(--accent-violet) 55%, var(--accent-rose) 100%);
             color: white;
             border: none;
             padding: 16px 48px;
@@ -1105,7 +1578,7 @@
         }
 
         .test-btn.secondary:hover {
-            background: rgba(24, 199, 201, 0.1);
+            background: rgba(139, 127, 212, 0.1);
         }
 
         .progress-bar {
@@ -1119,7 +1592,7 @@
 
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, var(--accent-cyan) 0%, var(--accent-purple) 55%, var(--accent-pink) 100%);
+            background: linear-gradient(90deg, var(--accent-violet) 0%, var(--accent-violet) 55%, var(--accent-rose) 100%);
             border-radius: 3px;
             transition: width 0.5s ease;
             width: 0%;
@@ -1165,9 +1638,9 @@
         }
 
         .option-btn:hover {
-            border-color: var(--accent-cyan);
+            border-color: var(--accent-violet);
             transform: translateX(8px);
-            box-shadow: 0 4px 20px rgba(24, 199, 201, 0.18);
+            box-shadow: 0 4px 20px rgba(139, 127, 212, 0.18);
         }
 
         .option-btn::before {
@@ -1177,7 +1650,7 @@
             top: 0;
             bottom: 0;
             width: 4px;
-            background: linear-gradient(180deg, var(--accent-cyan) 0%, var(--accent-purple) 100%);
+            background: linear-gradient(180deg, var(--accent-violet) 0%, var(--accent-violet) 100%);
             opacity: 0;
             transition: opacity 0.3s ease;
         }
@@ -1207,7 +1680,7 @@
             font-weight: 700;
             margin-bottom: 16px;
             font-family: "Playfair Display", serif;
-            background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 60%, var(--accent-pink) 100%);
+            background: linear-gradient(135deg, var(--accent-violet) 0%, var(--accent-violet) 60%, var(--accent-rose) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -1253,7 +1726,7 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: #0F8E91;
+            color: #8B7FD4;
             font-weight: 700;
         }
 
@@ -1331,7 +1804,7 @@
         .loader-bar-fill {
             height: 100%;
             width: 0%;
-            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple), var(--accent-pink));
+            background: linear-gradient(90deg, var(--accent-violet), var(--accent-violet), var(--accent-rose));
             border-radius: 3px;
             animation: loader-progress 1.5s ease-in-out forwards;
         }
@@ -1358,22 +1831,6 @@
             transform: translateY(0);
         }
 
-        .animate-on-scroll.from-left {
-            transform: translateX(-40px);
-        }
-
-        .animate-on-scroll.from-left.visible {
-            transform: translateX(0);
-        }
-
-        .animate-on-scroll.from-right {
-            transform: translateX(40px);
-        }
-
-        .animate-on-scroll.from-right.visible {
-            transform: translateX(0);
-        }
-
         .animate-on-scroll.scale-in {
             transform: scale(0.9);
         }
@@ -1389,11 +1846,6 @@
         /* 时间线节点点击反馈 */
         .timeline-node.clicked .node-circle {
             filter: drop-shadow(0 0 20px rgba(124, 92, 255, 0.6));
-        }
-
-        .timeline-node.clicked .node-label {
-            fill: var(--accent-violet);
-            font-weight: 700;
         }
 
         .node-pulse {
@@ -1437,16 +1889,16 @@
 
         /* 联系方式高亮 */
         .contact-highlight {
-            background: linear-gradient(135deg, rgba(24, 199, 201, 0.12), rgba(124, 92, 255, 0.12));
+            background: linear-gradient(135deg, rgba(139, 127, 212, 0.12), rgba(124, 92, 255, 0.12));
             border-radius: 16px;
             padding: 20px 24px;
-            border: 1px solid rgba(24, 199, 201, 0.25);
+            border: 1px solid rgba(139, 127, 212, 0.25);
             animation: contact-pulse 2s ease-in-out 0.5s;
         }
 
         @keyframes contact-pulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(24, 199, 201, 0); }
-            50% { box-shadow: 0 0 20px 5px rgba(24, 199, 201, 0.15); }
+            0%, 100% { box-shadow: 0 0 0 0 rgba(139, 127, 212, 0); }
+            50% { box-shadow: 0 0 20px 5px rgba(139, 127, 212, 0.15); }
         }
 
         /* Notion链接样式 */
@@ -1524,7 +1976,7 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            background: linear-gradient(135deg, var(--accent-violet), var(--accent-violet));
             color: white;
             border: none;
             padding: 14px 36px;
@@ -1557,11 +2009,9 @@
             .hero-slogan { max-width: 100%; }
             .hero-proof { margin-bottom: 28px; }
             .hero-proof-item { min-width: 0; width: calc(50% - 8px); }
-            .timeline-svg { height: 620px; }
+            .timeline-svg { display: none; }
+            .timeline-mobile { display: block; }
             .timeline-container { padding: 20px 10px; }
-            .timeline-main-label { font-size: 12px; }
-            .timeline-branch-label, .timeline-core-subtitle { font-size: 10px; }
-            .timeline-core-label { font-size: 14px; }
             .planets-grid {
                 display: grid;
                 grid-template-columns: 1fr;
@@ -1597,6 +2047,7 @@
             .planet-card[data-planet="ai"] {
                 order: -1;
             }
+            .planets-orbit { display: none; }
             .scroll-hint { display: none; }
             .footer-contact { flex-direction: column; gap: 15px; }
             .modal-content { max-height: 80vh; }
@@ -1644,6 +2095,7 @@
 
     <!-- Hero Section -->
     <section class="hero">
+        <canvas id="heroCanvas"></canvas>
         <div class="hero-badge animate-on-scroll">
             <span>✨</span> 正在寻找新的产品/运营机会
         </div>
@@ -1681,20 +2133,20 @@
                 <svg class="timeline-svg" viewBox="0 0 900 700">
                     <defs>
                         <linearGradient id="gradMain" x1="18%" y1="10%" x2="82%" y2="90%">
-                            <stop offset="0%" style="stop-color:#7C5CFF"/>
-                            <stop offset="100%" style="stop-color:#7C5CFF"/>
+                            <stop offset="0%" style="stop-color:#8B7FD4"/>
+                            <stop offset="100%" style="stop-color:#8B7FD4"/>
                         </linearGradient>
                         <linearGradient id="gradResearch" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" style="stop-color:#18C7C9"/>
-                            <stop offset="100%" style="stop-color:#7C5CFF"/>
+                            <stop offset="0%" style="stop-color:#8B7FD4"/>
+                            <stop offset="100%" style="stop-color:#8B7FD4"/>
                         </linearGradient>
                         <linearGradient id="gradCreation" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" style="stop-color:#FF5FA2"/>
-                            <stop offset="100%" style="stop-color:#F8C84E"/>
+                            <stop offset="0%" style="stop-color:#E06B8A"/>
+                            <stop offset="100%" style="stop-color:#D4A574"/>
                         </linearGradient>
                         <linearGradient id="gradFuture" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" style="stop-color:#7C5CFF"/>
-                            <stop offset="100%" style="stop-color:#18C7C9"/>
+                            <stop offset="0%" style="stop-color:#8B7FD4"/>
+                            <stop offset="100%" style="stop-color:#8B7FD4"/>
                         </linearGradient>
                         <filter id="timelineGlow" x="-40%" y="-40%" width="180%" height="180%">
                             <feGaussianBlur stdDeviation="4" result="blur"/>
@@ -1714,114 +2166,189 @@
 
                     <ellipse class="timeline-orbit" cx="450" cy="350" rx="315" ry="205"/>
                     <ellipse class="timeline-orbit" cx="450" cy="350" rx="225" ry="145" transform="rotate(18 450 350)"/>
-                    <path class="timeline-path nerve-thread" d="M150 170 C300 92 510 118 735 470" stroke="#18C7C9"/>
-                    <path class="timeline-path nerve-thread" d="M320 300 C205 378 194 470 210 548 C305 586 438 574 560 512" stroke="#FF5FA2"/>
+                    <path class="timeline-path nerve-thread" d="M150 170 C300 92 510 118 735 470" stroke="#8B7FD4"/>
+                    <path class="timeline-path nerve-thread" d="M320 300 C205 378 194 470 210 548 C305 586 438 574 560 512" stroke="#E06B8A"/>
 
                     <path id="path-main-axis" class="timeline-path main-axis" d="M150 170 C218 202 260 260 320 300 C398 350 438 356 505 360 C585 366 650 412 735 470" stroke="url(#gradMain)"/>
-                    <path id="path-harbin-research" class="timeline-path branch-vine" d="M320 300 C260 342 222 402 210 470" stroke="#18C7C9"/>
-                    <path id="path-harbin-hotline" class="timeline-path branch-vine" d="M320 300 C350 402 410 468 455 520" stroke="#3B82F6"/>
-                    <path id="path-harbin-hospital" class="timeline-path branch-vine" d="M320 300 C390 392 502 520 610 575" stroke="#22C55E"/>
-                    <path id="path-harbin-activities" class="timeline-path branch-vine" d="M320 300 C364 214 420 170 485 135" stroke="#F8C84E"/>
-                    <path id="path-harbin-avoice" class="timeline-path branch-vine" d="M320 300 C452 244 558 196 690 175" stroke="#FF5FA2"/>
-                    <path id="path-future-ai" class="timeline-path branch-vine" d="M505 360 C532 300 578 264 640 250" stroke="url(#gradFuture)"/>
-                    <path id="path-future-haoshijia" class="timeline-path branch-vine" d="M505 360 C580 396 660 385 735 330" stroke="#22C55E"/>
+                    <path id="path-harbin-research" class="timeline-path branch-vine" d="M320 300 C260 342 222 402 210 470" stroke="var(--branch-research)"/>
+                    <path id="path-harbin-hotline" class="timeline-path branch-vine" d="M320 300 C350 402 410 468 455 520" stroke="var(--branch-hotline)"/>
+                    <path id="path-harbin-hospital" class="timeline-path branch-vine" d="M320 300 C390 392 502 520 610 575" stroke="var(--branch-hospital)"/>
+                    <path id="path-harbin-activities" class="timeline-path branch-vine" d="M320 300 C364 214 420 170 485 135" stroke="var(--branch-activities)"/>
+                    <path id="path-harbin-avoice" class="timeline-path branch-vine" d="M320 300 C452 244 558 196 690 175" stroke="var(--branch-avoice)"/>
+                    <path id="path-future-ai" class="timeline-path branch-vine" d="M505 360 C532 300 578 264 640 250" stroke="var(--branch-ai)"/>
+                    <path id="path-future-haoshijia" class="timeline-path branch-vine" d="M505 360 C580 396 660 385 735 330" stroke="var(--branch-haoshijia)"/>
 
-                    <circle class="timeline-signal" r="4.5" fill="#FFFFFF">
-                        <animateMotion dur="9s" repeatCount="indefinite">
-                            <mpath href="#path-main-axis"/>
-                        </animateMotion>
-                    </circle>
-                    <circle class="timeline-signal" r="4" fill="#18C7C9">
-                        <animateMotion dur="6s" repeatCount="indefinite">
-                            <mpath href="#path-future-ai"/>
-                        </animateMotion>
-                    </circle>
-                    <circle class="timeline-signal" r="4" fill="#F8C84E">
-                        <animateMotion dur="7s" begin="-2s" repeatCount="indefinite">
-                            <mpath href="#path-harbin-activities"/>
-                        </animateMotion>
-                    </circle>
-                    <circle class="timeline-signal" r="4" fill="#22C55E">
-                        <animateMotion dur="7s" begin="-1s" repeatCount="indefinite">
-                            <mpath href="#path-future-haoshijia"/>
-                        </animateMotion>
-                    </circle>
-                    <circle class="timeline-signal" r="4" fill="#FF5FA2">
-                        <animateMotion dur="8s" begin="-3s" repeatCount="indefinite">
-                            <mpath href="#path-harbin-avoice"/>
-                        </animateMotion>
-                    </circle>
+                    <circle class="timeline-signal" data-signal="main-axis" r="4.5" fill="#FFFFFF"/>
+                    <circle class="timeline-signal" data-signal="harbin-research" r="3.5" fill="none" stroke="var(--branch-research)" stroke-width="1.5"/>
+                    <circle class="timeline-signal" data-signal="harbin-hotline" r="3.5" fill="none" stroke="var(--branch-hotline)" stroke-width="1.5"/>
+                    <circle class="timeline-signal" data-signal="harbin-hospital" r="3.5" fill="none" stroke="var(--branch-hospital)" stroke-width="1.5"/>
+                    <circle class="timeline-signal" data-signal="harbin-activities" r="3.5" fill="none" stroke="var(--branch-activities)" stroke-width="1.5"/>
+                    <circle class="timeline-signal" data-signal="harbin-avoice" r="3.5" fill="none" stroke="var(--branch-avoice)" stroke-width="1.5"/>
+                    <circle class="timeline-signal" data-signal="future-ai" r="3.5" fill="none" stroke="var(--branch-ai)" stroke-width="1.5"/>
+                    <circle class="timeline-signal" data-signal="future-haoshijia" r="3.5" fill="none" stroke="var(--branch-haoshijia)" stroke-width="1.5"/>
 
                     <g class="timeline-node" data-node="future">
-                        <circle class="node-circle" cx="505" cy="360" r="38" fill="#7C5CFF"/>
-                        <circle cx="505" cy="360" r="52" fill="none" stroke="#7C5CFF" stroke-width="2" opacity="0.35">
-                            <animate attributeName="r" values="48;62;48" dur="2.4s" repeatCount="indefinite"/>
-                            <animate attributeName="opacity" values="0.35;0;0.35" dur="2.4s" repeatCount="indefinite"/>
-                        </circle>
+                        <circle class="node-circle" cx="505" cy="360" r="38" fill="var(--main-axis)"/>
+                        <circle class="node-pulse-ring" cx="505" cy="360" r="38" style="--pulse-start:38;--pulse-end:70;"/>
                         <text x="505" y="428" class="timeline-core-label">正在寻找新机会</text>
                         <text x="505" y="448" class="timeline-core-subtitle">AI产品/运营方向</text>
                     </g>
 
                     <g class="timeline-node" data-node="guizhou">
-                        <circle class="node-circle" cx="150" cy="170" r="22" fill="#7C5CFF"/>
+                        <circle class="node-circle" cx="150" cy="170" r="22" fill="var(--main-axis)"/>
+                        <circle class="node-pulse-ring" cx="150" cy="170" r="22" style="--pulse-start:22;--pulse-end:50;"/>
                         <text x="150" y="132" class="timeline-main-label">贵州大学</text>
                         <text x="150" y="150" class="timeline-branch-label">2017-2021 生物科学</text>
                     </g>
 
                     <g class="timeline-node" data-node="harbin">
-                        <circle class="node-circle" cx="320" cy="300" r="22" fill="#7C5CFF"/>
+                        <circle class="node-circle" cx="320" cy="300" r="22" fill="var(--main-axis)"/>
+                        <circle class="node-pulse-ring" cx="320" cy="300" r="22" style="--pulse-start:22;--pulse-end:50;"/>
                         <text x="320" y="262" class="timeline-main-label">哈尔滨医科大学</text>
                         <text x="320" y="282" class="timeline-branch-label">2022-2025 应用心理</text>
                     </g>
 
-                    <g class="timeline-node" data-node="research-group">
-                        <circle class="node-circle" cx="210" cy="470" r="17" fill="#18C7C9"/>
+                    <g class="timeline-node timeline-node-branch" data-node="research-group">
+                        <circle class="node-circle" cx="210" cy="470" r="17" fill="var(--branch-research)"/>
+                        <circle class="node-pulse-ring" cx="210" cy="470" r="17" style="--pulse-start:17;--pulse-end:45;"/>
                         <text x="210" y="512" class="timeline-main-label">性健康课题组</text>
                         <text x="210" y="532" class="timeline-branch-label">研究与教育转化</text>
                     </g>
 
-                    <g class="timeline-node" data-node="hotline">
-                        <circle class="node-circle" cx="455" cy="520" r="15" fill="#3B82F6"/>
+                    <g class="timeline-node timeline-node-branch" data-node="hotline">
+                        <circle class="node-circle" cx="455" cy="520" r="15" fill="var(--branch-hotline)"/>
+                        <circle class="node-pulse-ring" cx="455" cy="520" r="15" style="--pulse-start:15;--pulse-end:42;"/>
                         <text x="455" y="562" class="timeline-main-label">12355心理热线</text>
                         <text x="455" y="582" class="timeline-branch-label">用户倾听与危机干预</text>
                     </g>
 
-                    <g class="timeline-node" data-node="hospital">
-                        <circle class="node-circle" cx="610" cy="575" r="15" fill="#22C55E"/>
+                    <g class="timeline-node timeline-node-branch" data-node="hospital">
+                        <circle class="node-circle" cx="610" cy="575" r="15" fill="var(--branch-hospital)"/>
+                        <circle class="node-pulse-ring" cx="610" cy="575" r="15" style="--pulse-start:15;--pulse-end:42;"/>
                         <text x="610" y="617" class="timeline-main-label">第一专科医院</text>
                         <text x="610" y="637" class="timeline-branch-label">临床观察与咨询实践</text>
                     </g>
 
-                    <g class="timeline-node" data-node="activities">
-                        <circle class="node-circle" cx="485" cy="135" r="17" fill="#F8C84E"/>
+                    <g class="timeline-node timeline-node-branch" data-node="activities">
+                        <circle class="node-circle" cx="485" cy="135" r="17" fill="var(--branch-activities)"/>
+                        <circle class="node-pulse-ring" cx="485" cy="135" r="17" style="--pulse-start:17;--pulse-end:45;"/>
                         <text x="485" y="96" class="timeline-main-label">校园活动</text>
                         <text x="485" y="115" class="timeline-branch-label">体验设计与执行</text>
                     </g>
 
-                    <g class="timeline-node" data-node="avoice">
-                        <circle class="node-circle" cx="690" cy="175" r="15" fill="#FF5FA2"/>
+                    <g class="timeline-node timeline-node-branch" data-node="avoice">
+                        <circle class="node-circle" cx="690" cy="175" r="15" fill="var(--branch-avoice)"/>
+                        <circle class="node-pulse-ring" cx="690" cy="175" r="15" style="--pulse-start:15;--pulse-end:42;"/>
                         <text x="690" y="136" class="timeline-main-label">Avoice项目</text>
                         <text x="690" y="155" class="timeline-branch-label">内容协作与视觉呈现</text>
                     </g>
 
-                    <g class="timeline-node" data-node="ai-project">
-                        <circle class="node-circle" cx="640" cy="250" r="20" fill="#18C7C9"/>
+                    <g class="timeline-node timeline-node-branch" data-node="ai-project">
+                        <circle class="node-circle" cx="640" cy="250" r="20" fill="var(--branch-ai)"/>
+                        <circle class="node-pulse-ring" cx="640" cy="250" r="20" style="--pulse-start:20;--pulse-end:48;"/>
                         <text x="640" y="212" class="timeline-main-label">AI内容运营</text>
                         <text x="640" y="232" class="timeline-branch-label">Coze工作流搭建</text>
                     </g>
 
-                    <g class="timeline-node" data-node="haoshijia">
-                        <circle class="node-circle" cx="735" cy="330" r="20" fill="#22C55E"/>
+                    <g class="timeline-node timeline-node-branch" data-node="haoshijia">
+                        <circle class="node-circle" cx="735" cy="330" r="20" fill="var(--branch-haoshijia)"/>
+                        <circle class="node-pulse-ring" cx="735" cy="330" r="20" style="--pulse-start:20;--pulse-end:48;"/>
                         <text x="735" y="292" class="timeline-main-label">好食家</text>
                         <text x="735" y="312" class="timeline-branch-label">减脂记录与复盘产品</text>
                     </g>
 
                     <g class="timeline-node" data-node="tianao">
-                        <circle class="node-circle" cx="735" cy="470" r="22" fill="#7C5CFF"/>
+                        <circle class="node-circle" cx="735" cy="470" r="22" fill="var(--main-axis)"/>
+                        <circle class="node-pulse-ring" cx="735" cy="470" r="22" style="--pulse-start:22;--pulse-end:50;"/>
                         <text x="735" y="516" class="timeline-main-label">云南天奥医药</text>
                         <text x="735" y="536" class="timeline-branch-label">市场内容与流程管理</text>
                     </g>
                 </svg>
+                <div class="timeline-tooltip" id="timelineTooltip"></div>
+
+                <!-- 移动端垂直时间线 -->
+                <div class="timeline-mobile" id="timelineMobile">
+                    <div class="timeline-mobile-line"></div>
+                    <div class="timeline-mobile-items">
+                        <div class="timeline-mobile-item" data-node="future">
+                            <div class="timeline-mobile-dot core" style="--dot-color:#8B7FD4;"></div>
+                            <div class="timeline-mobile-content">
+                                <h4>正在寻找新机会</h4>
+                                <span>AI产品/运营方向</span>
+                            </div>
+                        </div>
+                        <div class="timeline-mobile-item" data-node="guizhou">
+                            <div class="timeline-mobile-dot" style="--dot-color:#8B7FD4;"></div>
+                            <div class="timeline-mobile-content">
+                                <h4>贵州大学</h4>
+                                <span>2017-2021 生物科学</span>
+                            </div>
+                        </div>
+                        <div class="timeline-mobile-item" data-node="harbin">
+                            <div class="timeline-mobile-dot" style="--dot-color:#8B7FD4;"></div>
+                            <div class="timeline-mobile-content">
+                                <h4>哈尔滨医科大学</h4>
+                                <span>2022-2025 应用心理</span>
+                            </div>
+                        </div>
+                        <div class="timeline-mobile-item" data-node="research-group">
+                            <div class="timeline-mobile-dot" style="--dot-color:#8B7FD4;"></div>
+                            <div class="timeline-mobile-content">
+                                <h4>性健康课题组</h4>
+                                <span>研究与教育转化</span>
+                            </div>
+                        </div>
+                        <div class="timeline-mobile-item" data-node="hotline">
+                            <div class="timeline-mobile-dot" style="--dot-color:#8B7FD4;"></div>
+                            <div class="timeline-mobile-content">
+                                <h4>12355心理热线</h4>
+                                <span>用户倾听与危机干预</span>
+                            </div>
+                        </div>
+                        <div class="timeline-mobile-item" data-node="hospital">
+                            <div class="timeline-mobile-dot" style="--dot-color:#D4A574;"></div>
+                            <div class="timeline-mobile-content">
+                                <h4>第一专科医院</h4>
+                                <span>临床观察与咨询实践</span>
+                            </div>
+                        </div>
+                        <div class="timeline-mobile-item" data-node="activities">
+                            <div class="timeline-mobile-dot" style="--dot-color:#D4A574;"></div>
+                            <div class="timeline-mobile-content">
+                                <h4>校园活动</h4>
+                                <span>体验设计与执行</span>
+                            </div>
+                        </div>
+                        <div class="timeline-mobile-item" data-node="avoice">
+                            <div class="timeline-mobile-dot" style="--dot-color:#E06B8A;"></div>
+                            <div class="timeline-mobile-content">
+                                <h4>Avoice项目</h4>
+                                <span>内容协作与视觉呈现</span>
+                            </div>
+                        </div>
+                        <div class="timeline-mobile-item" data-node="tianao">
+                            <div class="timeline-mobile-dot" style="--dot-color:#8B7FD4;"></div>
+                            <div class="timeline-mobile-content">
+                                <h4>云南天奥医药</h4>
+                                <span>市场内容与流程管理</span>
+                            </div>
+                        </div>
+                        <div class="timeline-mobile-item" data-node="ai-project">
+                            <div class="timeline-mobile-dot" style="--dot-color:#8B7FD4;"></div>
+                            <div class="timeline-mobile-content">
+                                <h4>AI内容运营</h4>
+                                <span>Coze工作流搭建</span>
+                            </div>
+                        </div>
+                        <div class="timeline-mobile-item" data-node="haoshijia">
+                            <div class="timeline-mobile-dot" style="--dot-color:#D4A574;"></div>
+                            <div class="timeline-mobile-content">
+                                <h4>好食家</h4>
+                                <span>减脂记录与复盘产品</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1900,6 +2427,58 @@
                     <div class="planet-stats">
                         <span class="planet-stat">900+ 样本</span>
                         <span class="planet-stat">硕士论文</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 桌面端：能力星球轨道系统 -->
+            <div class="planets-orbit" id="planetsOrbit">
+                <div class="orbit-tracks">
+                    <div class="orbit-track orbit-outer"></div>
+                    <div class="orbit-track orbit-middle"></div>
+                    <div class="orbit-track orbit-inner"></div>
+                </div>
+                <div class="orbit-core" data-planet="ai">
+                    <div class="orbit-planet-card core-card">
+                        <span class="planet-icon">🤖</span>
+                        <h3 class="planet-title">AI产品运营</h3>
+                        <div class="planet-core-glow"></div>
+                        <div class="planet-desc-tooltip"><div class="tooltip-desc">围绕AI内容生产与个人健康管理两个真实场景，完成从需求分析、流程设计、工具搭建到产品上线的完整实践</div><div class="tooltip-tags"><span class="tooltip-tag">2个产品项目</span><span class="tooltip-tag">完整上线闭环</span></div></div>
+                    </div>
+                </div>
+                <div class="orbit-planet" data-planet="content" style="--orbit-duration:40s;--orbit-direction:normal;--orbit-radius:140px;--orbit-start:0deg;">
+                    <div class="orbit-planet-card">
+                        <span class="planet-icon">✍️</span>
+                        <h3 class="planet-title">内容策略</h3>
+                        <div class="planet-desc-tooltip"><div class="tooltip-desc">围绕心理学科普、性别议题与社会热点进行选题策划，把专业理论转译成大众可读、有情绪共鸣的公众号推文和教育剧本；能完成结构设计、角色对白、用户语言适配与内容效果复盘。</div><div class="tooltip-tags"><span class="tooltip-tag">6+ 推文</span><span class="tooltip-tag">450+ 阅读</span></div></div>
+                    </div>
+                </div>
+                <div class="orbit-planet" data-planet="research" style="--orbit-duration:45s;--orbit-direction:reverse;--orbit-radius:140px;--orbit-start:180deg;">
+                    <div class="orbit-planet-card">
+                        <span class="planet-icon">🔬</span>
+                        <h3 class="planet-title">用户研究</h3>
+                        <div class="planet-desc-tooltip"><div class="tooltip-desc">定性与定量研究方法结合，从问卷设计到数据分析的全流程研究经验，深入理解用户需求</div><div class="tooltip-tags"><span class="tooltip-tag">900+ 样本</span><span class="tooltip-tag">硕士论文</span></div></div>
+                    </div>
+                </div>
+                <div class="orbit-planet" data-planet="design" style="--orbit-duration:55s;--orbit-direction:normal;--orbit-radius:220px;--orbit-start:60deg;">
+                    <div class="orbit-planet-card">
+                        <span class="planet-icon">🎨</span>
+                        <h3 class="planet-title">视觉设计</h3>
+                        <div class="planet-desc-tooltip"><div class="tooltip-desc">负责 Avoice 海外华人女性保护项目 8 篇推文与封面排版，也完成校园心理月海报、性教育会议海报和科研汇报 PPT 设计；强调信息层级、视觉秩序与传播场景适配。</div><div class="tooltip-tags"><span class="tooltip-tag">8+ 排版</span><span class="tooltip-tag">优秀志愿者</span></div></div>
+                    </div>
+                </div>
+                <div class="orbit-planet" data-planet="event" style="--orbit-duration:50s;--orbit-direction:reverse;--orbit-radius:220px;--orbit-start:240deg;">
+                    <div class="orbit-planet-card">
+                        <span class="planet-icon">🎯</span>
+                        <h3 class="planet-title">活动策划</h3>
+                        <div class="planet-desc-tooltip"><div class="tooltip-desc">从创意构思到现场执行的全流程活动运营，擅长解谜游戏设计、心理活动策划与用户体验优化</div><div class="tooltip-tags"><span class="tooltip-tag">89人峰值</span><span class="tooltip-tag">标志性活动</span></div></div>
+                    </div>
+                </div>
+                <div class="orbit-planet" data-planet="video" style="--orbit-duration:65s;--orbit-direction:normal;--orbit-radius:300px;--orbit-start:300deg;">
+                    <div class="orbit-planet-card">
+                        <span class="planet-icon">🎬</span>
+                        <h3 class="planet-title">影像创作</h3>
+                        <div class="planet-desc-tooltip"><div class="tooltip-desc">具备从资料查阅、脚本创作、分镜设计到拍摄统筹、白板动画和后期剪辑的完整视频制作经验，作品覆盖艾滋病防治宣传、心理科普微视频和课题组宣传片，兼顾知识准确性与传播节奏。</div><div class="tooltip-tags"><span class="tooltip-tag">全国决赛</span><span class="tooltip-tag">3个作品</span></div></div>
                     </div>
                 </div>
             </div>
@@ -2072,39 +2651,44 @@
             setTimeout(() => ripple.remove(), 600);
         });
 
-        // 粒子系统
+        // 粒子系统 - 极简，仅5个缓慢光点
         function createParticles() {
             const container = document.getElementById('particlesContainer');
-            const particleCount = window.innerWidth < 768 ? 15 : 30;
+            const particleCount = 5;
 
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
                 particle.style.left = Math.random() * 100 + '%';
                 particle.style.animationDelay = Math.random() * 15 + 's';
-                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                particle.style.animationDuration = (20 + Math.random() * 15) + 's';
+                particle.style.width = '3px';
+                particle.style.height = '3px';
+                particle.style.opacity = '0.15';
 
-                const colors = ['#18C7C9', '#7C5CFF', '#FF5FA2', '#F8C84E'];
+                const colors = ['#8B7FD4', '#E06B8A'];
                 particle.style.background = colors[Math.floor(Math.random() * colors.length)];
 
                 container.appendChild(particle);
             }
         }
 
-        // 浮动表情
+        // 浮动表情 - 仅保留2个，极低透明度
         function createFloatingEmojis() {
             const container = document.getElementById('floatingEmojis');
-            const emojis = ['✨', '🧠', '🤖', '💡', '🎯', '🎨', '📊', '🔍', '💫', '🦋'];
-            const count = window.innerWidth < 768 ? 6 : 12;
+            const emojis = ['✨', '💫'];
+            const count = 2;
 
             for (let i = 0; i < count; i++) {
                 const emoji = document.createElement('div');
                 emoji.className = 'floating-emoji-bg';
-                emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-                emoji.style.left = Math.random() * 100 + '%';
-                emoji.style.top = Math.random() * 100 + '%';
+                emoji.textContent = emojis[i];
+                emoji.style.left = (20 + Math.random() * 60) + '%';
+                emoji.style.top = (20 + Math.random() * 60) + '%';
                 emoji.style.animationDelay = Math.random() * 20 + 's';
-                emoji.style.animationDuration = (15 + Math.random() * 10) + 's';
+                emoji.style.animationDuration = (20 + Math.random() * 10) + 's';
+                emoji.style.opacity = '0.04';
+                emoji.style.fontSize = '24px';
                 container.appendChild(emoji);
             }
         }
@@ -2124,6 +2708,9 @@
             createParticles();
             createFloatingEmojis();
             initScrollAnimations();
+            initHeroCanvas();
+            initTimelineReveal();
+            initOrbitSystem();
         });
 
         // 时间线节点点击反馈
@@ -2148,7 +2735,7 @@
                 pulse.setAttribute('cy', cy);
                 pulse.setAttribute('r', r);
                 pulse.setAttribute('fill', 'none');
-                pulse.setAttribute('stroke', circle.getAttribute('fill') || '#7C5CFF');
+                pulse.setAttribute('stroke', circle.getAttribute('fill') || '#8B7FD4');
                 pulse.setAttribute('stroke-width', '3');
                 pulse.classList.add('node-pulse');
 
@@ -2774,7 +3361,7 @@
                     <div class="modal-section">
                         <h4>📊 定量研究：硕士毕业论文</h4>
                         <p><strong>主题：</strong>青少年社交媒体使用对性保护自我效能的影响（多重中介效应）</p>
-                        <p><strong>研究流程：</strong>问卷设计 → 样本调研（n=<span style="color:var(--accent-pink);font-weight:600;">900</span>）→ 信效度检验 → 结构方程模型分析</p>
+                        <p><strong>研究流程：</strong>问卷设计 → 样本调研（n=<span style="color:var(--accent-rose);font-weight:600;">900</span>）→ 信效度检验 → 结构方程模型分析</p>
                         <p><strong>核心发现：</strong>社交媒体使用通过心理资本、性宽容态度两条路径<strong>显著提升</strong>青少年性保护自我效能</p>
                         <p><strong>研究价值：</strong>为青少年性健康教育干预提供实证依据与实践参考</p>
                         <p><strong>工具：</strong>问卷星 / SPSS / Mplus</p>
@@ -2782,13 +3369,13 @@
                     <div class="modal-section">
                         <h4>📝 定性研究一：性自我效能与性健康行为关系综述</h4>
                         <p><strong>工具：</strong>Endnote / MAXQDA</p>
-                        <p><strong>研究流程：</strong>文献检索（n=<span style="color:var(--accent-pink);font-weight:600;">61</span>）→ 筛选（最终 n=<span style="color:var(--accent-pink);font-weight:600;">15</span>）→ 文本编码分析</p>
+                        <p><strong>研究流程：</strong>文献检索（n=<span style="color:var(--accent-rose);font-weight:600;">61</span>）→ 筛选（最终 n=<span style="color:var(--accent-rose);font-weight:600;">15</span>）→ 文本编码分析</p>
                         <p><strong>核心结果：</strong>性自我效能与性健康行为呈显著正向关联，受社会文化、性别角色等因素调节</p>
                     </div>
                     <div class="modal-section">
                         <h4>📝 定性研究二：青少年性自我效能质性研究综述</h4>
                         <p><strong>工具：</strong>Endnote / MAXQDA</p>
-                        <p><strong>研究流程：</strong>文献检索（n=<span style="color:var(--accent-pink);font-weight:600;">184</span>）→ 筛选（最终 n=<span style="color:var(--accent-pink);font-weight:600;">50</span>）→ 主题编码</p>
+                        <p><strong>研究流程：</strong>文献检索（n=<span style="color:var(--accent-rose);font-weight:600;">184</span>）→ 筛选（最终 n=<span style="color:var(--accent-rose);font-weight:600;">50</span>）→ 主题编码</p>
                         <p><strong>核心结果：</strong>青少年性自我效能受知识获取、权力结构、家庭氛围等多维度影响，需综合干预提升</p>
                     </div>
                     <div class="modal-section">
@@ -2859,13 +3446,19 @@
             });
         });
 
-        // 打字机效果
+        // 打字机效果 - 带字符微浮动
         function typeWriter(element, text, speed = 150) {
             let i = 0;
             element.classList.add('typing-cursor');
+            element.innerHTML = '';
             function type() {
                 if (i < text.length) {
-                    element.textContent += text.charAt(i);
+                    const char = text.charAt(i);
+                    const span = document.createElement('span');
+                    span.className = 'char';
+                    span.style.setProperty('--char-index', i);
+                    span.textContent = char === ' ' ? ' ' : char;
+                    element.appendChild(span);
                     i++;
                     setTimeout(type, speed);
                 } else {
@@ -2873,6 +3466,58 @@
                 }
             }
             type();
+        }
+
+        // Hero Canvas 鼠标光迹
+        function initHeroCanvas() {
+            const canvas = document.getElementById('heroCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let width, height;
+            let trails = [];
+            let mouse = { x: -1000, y: -1000 };
+
+            function resize() {
+                const hero = document.querySelector('.hero');
+                width = canvas.width = hero.offsetWidth;
+                height = canvas.height = hero.offsetHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize);
+
+            document.querySelector('.hero').addEventListener('mousemove', (e) => {
+                const rect = canvas.getBoundingClientRect();
+                mouse.x = e.clientX - rect.left;
+                mouse.y = e.clientY - rect.top;
+                for (let i = 0; i < 3; i++) {
+                    trails.push({
+                        x: mouse.x + (Math.random() - 0.5) * 10,
+                        y: mouse.y + (Math.random() - 0.5) * 10,
+                        vx: (Math.random() - 0.5) * 0.5,
+                        vy: (Math.random() - 0.5) * 0.5,
+                        life: 1,
+                        decay: 0.008 + Math.random() * 0.012,
+                        size: 1 + Math.random() * 2,
+                        color: Math.random() > 0.5 ? '224, 107, 138' : '139, 127, 212'
+                    });
+                }
+            });
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+                trails = trails.filter(t => t.life > 0);
+                trails.forEach(t => {
+                    t.x += t.vx;
+                    t.y += t.vy;
+                    t.life -= t.decay;
+                    ctx.beginPath();
+                    ctx.arc(t.x, t.y, t.size * t.life, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(${t.color}, ${t.life * 0.35})`;
+                    ctx.fill();
+                });
+                requestAnimationFrame(animate);
+            }
+            animate();
         }
 
         // 打字机效果在加载动画完成后触发（见上方加载动画代码）
@@ -3089,6 +3734,353 @@
         function restartTest() {
             document.getElementById('testResult').classList.remove('active');
             document.getElementById('testStart').classList.add('active');
+        }
+
+        // 时间线星系滚动揭示系统
+        function initTimelineReveal() {
+            const timelineSection = document.getElementById('timeline');
+            const svg = timelineSection.querySelector('.timeline-svg');
+            if (!svg) return;
+
+            const paths = svg.querySelectorAll('.timeline-path:not(.nerve-thread)');
+            const nodes = svg.querySelectorAll('.timeline-node');
+            const orbits = svg.querySelectorAll('.timeline-orbit');
+            const signals = svg.querySelectorAll('.timeline-signal');
+            const tooltip = document.getElementById('timelineTooltip');
+
+            // 动态设置路径长度
+            paths.forEach(path => {
+                const length = path.getTotalLength ? path.getTotalLength() : 2000;
+                path.style.strokeDasharray = length;
+                path.style.strokeDashoffset = length;
+            });
+
+            // 同步脉冲环颜色与节点颜色
+            nodes.forEach(node => {
+                const circle = node.querySelector('.node-circle');
+                const pulseRing = node.querySelector('.node-pulse-ring');
+                if (circle && pulseRing) {
+                    const fill = circle.getAttribute('fill');
+                    if (fill && fill !== 'none') {
+                        pulseRing.style.stroke = fill;
+                    }
+                }
+            });
+
+            // 揭示顺序定义
+            const timelineSequence = [
+                { stage: 0.0, nodes: ['future'], paths: [] },
+                { stage: 0.10, nodes: ['guizhou'], paths: ['path-main-axis'] },
+                { stage: 0.20, nodes: ['harbin'], paths: [] },
+                { stage: 0.28, nodes: ['research-group'], paths: ['path-harbin-research'] },
+                { stage: 0.35, nodes: ['hotline'], paths: ['path-harbin-hotline'] },
+                { stage: 0.42, nodes: ['hospital'], paths: ['path-harbin-hospital'] },
+                { stage: 0.48, nodes: ['activities'], paths: ['path-harbin-activities'] },
+                { stage: 0.55, nodes: ['avoice'], paths: ['path-harbin-avoice'] },
+                { stage: 0.65, nodes: ['tianao'], paths: [] },
+                { stage: 0.78, nodes: ['ai-project', 'haoshijia'], paths: ['path-future-ai', 'path-future-haoshijia'] },
+                { stage: 0.90, nodes: [], paths: [], orbits: true }
+            ];
+
+            // 节点tooltip数据
+            const nodeTooltips = {
+                'future': '正在寻找新机会 · AI产品/运营',
+                'guizhou': '2017-2021 · 生物科学本科，专业前10%',
+                'harbin': '2022-2025 · 应用心理硕士，专业前1%',
+                'research-group': '2022-2025 · 性健康研究与教育转化',
+                'hotline': '2023-2024 · 12355心理热线实习生',
+                'hospital': '2023-2024 · 第一专科医院临床观察',
+                'activities': '2022-2025 · 校园活动策划与执行',
+                'avoice': '2023 · 海外华人女性公益内容协作',
+                'ai-project': '2024-2025 · Coze工作流搭建实践',
+                'haoshijia': '2024-2025 · 减脂记录与复盘产品',
+                'tianao': '2025-2026 · 中成药市场内容与流程管理'
+            };
+
+            let revealedStages = new Set();
+            let isActive = false;
+            let hasPlayedTimeline = false;
+
+            function revealStep(step, index) {
+                if (revealedStages.has(index)) return;
+                revealedStages.add(index);
+
+                // 揭示节点
+                step.nodes.forEach(nodeId => {
+                    const node = svg.querySelector(`.timeline-node[data-node="${nodeId}"]`);
+                    if (node) {
+                        node.classList.add('revealed');
+                    }
+                });
+
+                // 揭示路径
+                step.paths.forEach(pathId => {
+                    const path = svg.querySelector(`#${pathId}`);
+                    if (path) {
+                        path.classList.add('revealed');
+                        // 分支线在 draw-line 动画完成后设置虚线样式并启动流动
+                        if (path.classList.contains('branch-vine')) {
+                            const onAnimEnd = (e) => {
+                                if (e.animationName === 'draw-line') {
+                                    path.style.strokeDasharray = '6 8';
+                                    path.style.animation = 'branch-dash-flow 12s linear infinite';
+                                    path.removeEventListener('animationend', onAnimEnd);
+                                }
+                            };
+                            path.addEventListener('animationend', onAnimEnd);
+                        }
+                    }
+                });
+
+                // 揭示轨道
+                if (step.orbits) {
+                    orbits.forEach(orbit => orbit.classList.add('revealed'));
+                    signals.forEach(signal => signal.classList.add('active'));
+                    startSignalAnimations();
+                }
+            }
+
+            function playTimelineReveal() {
+                if (hasPlayedTimeline) return;
+                hasPlayedTimeline = true;
+
+                const stepDelay = 320;
+                timelineSequence.forEach((step, index) => {
+                    setTimeout(() => revealStep(step, index), index * stepDelay);
+                });
+            }
+
+            // 信号点沿路径运动（替代SMIL）
+            const signalAnimations = [];
+            function startSignalAnimations() {
+                signals.forEach(signal => {
+                    const pathId = signal.getAttribute('data-signal');
+                    if (!pathId) return;
+                    const path = svg.querySelector(`#path-${pathId}`);
+                    if (!path || !path.getTotalLength) return;
+
+                    const length = path.getTotalLength();
+                    const duration = 6000 + Math.random() * 4000;
+                    let startTime = performance.now() - Math.random() * duration;
+
+                    signalAnimations.push({
+                        signal, path, length, duration, startTime
+                    });
+                });
+            }
+
+            function animateSignals(now) {
+                if (!isActive && revealedStages.size < timelineSequence.length) return;
+                signalAnimations.forEach(anim => {
+                    const elapsed = (now - anim.startTime) % anim.duration;
+                    const t = elapsed / anim.duration;
+                    const point = anim.path.getPointAtLength(t * anim.length);
+                    anim.signal.setAttribute('cx', point.x);
+                    anim.signal.setAttribute('cy', point.y);
+                });
+                requestAnimationFrame(animateSignals);
+            }
+            requestAnimationFrame(animateSignals);
+
+            // 首次进入时间线区域后，自动按顺序播放完整揭示动画
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        isActive = true;
+                        playTimelineReveal();
+                    } else {
+                        isActive = false;
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -80px 0px' });
+
+            observer.observe(timelineSection);
+
+            // 悬停聚焦效果
+            nodes.forEach(node => {
+                node.addEventListener('mouseenter', (e) => {
+                    const nodeId = node.getAttribute('data-node');
+
+                    // 聚焦当前节点
+                    nodes.forEach(n => {
+                        if (n === node) {
+                            n.classList.add('hover-focus');
+                            n.classList.remove('hover-dim');
+                        } else {
+                            n.classList.remove('hover-focus');
+                            n.classList.add('hover-dim');
+                        }
+                    });
+
+                    // 路径变暗
+                    paths.forEach(p => p.style.opacity = '0.2');
+                    orbits.forEach(o => o.style.opacity = '0.1');
+
+                    // 显示tooltip
+                    if (tooltip && nodeTooltips[nodeId]) {
+                        tooltip.textContent = nodeTooltips[nodeId];
+                        tooltip.classList.add('show');
+                    }
+                });
+
+                node.addEventListener('mousemove', (e) => {
+                    if (tooltip && tooltip.classList.contains('show')) {
+                        const containerRect = timelineSection.querySelector('.timeline-container').getBoundingClientRect();
+                        tooltip.style.left = (e.clientX - containerRect.left + 16) + 'px';
+                        tooltip.style.top = (e.clientY - containerRect.top - 40) + 'px';
+                    }
+                });
+
+                node.addEventListener('mouseleave', () => {
+                    nodes.forEach(n => {
+                        n.classList.remove('hover-focus', 'hover-dim');
+                    });
+                    paths.forEach(p => p.style.opacity = '');
+                    orbits.forEach(o => o.style.opacity = '');
+                    if (tooltip) tooltip.classList.remove('show');
+                });
+            });
+
+            // SVG 画布拖拽平移
+            let isPanning = false;
+            let panStart = { x: 0, y: 0 };
+            let viewBoxStart = { x: 0, y: 0, w: 900, h: 700 };
+            let panMoved = false;
+            const PAN_THRESHOLD = 5;
+
+            svg.addEventListener('mousedown', (e) => {
+                if (e.target.closest('.timeline-node')) return;
+                isPanning = true;
+                panMoved = false;
+                panStart = { x: e.clientX, y: e.clientY };
+                const vb = svg.viewBox.baseVal;
+                viewBoxStart = { x: vb.x, y: vb.y, w: vb.width || 900, h: vb.height || 700 };
+                svg.style.cursor = 'grabbing';
+            });
+
+            const onMouseMove = (e) => {
+                if (!isPanning) return;
+                const dx = e.clientX - panStart.x;
+                const dy = e.clientY - panStart.y;
+                if (!panMoved && Math.hypot(dx, dy) > PAN_THRESHOLD) {
+                    panMoved = true;
+                }
+                if (!panMoved) return;
+                const scaleX = viewBoxStart.w / svg.clientWidth;
+                const scaleY = viewBoxStart.h / svg.clientHeight;
+                let newX = viewBoxStart.x - dx * scaleX;
+                let newY = viewBoxStart.y - dy * scaleY;
+                newX = Math.max(0, Math.min(newX, 900 - viewBoxStart.w));
+                newY = Math.max(0, Math.min(newY, 700 - viewBoxStart.h));
+                svg.setAttribute('viewBox', `${newX} ${newY} ${viewBoxStart.w} ${viewBoxStart.h}`);
+            };
+
+            const onMouseUp = () => {
+                isPanning = false;
+                svg.style.cursor = 'grab';
+            };
+
+            window.addEventListener('mousemove', onMouseMove);
+            window.addEventListener('mouseup', onMouseUp);
+
+            svg.addEventListener('touchstart', (e) => {
+                if (e.target.closest('.timeline-node')) return;
+                if (e.touches.length === 1) {
+                    isPanning = true;
+                    panMoved = false;
+                    const t = e.touches[0];
+                    panStart = { x: t.clientX, y: t.clientY };
+                    const vb = svg.viewBox.baseVal;
+                    viewBoxStart = { x: vb.x, y: vb.y, w: vb.width || 900, h: vb.height || 700 };
+                }
+            }, { passive: true });
+
+            const onTouchMove = (e) => {
+                if (!isPanning || e.touches.length !== 1) return;
+                const t = e.touches[0];
+                const dx = t.clientX - panStart.x;
+                const dy = t.clientY - panStart.y;
+                if (!panMoved && Math.hypot(dx, dy) > PAN_THRESHOLD) {
+                    panMoved = true;
+                }
+                if (!panMoved) return;
+                const scaleX = viewBoxStart.w / svg.clientWidth;
+                const scaleY = viewBoxStart.h / svg.clientHeight;
+                let newX = viewBoxStart.x - dx * scaleX;
+                let newY = viewBoxStart.y - dy * scaleY;
+                newX = Math.max(0, Math.min(newX, 900 - viewBoxStart.w));
+                newY = Math.max(0, Math.min(newY, 700 - viewBoxStart.h));
+                svg.setAttribute('viewBox', `${newX} ${newY} ${viewBoxStart.w} ${viewBoxStart.h}`);
+            };
+
+            window.addEventListener('touchmove', onTouchMove, { passive: true });
+            window.addEventListener('touchend', onMouseUp);
+
+            // 移动端垂直时间线滚动揭示
+            const timelineMobile = document.getElementById('timelineMobile');
+            if (timelineMobile) {
+                const mobileLine = timelineMobile.querySelector('.timeline-mobile-line');
+                const mobileItems = timelineMobile.querySelectorAll('.timeline-mobile-item');
+
+                // 垂直线整体揭示
+                const lineObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            mobileLine.classList.add('revealed');
+                            lineObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+                lineObserver.observe(timelineMobile);
+
+                // 每个节点依次揭示
+                mobileItems.forEach((item, index) => {
+                    const itemObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                setTimeout(() => {
+                                    item.classList.add('revealed');
+                                }, index * 120);
+                                itemObserver.unobserve(item);
+                            }
+                        });
+                    }, { threshold: 0.3, rootMargin: '0px 0px -40px 0px' });
+                    itemObserver.observe(item);
+                });
+
+                // 点击事件
+                mobileItems.forEach(item => {
+                    item.addEventListener('click', () => {
+                        const nodeId = item.getAttribute('data-node');
+                        openModal(nodeId, false);
+                    });
+                });
+            }
+        }
+
+        function initOrbitSystem() {
+            const orbitContainer = document.getElementById('planetsOrbit');
+            if (!orbitContainer) return;
+
+            const cards = orbitContainer.querySelectorAll('.orbit-planet-card');
+
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    orbitContainer.classList.add('paused', 'has-hover');
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    orbitContainer.classList.remove('paused', 'has-hover');
+                });
+
+                card.addEventListener('click', () => {
+                    const planetEl = card.closest('[data-planet]');
+                    if (planetEl) {
+                        const planetId = planetEl.getAttribute('data-planet');
+                        openModal(planetId, true);
+                    }
+                });
+            });
         }
     </script>
 </body>
