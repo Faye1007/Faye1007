@@ -483,12 +483,13 @@
         .timeline-mobile {
             display: none;
             position: relative;
-            padding: 20px 0;
+            --timeline-mobile-axis-x: 24px;
+            padding: 24px 0 28px;
         }
 
         .timeline-mobile-line {
             position: absolute;
-            left: 24px;
+            left: var(--timeline-mobile-axis-x);
             top: 0;
             bottom: 0;
             width: 2px;
@@ -506,22 +507,52 @@
         .timeline-mobile-items {
             display: flex;
             flex-direction: column;
-            gap: 28px;
+            gap: 34px;
+        }
+
+        .timeline-mobile-group {
+            position: relative;
         }
 
         .timeline-mobile-item {
-            display: flex;
+            display: grid;
+            grid-template-columns: 48px minmax(0, 1fr);
             align-items: flex-start;
-            gap: 16px;
+            column-gap: 8px;
             opacity: 0;
             transform: translateX(20px);
             transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
+            position: relative;
         }
 
         .timeline-mobile-item.revealed {
             opacity: 1;
             transform: translateX(0);
+        }
+
+        .timeline-mobile-branches {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 14px;
+            position: relative;
+        }
+
+        .timeline-mobile-branches::before {
+            content: '';
+            position: absolute;
+            left: 72px;
+            top: 3px;
+            bottom: 3px;
+            width: 1px;
+            background: linear-gradient(to bottom, rgba(139, 127, 212, 0.28), rgba(224, 107, 138, 0.22));
+        }
+
+        .timeline-mobile-item.is-branch {
+            grid-template-columns: 16px minmax(0, 1fr);
+            margin-left: 64px;
+            transform: translateX(14px);
         }
 
         .timeline-mobile-dot {
@@ -533,7 +564,7 @@
             box-shadow: 0 0 0 2px var(--dot-color, var(--accent-violet)), 0 4px 12px rgba(139, 127, 212, 0.25);
             flex-shrink: 0;
             margin-top: 6px;
-            margin-left: 18px;
+            justify-self: center;
             transform: scale(0);
             transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.1s;
         }
@@ -545,19 +576,33 @@
         .timeline-mobile-dot.core {
             width: 20px;
             height: 20px;
-            margin-left: 15px;
             margin-top: 3px;
             box-shadow: 0 0 0 3px var(--dot-color, var(--accent-violet)), 0 6px 20px rgba(139, 127, 212, 0.35);
+        }
+
+        .timeline-mobile-item.is-branch .timeline-mobile-dot {
+            width: 10px;
+            height: 10px;
+            border-width: 2px;
+            margin-top: 10px;
+            box-shadow: 0 0 0 1px var(--dot-color, var(--accent-violet)), 0 3px 8px rgba(139, 127, 212, 0.2);
         }
 
         .timeline-mobile-content {
             flex: 1;
             background: var(--bg-card);
-            border-radius: 16px;
+            border-radius: 14px;
             padding: 16px 20px;
             border: 1px solid rgba(139, 127, 212, 0.12);
             box-shadow: var(--shadow-soft);
             transition: all 0.3s ease;
+            min-width: 0;
+        }
+
+        .timeline-mobile-item.is-branch .timeline-mobile-content {
+            padding: 13px 15px;
+            border-color: rgba(139, 127, 212, 0.1);
+            box-shadow: 0 8px 22px rgba(139, 127, 212, 0.09);
         }
 
         .timeline-mobile-item:active .timeline-mobile-content {
@@ -570,11 +615,13 @@
             font-weight: 700;
             color: var(--text-primary);
             margin-bottom: 4px;
+            line-height: 1.35;
         }
 
         .timeline-mobile-content span {
             font-size: 13px;
             color: var(--text-secondary);
+            line-height: 1.45;
         }
 
         @keyframes draw-line {
@@ -1421,7 +1468,7 @@
         }
 
         .footer-copyright {
-            font-size: 12px;
+            font-size: 13px;
             color: var(--text-muted);
         }
 
@@ -2049,7 +2096,16 @@
             }
             .planets-orbit { display: none; }
             .scroll-hint { display: none; }
-            .footer-contact { flex-direction: column; gap: 15px; }
+            .footer-contact {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                text-align: center;
+            }
+            .footer-contact-item {
+                justify-content: center;
+                width: 100%;
+            }
             .modal-content { max-height: 80vh; }
             .test-section { padding: 72px 0; }
             .test-section .section-container { width: min(100% - 32px, 1100px); }
@@ -2270,81 +2326,93 @@
                 <div class="timeline-mobile" id="timelineMobile">
                     <div class="timeline-mobile-line"></div>
                     <div class="timeline-mobile-items">
-                        <div class="timeline-mobile-item" data-node="future">
-                            <div class="timeline-mobile-dot core" style="--dot-color:#8B7FD4;"></div>
-                            <div class="timeline-mobile-content">
-                                <h4>正在寻找新机会</h4>
-                                <span>AI产品/运营方向</span>
+                        <div class="timeline-mobile-group">
+                            <div class="timeline-mobile-item is-main" data-node="guizhou">
+                                <div class="timeline-mobile-dot" style="--dot-color:#8B7FD4;"></div>
+                                <div class="timeline-mobile-content">
+                                    <h4>贵州大学</h4>
+                                    <span>2017-2021 生物科学</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="timeline-mobile-item" data-node="guizhou">
-                            <div class="timeline-mobile-dot" style="--dot-color:#8B7FD4;"></div>
-                            <div class="timeline-mobile-content">
-                                <h4>贵州大学</h4>
-                                <span>2017-2021 生物科学</span>
+                        <div class="timeline-mobile-group">
+                            <div class="timeline-mobile-item is-main" data-node="harbin">
+                                <div class="timeline-mobile-dot" style="--dot-color:#8B7FD4;"></div>
+                                <div class="timeline-mobile-content">
+                                    <h4>哈尔滨医科大学</h4>
+                                    <span>2022-2025 应用心理</span>
+                                </div>
+                            </div>
+                            <div class="timeline-mobile-branches">
+                                <div class="timeline-mobile-item is-branch" data-node="research-group">
+                                    <div class="timeline-mobile-dot" style="--dot-color:#8B7FD4;"></div>
+                                    <div class="timeline-mobile-content">
+                                        <h4>性健康课题组</h4>
+                                        <span>研究与教育转化</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-mobile-item is-branch" data-node="hotline">
+                                    <div class="timeline-mobile-dot" style="--dot-color:#8B7FD4;"></div>
+                                    <div class="timeline-mobile-content">
+                                        <h4>12355心理热线</h4>
+                                        <span>用户倾听与危机干预</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-mobile-item is-branch" data-node="hospital">
+                                    <div class="timeline-mobile-dot" style="--dot-color:#D4A574;"></div>
+                                    <div class="timeline-mobile-content">
+                                        <h4>第一专科医院</h4>
+                                        <span>临床观察与咨询实践</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-mobile-item is-branch" data-node="activities">
+                                    <div class="timeline-mobile-dot" style="--dot-color:#D4A574;"></div>
+                                    <div class="timeline-mobile-content">
+                                        <h4>校园活动</h4>
+                                        <span>体验设计与执行</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-mobile-item is-branch" data-node="avoice">
+                                    <div class="timeline-mobile-dot" style="--dot-color:#E06B8A;"></div>
+                                    <div class="timeline-mobile-content">
+                                        <h4>Avoice项目</h4>
+                                        <span>内容协作与视觉呈现</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="timeline-mobile-item" data-node="harbin">
-                            <div class="timeline-mobile-dot" style="--dot-color:#8B7FD4;"></div>
-                            <div class="timeline-mobile-content">
-                                <h4>哈尔滨医科大学</h4>
-                                <span>2022-2025 应用心理</span>
+                        <div class="timeline-mobile-group">
+                            <div class="timeline-mobile-item is-main" data-node="tianao">
+                                <div class="timeline-mobile-dot" style="--dot-color:#8B7FD4;"></div>
+                                <div class="timeline-mobile-content">
+                                    <h4>云南天奥医药</h4>
+                                    <span>市场内容与流程管理</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="timeline-mobile-item" data-node="research-group">
-                            <div class="timeline-mobile-dot" style="--dot-color:#8B7FD4;"></div>
-                            <div class="timeline-mobile-content">
-                                <h4>性健康课题组</h4>
-                                <span>研究与教育转化</span>
+                        <div class="timeline-mobile-group">
+                            <div class="timeline-mobile-item is-main" data-node="future">
+                                <div class="timeline-mobile-dot core" style="--dot-color:#8B7FD4;"></div>
+                                <div class="timeline-mobile-content">
+                                    <h4>正在寻找新机会</h4>
+                                    <span>AI产品/运营方向</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="timeline-mobile-item" data-node="hotline">
-                            <div class="timeline-mobile-dot" style="--dot-color:#8B7FD4;"></div>
-                            <div class="timeline-mobile-content">
-                                <h4>12355心理热线</h4>
-                                <span>用户倾听与危机干预</span>
-                            </div>
-                        </div>
-                        <div class="timeline-mobile-item" data-node="hospital">
-                            <div class="timeline-mobile-dot" style="--dot-color:#D4A574;"></div>
-                            <div class="timeline-mobile-content">
-                                <h4>第一专科医院</h4>
-                                <span>临床观察与咨询实践</span>
-                            </div>
-                        </div>
-                        <div class="timeline-mobile-item" data-node="activities">
-                            <div class="timeline-mobile-dot" style="--dot-color:#D4A574;"></div>
-                            <div class="timeline-mobile-content">
-                                <h4>校园活动</h4>
-                                <span>体验设计与执行</span>
-                            </div>
-                        </div>
-                        <div class="timeline-mobile-item" data-node="avoice">
-                            <div class="timeline-mobile-dot" style="--dot-color:#E06B8A;"></div>
-                            <div class="timeline-mobile-content">
-                                <h4>Avoice项目</h4>
-                                <span>内容协作与视觉呈现</span>
-                            </div>
-                        </div>
-                        <div class="timeline-mobile-item" data-node="tianao">
-                            <div class="timeline-mobile-dot" style="--dot-color:#8B7FD4;"></div>
-                            <div class="timeline-mobile-content">
-                                <h4>云南天奥医药</h4>
-                                <span>市场内容与流程管理</span>
-                            </div>
-                        </div>
-                        <div class="timeline-mobile-item" data-node="ai-project">
-                            <div class="timeline-mobile-dot" style="--dot-color:#8B7FD4;"></div>
-                            <div class="timeline-mobile-content">
-                                <h4>AI内容运营</h4>
-                                <span>Coze工作流搭建</span>
-                            </div>
-                        </div>
-                        <div class="timeline-mobile-item" data-node="haoshijia">
-                            <div class="timeline-mobile-dot" style="--dot-color:#D4A574;"></div>
-                            <div class="timeline-mobile-content">
-                                <h4>好食家</h4>
-                                <span>减脂记录与复盘产品</span>
+                            <div class="timeline-mobile-branches">
+                                <div class="timeline-mobile-item is-branch" data-node="ai-project">
+                                    <div class="timeline-mobile-dot" style="--dot-color:#8B7FD4;"></div>
+                                    <div class="timeline-mobile-content">
+                                        <h4>AI内容运营</h4>
+                                        <span>Coze工作流搭建</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-mobile-item is-branch" data-node="haoshijia">
+                                    <div class="timeline-mobile-dot" style="--dot-color:#D4A574;"></div>
+                                    <div class="timeline-mobile-content">
+                                        <h4>好食家</h4>
+                                        <span>减脂记录与复盘产品</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -2564,7 +2632,7 @@
                     <span>+86 131 4440 1070</span>
                 </div>
             </div>
-            <p class="footer-copyright animate-on-scroll">© 2026 罗菲 Faye. All Rights Reserved.</p>
+            <p class="footer-copyright">© 2026 LUO FEI. ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
 
