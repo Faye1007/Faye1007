@@ -1706,6 +1706,63 @@
             opacity: 1;
         }
 
+        .option-btn.selected {
+            border-color: var(--accent-violet);
+            background: linear-gradient(135deg, rgba(139, 127, 212, 0.1) 0%, rgba(224, 107, 138, 0.1) 100%);
+            transform: translateX(8px);
+            box-shadow: 0 4px 20px rgba(139, 127, 212, 0.25);
+        }
+
+        .option-btn.selected::before {
+            opacity: 1;
+        }
+
+        .option-btn.selected::after {
+            content: '✓';
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            background: var(--accent-violet);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .options-hint {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 13px;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+
+        .confirm-btn {
+            width: 100%;
+            padding: 16px 24px;
+            margin-top: 16px;
+            background: linear-gradient(135deg, var(--accent-violet) 0%, var(--accent-rose) 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 127, 212, 0.3);
+        }
+
+        .confirm-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 127, 212, 0.4);
+        }
+
         .result-card {
             background: var(--bg-card);
             border-radius: 24px;
@@ -1720,6 +1777,25 @@
             font-size: 80px;
             margin-bottom: 24px;
             animation: pulse 2s infinite;
+        }
+
+        .result-icon-inline {
+            display: inline-flex;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .result-icon-small {
+            font-size: 32px;
+            animation: pulse 2s infinite;
+        }
+
+        .result-desc-line {
+            margin-bottom: 8px;
+        }
+
+        .result-scenario-line {
+            margin-bottom: 8px;
         }
 
         .result-type {
@@ -2586,6 +2662,7 @@
                     </div>
                     <div class="question-counter" id="questionCounter">1 / 8</div>
                     <h3 class="question-text" id="questionText"></h3>
+                    <p class="options-hint" id="optionsHint">可选2-3个，点击确认提交</p>
                     <div class="options-container" id="optionsContainer"></div>
                 </div>
 
@@ -3631,52 +3708,52 @@
         // Personality Test
         const testQuestions = [
             {
-                question: "老板/客户给出一个模糊的新需求，你会先做什么？",
+                question: "老板/客户给出一个模糊的新需求，你希望我先做哪些事？",
                 options: [
-                    { text: "画个草图/写个prompt快速做出demo看看效果", type: "creative" },
-                    { text: "拆成几个维度，找数据支撑做可行性分析", type: "analytical" },
-                    { text: "先去目标用户/客户那里聊一圈，理解真实痛点", type: "empathetic" },
-                    { text: "拉个会，把相关方对齐，明确分工和节奏", type: "executive" }
+                    { text: "快速出原型验证方向", type: "creative" },
+                    { text: "做数据分析找依据", type: "analytical" },
+                    { text: "访谈用户理解痛点", type: "empathetic" },
+                    { text: "协调资源对齐各方", type: "executive" }
                 ]
             },
             {
-                question: "描述一个产品/方案时，你最自然的表达方式是？",
+                question: "描述一个产品/方案时，你希望我怎么表达？",
                 options: [
-                    { text: "\"它能帮你快速生成/实现...\"", type: "creative" },
-                    { text: "\"根据数据，它的转化率/效果是...\"", type: "analytical" },
-                    { text: "\"用户告诉我，他们最头疼的是...\"", type: "empathetic" },
-                    { text: "\"我们已经协调了X部门配合，预计X月上线...\"", type: "executive" }
+                    { text: "展示能快速生成/实现什么", type: "creative" },
+                    { text: "用数据说明转化率/效果", type: "analytical" },
+                    { text: "分享用户的真实反馈和痛点", type: "empathetic" },
+                    { text: "说明协调了哪些资源、预计何时上线", type: "executive" }
                 ]
             },
             {
-                question: "项目中遇到瓶颈，你通常会怎么突破？",
+                question: "项目中遇到瓶颈，你希望我怎么突破？",
                 options: [
-                    { text: "换个角度尝试，比如用AI工具辅助产生新思路", type: "creative" },
-                    { text: "复盘数据，找出问题环节做A/B测试验证", type: "analytical" },
-                    { text: "找用户深度聊聊，从反馈中找到突破口", type: "empathetic" },
-                    { text: "调动资源，协调更多人手或调整时间线来推进", type: "executive" }
+                    { text: "用AI工具辅助产生新思路", type: "creative" },
+                    { text: "复盘数据，找出问题环节做A/B测试", type: "analytical" },
+                    { text: "深度访谈用户，从反馈中找突破口", type: "empathetic" },
+                    { text: "调动资源，协调更多人手或调整时间线", type: "executive" }
                 ]
             },
             {
-                question: "以下哪种工作状态让你最有成就感？",
+                question: "你希望我在哪种工作状态下发挥最大价值？",
                 options: [
-                    { text: "从0到1创造出一个新内容/产品原型", type: "creative" },
-                    { text: "通过数据分析发现了一个关键洞察", type: "analytical" },
-                    { text: "帮用户解决了一个TA自己都没意识到的痛点", type: "empathetic" },
-                    { text: "把一个复杂项目顺利交付，各方都满意", type: "executive" }
+                    { text: "从0到1创造新内容/产品原型", type: "creative" },
+                    { text: "通过数据分析发现关键洞察", type: "analytical" },
+                    { text: "帮用户解决TA自己都没意识到的痛点", type: "empathetic" },
+                    { text: "把复杂项目顺利交付，各方都满意", type: "executive" }
                 ]
             },
             {
-                question: "如果让你带一个新人，你会先教TA什么？",
+                question: "如果让你带我，你希望我先掌握什么？",
                 options: [
-                    { text: "用哪些AI工具可以快速产出成果", type: "creative" },
-                    { text: "怎么看数据、怎么做复盘", type: "analytical" },
-                    { text: "怎么和用户聊天、怎么提问", type: "empathetic" },
+                    { text: "用AI工具快速产出成果", type: "creative" },
+                    { text: "看数据、做复盘的方法", type: "analytical" },
+                    { text: "和用户聊天、提问的技巧", type: "empathetic" },
                     { text: "团队分工、对接流程、时间节点", type: "executive" }
                 ]
             },
             {
-                question: "面对一个全新的领域/行业，你的学习方式是？",
+                question: "面对一个全新的领域/行业，你希望我怎么学习？",
                 options: [
                     { text: "边做边学，用AI辅助快速上手实践", type: "creative" },
                     { text: "先找行业报告和数据，建立系统框架", type: "analytical" },
@@ -3685,21 +3762,21 @@
                 ]
             },
             {
-                question: "你的工位/桌面通常是什么样的？",
+                question: "你希望我的工位/桌面是什么样的？",
                 options: [
-                    { text: "有点乱但充满灵感素材、参考图、便利贴", type: "creative" },
-                    { text: "整齐有序，数据和文档分类清晰", type: "analytical" },
-                    { text: "有用户反馈截图、访谈记录、便利贴", type: "empathetic" },
+                    { text: "充满灵感素材、参考图、便利贴", type: "creative" },
+                    { text: "数据和文档分类清晰", type: "analytical" },
+                    { text: "有用户反馈截图、访谈记录", type: "empathetic" },
                     { text: "日历、甘特图、待办清单一应俱全", type: "executive" }
                 ]
             },
             {
-                question: "如果要用一句话形容你的价值，你会说？",
+                question: "如果要用一句话形容我能给你的价值，你会怎么说？",
                 options: [
-                    { text: "我总能想出别人想不到的点子", type: "creative" },
-                    { text: "我能让决策有据可依", type: "analytical" },
-                    { text: "我能听懂用户没说出口的话", type: "empathetic" },
-                    { text: "我能让事情从想法变成现实", type: "executive" }
+                    { text: "总能想出别人想不到的点子", type: "creative" },
+                    { text: "让决策有据可依", type: "analytical" },
+                    { text: "能听懂用户没说出口的话", type: "empathetic" },
+                    { text: "能让事情从想法变成现实", type: "executive" }
                 ]
             }
         ];
@@ -3710,10 +3787,10 @@
                 type: "灵感爆破型",
                 desc: "我擅长从0到1创造，用AI工具快速验证想法。如果你需要一个能不断产出新鲜创意、快速把概念变成原型的人，我就是你的最佳选择。",
                 evidence: [
-                    "用AI Coding（Claude Code）独立搭建个人作品集网站",
-                    "Coze搭建内容生成工作流，实现内容采集-生成-优化闭环",
-                    "运营小红书账号，验证对比人工与AI内容效果",
-                    "独立制作心理科普白板动画《乐观偏差》，入围全国决赛"
+                    { text: "用AI Coding（Claude Code、Codex）独立搭建个人作品集网站", types: ["creative", "executive"] },
+                    { text: "Coze搭建内容生成工作流，实现内容采集-生成-优化闭环", types: ["creative", "analytical"] },
+                    { text: "运营小红书账号，验证对比人工与AI内容效果", types: ["creative", "analytical"] },
+                    { text: "独立制作心理科普白板动画《乐观偏差》，入围全国决赛", types: ["creative", "empathetic"] }
                 ],
                 scenario: "你需要快速产出大量创意内容、搭建AI工作流、或者用创新的方式解决传统问题的时候"
             },
@@ -3722,10 +3799,10 @@
                 type: "逻辑拆解型",
                 desc: "我习惯用数据说话，擅长把复杂问题拆解成可验证的假设。如果你需要一个能帮你建立分析框架、用实证支撑决策的人，我正好合适。",
                 evidence: [
-                    "硕士毕业论文：900份问卷，SPSS/Mplus结构方程模型分析",
-                    "完成两篇文献综述（n=61和n=184），使用MAXQDA主题编码",
-                    "市场工作中通过Excel分析识别2个潜在增长区域",
-                    "协助销售经理进行销售数据分析，为策略提供支持"
+                    { text: "硕士毕业论文：900份问卷，SPSS/Mplus结构方程模型分析", types: ["analytical"] },
+                    { text: "完成两篇文献综述（n=61和n=184），使用MAXQDA主题编码", types: ["analytical", "empathetic"] },
+                    { text: "市场工作中通过Excel分析识别2个潜在增长区域", types: ["analytical", "executive"] },
+                    { text: "协助销售经理进行销售数据分析，为策略提供支持", types: ["analytical"] }
                 ],
                 scenario: "你需要做用户研究、数据分析、或者把模糊的业务问题变成可量化的研究课题的时候"
             },
@@ -3734,10 +3811,10 @@
                 type: "体验洞察型",
                 desc: "我有心理学专业背景，擅长站在用户角度思考问题。如果你需要一个真正能听懂用户、把复杂心理转化为产品语言的人，这就是我最独特的价值。",
                 evidence: [
-                    "心理热线实习：接听30+通电话，服务15名青少年和3名中老年人",
-                    "心理咨询室实习：旁听咨询过程，识别来访特征和心理特点",
-                    "累计心理咨询服务时长24.5小时，掌握危机干预应对流程",
-                    "硕士研究：青少年性保护自我效能，深入理解用户心理机制"
+                    { text: "心理热线实习：接听30+通电话，服务15名青少年和3名中老年人", types: ["empathetic"] },
+                    { text: "心理咨询室实习：旁听咨询过程，识别来访特征和心理特点", types: ["empathetic", "analytical"] },
+                    { text: "累计心理咨询服务时长24.5小时，掌握危机干预应对流程", types: ["empathetic", "executive"] },
+                    { text: "硕士研究：青少年性保护自我效能，深入理解用户心理机制", types: ["empathetic", "analytical"] }
                 ],
                 scenario: "你需要做用户访谈、梳理用户旅程、或者把心理学理论转化为产品策略的时候"
             },
@@ -3746,10 +3823,10 @@
                 type: "落地推动型",
                 desc: "我擅长把想法变成现实，协调资源推动项目前进。如果你需要一个能统筹全流程、确保事情按时高质量交付的人，我能胜任。",
                 evidence: [
-                    "主导《丁香之火》解谜游戏全流程：从创意到执行，89人参与",
-                    "策划执行2场线下代表培训营，涵盖百余人",
-                    "独立撰写市场部各项推广工作SOP课件，提升团队效率",
-                    "活动运营：串场PPT、视频剪辑、主持、调研设计、会议记录全包"
+                    { text: "主导《丁香之火》解谜游戏全流程：从创意到执行，89人参与", types: ["executive", "creative"] },
+                    { text: "策划执行2场线下代表培训营，涵盖百余人", types: ["executive"] },
+                    { text: "独立撰写市场部各项推广工作SOP课件，提升团队效率", types: ["executive", "analytical"] },
+                    { text: "活动运营：串场PPT、视频剪辑、主持、调研设计、会议记录全包", types: ["executive", "creative"] }
                 ],
                 scenario: "你需要推进跨部门项目、组织培训或活动、或者建立标准化的工作流程的时候"
             }
@@ -3757,10 +3834,12 @@
 
         let currentQuestion = 0;
         let scores = { creative: 0, analytical: 0, empathetic: 0, executive: 0 };
+        let selectedOptions = [];
 
         function startTest() {
             currentQuestion = 0;
             scores = { creative: 0, analytical: 0, empathetic: 0, executive: 0 };
+            selectedOptions = [];
             document.getElementById('testStart').classList.remove('active');
             document.getElementById('testQuestion').classList.add('active');
             showQuestion();
@@ -3771,21 +3850,59 @@
             document.getElementById('questionCounter').textContent = `${currentQuestion + 1} / ${testQuestions.length}`;
             document.getElementById('questionText').textContent = q.question;
             document.getElementById('progressFill').style.width = `${((currentQuestion) / testQuestions.length) * 100}%`;
+            document.getElementById('optionsHint').textContent = '可选2-3个，点击确认提交';
 
             const optionsContainer = document.getElementById('optionsContainer');
             optionsContainer.innerHTML = '';
+            selectedOptions = [];
 
             q.options.forEach((option, index) => {
                 const btn = document.createElement('button');
                 btn.className = 'option-btn';
                 btn.textContent = option.text;
-                btn.onclick = () => selectOption(option.type);
+                btn.dataset.type = option.type;
+                btn.onclick = () => toggleOption(btn, option.type);
                 optionsContainer.appendChild(btn);
             });
+
+            // 添加确认按钮
+            const confirmBtn = document.createElement('button');
+            confirmBtn.className = 'confirm-btn';
+            confirmBtn.id = 'confirmBtn';
+            confirmBtn.textContent = '确认';
+            confirmBtn.style.display = 'none';
+            confirmBtn.onclick = confirmSelection;
+            optionsContainer.appendChild(confirmBtn);
         }
 
-        function selectOption(type) {
-            scores[type]++;
+        function toggleOption(btn, type) {
+            if (btn.classList.contains('selected')) {
+                btn.classList.remove('selected');
+                selectedOptions = selectedOptions.filter(item => item.type !== type);
+            } else {
+                if (selectedOptions.length >= 3) {
+                    return; // 最多选3个
+                }
+                btn.classList.add('selected');
+                selectedOptions.push({ type, element: btn });
+            }
+
+            // 显示/隐藏确认按钮
+            const confirmBtn = document.getElementById('confirmBtn');
+            if (selectedOptions.length >= 2) {
+                confirmBtn.style.display = 'block';
+            } else {
+                confirmBtn.style.display = 'none';
+            }
+        }
+
+        function confirmSelection() {
+            // 加权评分：第1个得1分，第2个0.8分，第3个0.6分
+            selectedOptions.forEach((item, index) => {
+                const weight = 1 - (index * 0.2);
+                scores[item.type] += weight;
+            });
+
             currentQuestion++;
 
             if (currentQuestion < testQuestions.length) {
@@ -3799,28 +3916,86 @@
             document.getElementById('testQuestion').classList.remove('active');
             document.getElementById('testResult').classList.add('active');
 
-            // 找出最高分（如果有平局，优先empathetic以突出心理背景）
-            let maxScore = Math.max(...Object.values(scores));
-            let resultType = 'empathetic';
+            // 按分数排序，找出主类型和辅类型
+            const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+            const primaryType = sorted[0][0];
+            const secondaryType = sorted[1][0];
 
-            if (scores.creative === maxScore) resultType = 'creative';
-            else if (scores.analytical === maxScore) resultType = 'analytical';
-            else if (scores.executive === maxScore) resultType = 'executive';
+            const primaryResult = testResults[primaryType];
+            const secondaryResult = testResults[secondaryType];
 
-            const result = testResults[resultType];
+            // 图标缩小放类型名称前面
+            document.getElementById('resultIcon').innerHTML = 
+                `<span class="result-icon-small">${primaryResult.icon}</span>` +
+                `<span class="result-icon-small">${secondaryResult.icon}</span>`;
+            document.getElementById('resultIcon').className = 'result-icon-inline';
+            
+            document.getElementById('resultType').textContent = 
+                primaryResult.type + ' + ' + secondaryResult.type;
+            
+            // 组合描述（换行显示）
+            document.getElementById('resultDesc').innerHTML = 
+                `<div class="result-desc-line">主要能力：${primaryResult.desc.split('。')[0]}。</div>` +
+                `<div class="result-desc-line">辅助能力：${secondaryResult.desc.split('。')[0]}。</div>`;
+            
+            // 组合适合场景（换行显示）
+            document.getElementById('resultScenario').innerHTML = 
+                `<div class="result-scenario-line">${primaryResult.scenario}</div>` +
+                `<div class="result-scenario-line">${secondaryResult.scenario}</div>`;
 
-            document.getElementById('resultIcon').textContent = result.icon;
-            document.getElementById('resultType').textContent = result.type;
-            document.getElementById('resultDesc').textContent = result.desc;
-            document.getElementById('resultScenario').textContent = result.scenario;
-
+            // 匹配证据：优先找同时包含两种类型的经历
             const evidenceList = document.getElementById('resultEvidence');
             evidenceList.innerHTML = '';
-            result.evidence.forEach(item => {
+            
+            const matchedEvidence = matchEvidence(primaryType, secondaryType);
+            matchedEvidence.forEach(item => {
                 const li = document.createElement('li');
-                li.textContent = item;
+                li.textContent = item.text;
                 evidenceList.appendChild(li);
             });
+        }
+
+        function matchEvidence(primary, secondary) {
+            // 从testResults中收集所有evidence（去重）
+            const allEvidence = [];
+            
+            Object.keys(testResults).forEach(type => {
+                testResults[type].evidence.forEach(ev => {
+                    if (!allEvidence.find(e => e.text === ev.text)) {
+                        allEvidence.push({ text: ev.text, types: ev.types });
+                    }
+                });
+            });
+
+            // 优先找同时包含primary和secondary的经历
+            const combined = allEvidence.filter(ev => 
+                ev.types.includes(primary) && ev.types.includes(secondary)
+            );
+
+            // 如果没有组合，找primary的经历
+            const primaryOnly = allEvidence.filter(ev => 
+                ev.types.includes(primary) && !ev.types.includes(secondary)
+            );
+
+            // 如果不够，补secondary的经历
+            const secondaryOnly = allEvidence.filter(ev => 
+                ev.types.includes(secondary) && !ev.types.includes(primary)
+            );
+
+            // 合并结果，最多展示4条
+            const result = [...combined, ...primaryOnly, ...secondaryOnly].slice(0, 4);
+            
+            // 如果还是不够，补充primary类型的evidence
+            if (result.length < 4) {
+                const primaryEvidence = testResults[primary].evidence;
+                primaryEvidence.forEach(ev => {
+                    if (!result.find(e => e.text === ev.text) && result.length < 4) {
+                        result.push(ev);
+                    }
+                });
+            }
+
+            return result;
         }
 
         function restartTest() {
