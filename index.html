@@ -167,38 +167,6 @@
             z-index: 0;
         }
 
-        .hero-proof {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 34px;
-        }
-
-        .hero-proof-item {
-            min-width: 142px;
-            padding: 12px 16px;
-            background: rgba(255, 255, 255, 0.78);
-            border: 1px solid rgba(124, 92, 255, 0.14);
-            border-radius: 18px;
-            box-shadow: var(--shadow-soft);
-            backdrop-filter: blur(12px);
-        }
-
-        .hero-proof-item strong {
-            display: block;
-            font-size: 20px;
-            line-height: 1.2;
-            color: var(--accent-violet);
-            margin-bottom: 4px;
-        }
-
-        .hero-proof-item span {
-            display: block;
-            font-size: 12px;
-            color: var(--text-secondary);
-        }
-
         .hero-tags {
             display: flex;
             flex-wrap: wrap;
@@ -2131,8 +2099,6 @@
             .hero { min-height: auto; padding: 80px 20px; }
             .hero-title { font-size: 2rem; }
             .hero-slogan { max-width: 100%; }
-            .hero-proof { margin-bottom: 28px; }
-            .hero-proof-item { min-width: 0; width: calc(50% - 8px); }
             .timeline-svg { display: none; }
             .timeline-mobile { display: block; }
             .timeline-container { padding: 20px 10px; }
@@ -2233,25 +2199,11 @@
             <span>✨</span> 正在寻找新的机会
         </div>
         <h1 class="hero-title animate-on-scroll" id="heroTitle"></h1>
-        <p class="hero-slogan animate-on-scroll">用心理学理解用户，用AI提升内容与产品效率；<br>把研究洞察、内容创作和流程落地连接成可验证的产品运营实践。</p>
-        <div class="hero-proof animate-on-scroll">
-            <div class="hero-proof-item">
-                <strong>10min</strong>
-                <span>AI辅助单篇创作约耗时</span>
-            </div>
-            <div class="hero-proof-item">
-                <strong>900+</strong>
-                <span>用户研究样本经验</span>
-            </div>
-            <div class="hero-proof-item">
-                <strong>14场</strong>
-                <span>医疗AI用户访谈资料支持</span>
-            </div>
-        </div>
+        <p class="hero-slogan animate-on-scroll">用心理学理解用户，用数据驱动运营优化；<br>把用户洞察、内容创作和策略落地连接成可验证的运营实践。</p>
         <div class="hero-tags animate-on-scroll">
-            <span class="hero-tag">🤖 AI产品实践</span>
-            <span class="hero-tag">🧠 用户心理研究</span>
-            <span class="hero-tag">✍️ 内容运营转化</span>
+            <span class="hero-tag">🧠 用户洞察</span>
+            <span class="hero-tag">✍️ 内容运营</span>
+            <span class="hero-tag">🤖 AI工具应用</span>
         </div>
         <div class="scroll-hint animate-on-scroll">探索我的能力星图</div>
     </section>
@@ -2260,7 +2212,7 @@
     <section class="timeline-section" id="timeline">
         <div class="container">
             <h2 class="section-title animate-on-scroll">我的<span>成长轨迹</span></h2>
-            <p class="timeline-subtitle animate-on-scroll">点击星图节点，查看每段经历如何迁移成AI+运营能力</p>
+            <p class="timeline-subtitle animate-on-scroll">点击星图节点，查看每段经历如何迁移成运营能力</p>
 
             <div class="timeline-container animate-on-scroll scale-in">
                 <svg class="timeline-svg" viewBox="0 0 900 700">
@@ -2308,9 +2260,9 @@
                     <path id="path-harbin-hospital" class="timeline-path branch-vine" d="M320 300 C390 392 502 520 610 575" stroke="var(--branch-hospital)"/>
                     <path id="path-harbin-activities" class="timeline-path branch-vine" d="M320 300 C364 214 420 170 485 135" stroke="var(--branch-activities)"/>
                     <path id="path-harbin-avoice" class="timeline-path branch-vine" d="M320 300 C452 244 558 196 690 175" stroke="var(--branch-avoice)"/>
-                    <path id="path-future-ai" class="timeline-path branch-vine" d="M505 360 C532 300 578 264 640 250" stroke="var(--branch-ai)"/>
-                    <path id="path-future-haoshijia" class="timeline-path branch-vine" d="M505 360 C580 396 660 385 735 330" stroke="var(--branch-haoshijia)"/>
-                    <path id="path-future-growth" class="timeline-path branch-vine" d="M505 360 C530 402 565 438 620 460" stroke="var(--branch-growth)"/>
+                    <path id="path-future-ai" class="timeline-path branch-vine" d="M735 470 C710 420 680 340 640 250" stroke="var(--branch-ai)"/>
+                    <path id="path-future-haoshijia" class="timeline-path branch-vine" d="M735 470 C740 430 745 380 735 330" stroke="var(--branch-haoshijia)"/>
+                    <path id="path-future-growth" class="timeline-path branch-vine" d="M735 470 C700 465 660 462 620 460" stroke="var(--branch-growth)"/>
 
                     <circle class="timeline-signal" data-signal="main-axis" r="4.5" fill="#FFFFFF"/>
                     <circle class="timeline-signal" data-signal="harbin-research" r="3.5" fill="none" stroke="var(--branch-research)" stroke-width="1.5"/>
@@ -2323,10 +2275,10 @@
                     <circle class="timeline-signal" data-signal="future-growth" r="3.5" fill="none" stroke="var(--branch-growth)" stroke-width="1.5"/>
 
                     <g class="timeline-node" data-node="future">
-                        <circle class="node-circle" cx="505" cy="360" r="38" fill="var(--main-axis)"/>
-                        <circle class="node-pulse-ring" cx="505" cy="360" r="38" style="--pulse-start:38;--pulse-end:70;"/>
-                        <text x="505" y="428" class="timeline-core-label">正在寻找新机会</text>
-                        <text x="505" y="448" class="timeline-core-subtitle">AI+运营方向</text>
+                        <circle class="node-circle" cx="735" cy="470" r="22" fill="var(--main-axis)"/>
+                        <circle class="node-pulse-ring" cx="735" cy="470" r="22" style="--pulse-start:22;--pulse-end:50;"/>
+                        <text x="735" y="518" class="timeline-core-label">正在寻找新机会</text>
+                        <text x="735" y="538" class="timeline-core-subtitle">AI工具实践应用</text>
                     </g>
 
                     <g class="timeline-node" data-node="guizhou">
@@ -2381,29 +2333,29 @@
                     <g class="timeline-node timeline-node-branch" data-node="ai-project">
                         <circle class="node-circle" cx="640" cy="250" r="20" fill="var(--branch-ai)"/>
                         <circle class="node-pulse-ring" cx="640" cy="250" r="20" style="--pulse-start:20;--pulse-end:48;"/>
-                        <text x="640" y="212" class="timeline-main-label">AI内容运营</text>
-                        <text x="640" y="232" class="timeline-branch-label">Coze工作流搭建</text>
+                        <text x="640" y="212" class="timeline-main-label">内容创作</text>
+                        <text x="640" y="232" class="timeline-branch-label">小红书AI内容运营助手</text>
                     </g>
 
                     <g class="timeline-node timeline-node-branch" data-node="haoshijia">
                         <circle class="node-circle" cx="735" cy="330" r="20" fill="var(--branch-haoshijia)"/>
                         <circle class="node-pulse-ring" cx="735" cy="330" r="20" style="--pulse-start:20;--pulse-end:48;"/>
-                        <text x="735" y="292" class="timeline-main-label">好食家</text>
-                        <text x="735" y="312" class="timeline-branch-label">减脂记录与复盘产品</text>
+                        <text x="735" y="292" class="timeline-main-label">用户研究</text>
+                        <text x="735" y="312" class="timeline-branch-label">定性定量/毕业论文/用户心智调研</text>
                     </g>
 
                     <g class="timeline-node timeline-node-branch" data-node="growth-system">
                         <circle class="node-circle" cx="620" cy="460" r="20" fill="var(--branch-growth)"/>
                         <circle class="node-pulse-ring" cx="620" cy="460" r="20" style="--pulse-start:20;--pulse-end:48;"/>
-                        <text x="620" y="502" class="timeline-main-label">Growth Insight</text>
-                        <text x="620" y="522" class="timeline-branch-label">个人成长洞察系统</text>
+                        <text x="620" y="502" class="timeline-main-label">AI工具应用</text>
+                        <text x="620" y="522" class="timeline-branch-label">好食家/Growth Insight</text>
                     </g>
 
                     <g class="timeline-node" data-node="tianao">
-                        <circle class="node-circle" cx="735" cy="470" r="22" fill="var(--main-axis)"/>
-                        <circle class="node-pulse-ring" cx="735" cy="470" r="22" style="--pulse-start:22;--pulse-end:50;"/>
-                        <text x="735" y="516" class="timeline-main-label">云南天奥医药</text>
-                        <text x="735" y="536" class="timeline-branch-label">市场内容与流程管理</text>
+                        <circle class="node-circle" cx="505" cy="360" r="22" fill="var(--main-axis)"/>
+                        <circle class="node-pulse-ring" cx="505" cy="360" r="22" style="--pulse-start:22;--pulse-end:50;"/>
+                        <text x="505" y="322" class="timeline-main-label">云南天奥医药</text>
+                        <text x="505" y="342" class="timeline-branch-label">市场内容与流程管理</text>
                     </g>
                 </svg>
                 <div class="timeline-tooltip" id="timelineTooltip"></div>
@@ -2478,32 +2430,32 @@
                         </div>
                         <div class="timeline-mobile-group">
                             <div class="timeline-mobile-item is-main" data-node="future">
-                                <div class="timeline-mobile-dot core" style="--dot-color:#8B7FD4;"></div>
+                                <div class="timeline-mobile-dot" style="--dot-color:#8B7FD4;"></div>
                                 <div class="timeline-mobile-content">
                                     <h4>正在寻找新机会</h4>
-                                    <span>AI+运营方向</span>
+                                    <span>AI工具实践应用</span>
                                 </div>
                             </div>
                             <div class="timeline-mobile-branches">
                                 <div class="timeline-mobile-item is-branch" data-node="ai-project">
                                     <div class="timeline-mobile-dot" style="--dot-color:#8B7FD4;"></div>
                                     <div class="timeline-mobile-content">
-                                        <h4>AI内容运营</h4>
-                                        <span>Coze工作流搭建</span>
+                                        <h4>内容创作</h4>
+                                        <span>小红书AI内容运营助手</span>
                                     </div>
                                 </div>
                                 <div class="timeline-mobile-item is-branch" data-node="haoshijia">
                                     <div class="timeline-mobile-dot" style="--dot-color:#D4A574;"></div>
                                     <div class="timeline-mobile-content">
-                                        <h4>好食家</h4>
-                                        <span>减脂记录与复盘产品</span>
+                                        <h4>用户研究</h4>
+                                        <span>定性定量/毕业论文/用户心智调研</span>
                                     </div>
                                 </div>
                                 <div class="timeline-mobile-item is-branch" data-node="growth-system">
                                     <div class="timeline-mobile-dot" style="--dot-color:#6BAF8D;"></div>
                                     <div class="timeline-mobile-content">
-                                        <h4>Growth Insight System</h4>
-                                        <span>个人成长洞察系统</span>
+                                        <h4>AI工具应用</h4>
+                                        <span>好食家/Growth Insight</span>
                                     </div>
                                 </div>
                             </div>
@@ -2518,7 +2470,7 @@
     <section class="planets-section" id="planets">
         <div class="container">
             <h2 class="section-title animate-on-scroll">我的<span>能力星球</span></h2>
-            <p class="timeline-subtitle animate-on-scroll" style="margin-bottom: 50px;">以AI+运营为核心，点击轨道星球查看作品证据</p>
+            <p class="timeline-subtitle animate-on-scroll" style="margin-bottom: 50px;">以用户洞察为核心，点击轨道星球查看作品证据</p>
             <div class="planets-grid">
                 <span class="planet-connection"></span>
                 <span class="planet-connection"></span>
@@ -2528,11 +2480,10 @@
                 <!-- AI Product -->
                 <div class="planet-card animate-on-scroll" data-planet="ai" style="--card-index: 0">
                     <span class="planet-icon">🤖</span>
-                    <h3 class="planet-title">AI+运营</h3>
-                    <p class="planet-desc">覆盖AI Coding产品Demo、Coze内容工作流、医疗AI用户研究和个人效率系统，把AI能力拆进真实业务流程并验证效果</p>
+                    <h3 class="planet-title">AI工具应用</h3>
+                    <p class="planet-desc">覆盖小红书AI内容助手、减脂记录App、个人成长系统，把AI能力拆进真实业务流程并验证效果</p>
                     <div class="planet-stats">
-                        <span class="planet-stat">3个核心AI项目</span>
-                        <span class="planet-stat">1个医疗AI调研</span>
+                        <span class="planet-stat">3个AI项目</span>
                         <span class="planet-stat">约10分钟/篇</span>
                     </div>
                 </div>
@@ -2555,7 +2506,7 @@
                     <p class="planet-desc">具备从资料查阅、脚本创作、分镜设计到拍摄统筹、白板动画和后期剪辑的完整视频制作经验，作品覆盖艾滋病防治宣传、心理科普微视频和课题组宣传片，兼顾知识准确性与传播节奏。</p>
                     <div class="planet-stats">
                         <span class="planet-stat">全国决赛入围</span>
-                        <span class="planet-stat">3个完整作品</span>
+                        <span class="planet-stat">多个完整作品</span>
                     </div>
                 </div>
 
@@ -2584,7 +2535,7 @@
                 <!-- User Research -->
                 <div class="planet-card animate-on-scroll" data-planet="research" style="--card-index: 5">
                     <span class="planet-icon">🔬</span>
-                    <h3 class="planet-title">用户洞察</h3>
+                    <h3 class="planet-title">用户研究</h3>
                     <p class="planet-desc">定性与定量研究方法结合，从问卷设计到数据分析的全流程研究经验，深入理解用户需求</p>
                     <div class="planet-stats">
                         <span class="planet-stat">900+ 样本</span>
@@ -2603,9 +2554,9 @@
                 <div class="orbit-core" data-planet="ai">
                     <div class="orbit-planet-card core-card">
                         <span class="planet-icon">🤖</span>
-                        <h3 class="planet-title">AI+运营</h3>
+                        <h3 class="planet-title">AI工具应用</h3>
                         <div class="planet-core-glow"></div>
-                        <div class="planet-desc-tooltip"><div class="tooltip-desc">AI Coding 产品 Demo / Coze 内容工作流 / 医疗AI用户研究 / 个人效率系统</div><div class="tooltip-tags"><span class="tooltip-tag">3个核心AI项目</span><span class="tooltip-tag">1个医疗AI调研</span><span class="tooltip-tag">约10分钟/篇</span></div></div>
+                        <div class="planet-desc-tooltip"><div class="tooltip-desc">小红书AI内容助手 / 减脂记录App / 个人成长系统</div><div class="tooltip-tags"><span class="tooltip-tag">3个AI项目</span><span class="tooltip-tag">约10分钟/篇</span></div></div>
                     </div>
                 </div>
                 <div class="orbit-planet" data-planet="content" style="--orbit-duration:40s;--orbit-direction:normal;--orbit-radius:140px;--orbit-start:0deg;">
@@ -2618,7 +2569,7 @@
                 <div class="orbit-planet" data-planet="research" style="--orbit-duration:45s;--orbit-direction:reverse;--orbit-radius:140px;--orbit-start:180deg;">
                     <div class="orbit-planet-card">
                         <span class="planet-icon">🔬</span>
-                        <h3 class="planet-title">用户洞察</h3>
+                        <h3 class="planet-title">用户研究</h3>
                         <div class="planet-desc-tooltip"><div class="tooltip-desc">定性与定量研究方法结合，从问卷设计到数据分析的全流程研究经验，深入理解用户需求</div><div class="tooltip-tags"><span class="tooltip-tag">900+ 样本</span><span class="tooltip-tag">硕士论文</span></div></div>
                     </div>
                 </div>
@@ -2640,7 +2591,7 @@
                     <div class="orbit-planet-card">
                         <span class="planet-icon">🎬</span>
                         <h3 class="planet-title">影像创作</h3>
-                        <div class="planet-desc-tooltip"><div class="tooltip-desc">具备从资料查阅、脚本创作、分镜设计到拍摄统筹、白板动画和后期剪辑的完整视频制作经验，作品覆盖艾滋病防治宣传、心理科普微视频和课题组宣传片，兼顾知识准确性与传播节奏。</div><div class="tooltip-tags"><span class="tooltip-tag">全国决赛</span><span class="tooltip-tag">3个作品</span></div></div>
+                        <div class="planet-desc-tooltip"><div class="tooltip-desc">具备从资料查阅、脚本创作、分镜设计到拍摄统筹、白板动画和后期剪辑的完整视频制作经验，作品覆盖艾滋病防治宣传、心理科普微视频和课题组宣传片，兼顾知识准确性与传播节奏。</div><div class="tooltip-tags"><span class="tooltip-tag">全国决赛</span><span class="tooltip-tag">多个作品</span></div></div>
                     </div>
                 </div>
             </div>
@@ -2657,7 +2608,7 @@
         <div class="section-container">
             <div class="section-header animate-on-scroll">
                 <span class="section-tag">招聘者匹配测试</span>
-                <h2 class="section-title">你正在寻找哪种 AI 产品协作者？</h2>
+                <h2 class="section-title">你正在寻找哪种运营协作者？</h2>
                 <p class="section-subtitle">8道题，匹配我最适合发挥价值的合作场景</p>
             </div>
 
@@ -2679,7 +2630,7 @@
                     </div>
                     <div class="question-counter" id="questionCounter">1 / 8</div>
                     <h3 class="question-text" id="questionText"></h3>
-                    <p class="options-hint" id="optionsHint">可选2-3个，点击确认提交</p>
+                    <p class="options-hint" id="optionsHint">可选1-3个，点击确认提交</p>
                     <div class="options-container" id="optionsContainer"></div>
                 </div>
 
@@ -2942,19 +2893,15 @@
                 content: `
                     <div class="modal-section">
                         <h4>🎓 学术表现</h4>
-                        <ul>
-                            <li>专业排名前 10%</li>
-                            <li>2018-2019学年国家励志奖学金</li>
-                            <li>2019-2020学年校级二等奖学金、校三好学生</li>
-                        </ul>
+                        <p>专业排名前10% · 国家励志奖学金 · 校级二等奖学金 · 校三好学生</p>
                     </div>
                     <div class="modal-section">
                         <h4>📚 核心课程</h4>
-                        <p>植物学、动物学、微生物学、生物化学、细胞/分子/环境/保护生物学、植物/动物/微生物生理学、生物摄影与绘画、生物统计学、免疫学等</p>
+                        <p>植物学、动物学、微生物学、生物化学、细胞/分子/环境/保护生物学、生物统计学、免疫学等</p>
                     </div>
                     <div class="modal-section">
                         <h4>🌱 成长收获</h4>
-                        <p>生物学训练培养了我严谨的实验思维和对生命的敏感度，生物摄影与绘画课程启发了我的视觉表达能力，为后来跨专业学习心理学和内容创作奠定了基础。</p>
+                        <p>生物学训练培养了严谨的实验思维和对生命的敏感度，为后来跨专业学习心理学和内容创作奠定了基础。</p>
                     </div>
                 `
             },
@@ -2964,23 +2911,16 @@
                 content: `
                     <div class="modal-section">
                         <h4>🎓 学术表现</h4>
-                        <ul>
-                            <li>专业排名前 1%</li>
-                            <li>2022年二等新生奖学金</li>
-                            <li>2023年、2024年一等学业奖学金</li>
-                            <li>2023年哈尔滨医科大学研究生科研和实践创新项目</li>
-                        </ul>
+                        <p>专业排名前1% · 一等学业奖学金×2 · 研究生科研和实践创新项目</p>
                     </div>
                     <div class="modal-section">
                         <h4>📚 核心课程</h4>
-                        <p>普通/人格/社会/医学/实验/变态心理学、心理学与生活、心理学研究方法、心理/医学统计学、叙事疗法、萨提亚家庭治疗、团体辅导、正念认知疗法、性别与健康、医学人类学等</p>
+                        <p>普通/人格/社会/医学/实验/变态心理学、心理学研究方法、心理/医学统计学、叙事疗法、团体辅导、正念认知疗法、性别与健康等</p>
                     </div>
                     <div class="modal-section">
                         <h4>🎯 研究焦点</h4>
                         <p>硕士论文：青少年性保护自我效能研究。发放问卷900份，使用SPSS、Mplus进行数据分析，探索社交媒体使用对性保护自我效能的影响机制。</p>
                     </div>
-                    <div class="achievement-tag">专业排名 1%</div>
-                    <div class="achievement-tag">一等学业奖学金 x2</div>
                 `
             },
             'tianao': {
@@ -2988,32 +2928,18 @@
                 date: '2025年10月 - 2026年3月',
                 content: `
                     <div class="modal-section">
-                        <h4>📝 内容运营</h4>
-                        <p>负责中成药品牌市场内容支持，独立完成公众号推文撰写（海报、文案与排版、会议报道）、活动执行等工作，擅长将医学信息转化为合规易懂的推广语言。</p>
+                        <h4>📝 市场内容与培训支持</h4>
+                        <p>参与2场省区经销商培训营（合计100+人），负责满意度问卷设计、培训反馈收集与分析；主讲10余场线上培训，从培训互动中提炼用户认知痛点与信息需求；整理约30页产品推广课件被市场部采纳为年度培训底稿。</p>
                     </div>
                     <div class="modal-section">
-                        <h4>🎯 活动运营</h4>
-                        <ul>
-                            <li>参与策划执行2场线下代表培训营，涵盖百余人</li>
-                            <li>负责串场PPT制作、宣传视频剪辑、会议主持</li>
-                            <li>满意度调研设计及会议记录与总结</li>
-                            <li>深度拜访专家4次，整理临床咨询问题合集</li>
-                        </ul>
+                        <h4>🎯 竞品分析与产品信息梳理</h4>
+                        <p>围绕适应症、卖点、价格、临床证据、药材组成等维度建立竞品多维对比框架，为经销商代表和销售团队提供培训材料基础；持续更新竞品信息库，整理竞品分析话术及Q&A。</p>
                     </div>
                     <div class="modal-section">
-                        <h4>📊 产品信息梳理</h4>
-                        <p>系统梳理产品相关疾病知识、最新基础/临床研究，提炼核心推广点。其中某疾病梳理课件被采纳为年度全国推广培训底稿；持续更新竞品信息库，整理竞品分析话术及Q&A。</p>
-                    </div>
-                    <div class="modal-section">
-                        <h4>⚙️ 标准化与流程管理</h4>
-                        <ul>
-                            <li>独立撰写市场部各项推广工作SOP课件，提升团队工作效率</li>
-                            <li>协助销售经理处理日常销售数据录入、导出及分析，通过Excel分析识别出2个潜在增长区域</li>
-                            <li>对接财务进行销售订单管理，核对、完善订单合同及票据，确保流程合规</li>
-                        </ul>
+                        <h4>⚙️ 流程标准化与销售支持</h4>
+                        <p>完成6个市场推广SOP课件初稿，沉淀可复用的推广流程；参与月度流向数据清洗与汇总，协助发货做单、经销商对账资料，理解医药To B招商和销售合规链路。</p>
                     </div>
                     <div class="achievement-tag">课件被采纳为全国培训底稿</div>
-                    <div class="achievement-tag">识别2个潜在增长区域</div>
                 `
             },
             'research-group': {
@@ -3045,23 +2971,12 @@
                 content: `
                     <div class="modal-section">
                         <h4>📞 热线服务</h4>
-                        <p>接听心理援助热线电话，负责对来访进行心理服务和危机干预。共接通约30通电话，服务约15名青少年和3名中老年人。</p>
+                        <p>接听心理援助热线电话，负责对来访进行心理服务和危机干预。共接通约30通电话，服务约15名青少年和3名中老年人，累计服务时长24.5小时。</p>
                     </div>
                     <div class="modal-section">
                         <h4>💬 咨询话题</h4>
-                        <ul>
-                            <li>青少年学业、人际关系、工作适应等问题</li>
-                            <li>提供心理陪伴</li>
-                            <li>子女教育/学业/心理疾病问题</li>
-                            <li>个人婚姻/家庭问题</li>
-                        </ul>
+                        <p>青少年学业/人际关系/工作适应、心理陪伴、子女教育/学业/心理疾病、个人婚姻/家庭问题</p>
                     </div>
-                    <div class="modal-section">
-                        <h4>⏱️ 服务数据</h4>
-                        <p>累计服务时长 24.5小时</p>
-                    </div>
-                    <div class="achievement-tag">危机干预训练</div>
-                    <div class="achievement-tag">累计服务 24.5h</div>
                 `
             },
             'hospital': {
@@ -3069,24 +2984,13 @@
                 date: '2024年7月 - 2024年8月',
                 content: `
                     <div class="modal-section">
-                        <h4>🏥 科室轮转</h4>
-                        <p>分别在未成年指导中心、心理测查室、个体化诊疗室、三疗科进行轮转实习。</p>
-                    </div>
-                    <div class="modal-section">
-                        <h4>🎯 核心工作</h4>
-                        <ul>
-                            <li>负责接待来访并预约面询，知晓热线援助中危机干预应对流程</li>
-                            <li>根据医嘱对患者进行相应的问卷/量表测查，解决患者填写过程中遇到的相关问题</li>
-                            <li>在伦理要求基础上旁听心理咨询过程，学习识别各类来访特征和其心理特点，及所应用的咨询方法</li>
-                            <li>跟随带教老师出门诊、药诊、病房查房，识别各类精神/心理疾病特征及所用药物，了解部分物理治疗仪器</li>
-                        </ul>
+                        <h4>🏥 临床实习</h4>
+                        <p>在未成年指导中心、心理测查室、个体化诊疗室、三疗科轮转实习。负责接待来访、问卷/量表测查、旁听心理咨询过程，学习识别各类来访特征和咨询方法；跟随带教老师出门诊、药诊、病房查房，识别各类精神/心理疾病特征及所用药物。</p>
                     </div>
                     <div class="modal-section">
                         <h4>💬 咨询实践</h4>
                         <p>对轻症患者进行义务心理咨询，共咨询2名青少年和1名中年人，累计服务时长7.5小时。</p>
                     </div>
-                    <div class="achievement-tag">临床咨询实践</div>
-                    <div class="achievement-tag">累计服务 7.5h</div>
                 `
             },
             'activities': {
@@ -3115,7 +3019,7 @@
             },
             'avoice': {
                 title: 'Avoice 海外华人女性保护项目 | 公众号排版实习生',
-                date: '2023年5月 - 2025年9月',
+                date: '2023年5月 - 2025年5月',
                 content: `
                     <div class="modal-section">
                         <h4>📝 工作内容</h4>
@@ -3134,127 +3038,62 @@
                 `
             },
             'ai-project': {
-                title: 'AI驱动的小红书内容运营项目',
+                title: '小红书AI内容运营助手',
                 date: 'Coze工作流 / Agent / Skill实践',
                 content: `
                     <div class="modal-section">
                         <h4>🎯 项目背景</h4>
-                        <p>围绕裸辞求职记录场景，解决内容运营中素材分散、图片信息整理耗时、笔记初稿不稳定的问题，搭建一个可持续迭代的AI辅助内容生产流程。</p>
-                    </div>
-                    <div class="modal-section">
-                        <h4>🔁 流程设计</h4>
-                        <ul>
-                            <li>将内容链路拆成“素材记录 -> 数据存储 -> 图片解析 -> 笔记生成 -> 人工优化”五步，明确AI负责结构化和初稿生成，人负责选题判断和表达校正</li>
-                            <li>用飞书多维表格沉淀选题、素材、图片信息、标题和发布复盘，让内容资产可追踪、可复用</li>
-                            <li>围绕干货输出、图片上传、文案库和风格学习机制持续迭代，减少每次从零开始写作的成本</li>
-                        </ul>
+                        <p>围绕裸辞求职记录场景，搭建"素材记录→数据存储→笔记生成→人工优化"的AI辅助内容生产流程，解决素材分散、图片信息整理耗时的问题。</p>
                     </div>
                     <div class="modal-section">
                         <h4>🛠️ 工具与实现</h4>
-                        <p>使用Coze工作流、Coze 2.5 Agent、Skill、飞书CLI与飞书多维表格完成流程搭建；通过Prompt结构、Agent角色设定和风格样例沉淀，提高生成内容的稳定性和可改写性。</p>
+                        <p>使用Coze工作流、Agent、Skill、飞书CLI与飞书多维表格完成流程搭建；迭代V1.0-V1.2.1版本，完成基础生成、干货输出强化、图片修复、发布文案库与风格学习机制。</p>
                     </div>
                     <div class="modal-section">
                         <h4>📈 验证结果</h4>
-                        <p>对比手动/AI辅助各16篇小红书笔记，单篇创作时间由45-60分钟降至约10分钟；AI主要承担素材整理、图片解析和初稿生成，最终发布前仍由人工完成选题判断、标题兑现和互动设计。</p>
+                        <p>对比手动/AI辅助各16篇笔记，单篇创作时间由45-60分钟降至约10分钟；复盘发现AI提升效率但无法替代选题价值判断，据此调整运营策略。</p>
                     </div>
-                    <div class="modal-section">
-                        <h4>💡 复盘结论</h4>
-                        <p>AI能显著提升内容生产效率，但内容表现仍取决于选题价值、标题兑现和互动设计；因此更适合把AI放在“提效和辅助判断”位置，而不是直接替代运营决策。</p>
-                    </div>
-                    <div class="achievement-tag">手动/AI各16篇对比</div>
                     <div class="achievement-tag">约10分钟/篇</div>
                     <a href="https://www.notion.so/AI-335a21715ff180aca1a9eb7feb995e3f" target="_blank" class="notion-link">查看完整Notion分析</a>
                 `
             },
             'haoshijia': {
-                title: '好食家 | 减脂记录与复盘 Web App',
-                date: '2026年4月 - 持续迭代',
+                title: '用户研究',
+                date: '定性定量研究 / 毕业论文 / 用户心智调研',
                 content: `
                     <div class="modal-section">
-                        <h4>🎯 产品定位</h4>
-                        <p>好食家是一个围绕"记录 -> 复盘 -> 下周计划"的减脂记录与复盘产品，不只记录体重、饮食和运动，而是帮助用户看见情绪、场景和行为之间的关系，并把复盘结果转化为下一周可以执行的饮食安排。</p>
+                        <h4>📊 定性定量研究</h4>
+                        <p>心理学研究训练背景，具备深度访谈、焦点小组、问卷设计与量化分析经验。熟练使用SPSS、Mplus进行描述统计、信效度检验、结构方程模型与中介效应分析。</p>
                     </div>
                     <div class="modal-section">
-                        <h4>👥 用户洞察</h4>
-                        <p>减脂失败往往不是因为用户不知道要少吃多动，而是因为记录成本高、复盘缺失、情绪性进食难以被看见。产品因此把饮食记录扩展到饥饿程度、触发原因和情绪状态，让后续复盘有依据。</p>
+                        <h4>📖 硕士毕业论文</h4>
+                        <p>青少年性保护自我效能研究：通过线上线下发放问卷900份，使用SPSS、Mplus进行数据分析，探索社交媒体使用对性保护自我效能的影响机制。</p>
                     </div>
                     <div class="modal-section">
-                        <h4>🤖 AI Coding 实现路径</h4>
-                        <p>使用OpenCode、Claude Code和Codex辅助完成需求分析、PRD、功能拆解、前端开发、Firebase接入与Vercel部署。我的核心工作不是"让AI直接写完"，而是把真实需求拆成可实现的MVP范围，持续校验功能、数据流和体验闭环。</p>
-                    </div>
-                    <div class="modal-section">
-                        <h4>🧩 核心功能</h4>
-                        <ul>
-                            <li>仪表盘任务面板：聚合称重、饮食、运动和复盘任务，降低每日使用门槛</li>
-                            <li>体重与围度记录：支持目标体重、最新体重、身体围度和 BMI 参考</li>
-                            <li>饮食与运动记录：记录食物、份量、运动类型，同时补充情绪和触发原因</li>
-                            <li>日复盘与周复盘：根据记录生成执行度、高风险场景和下周策略</li>
-                            <li>食材库存与菜谱生成：根据库存、可用顿数、身体资料和基础搭配规则生成一周菜单</li>
-                            <li>账号与数据管理：支持注册登录、清除历史数据和注销账号</li>
-                        </ul>
-                    </div>
-                    <div class="modal-section">
-                        <h4>⚖️ 产品取舍</h4>
-                        <p>第一版没有追求医疗级营养计算或 AI 图像识别，而是优先验证核心闭环：用户能否持续记录、能否形成复盘、能否得到下一步计划。菜谱生成只使用用户录入的库存食材，库存不足时直接提示补货方向，避免生成不可执行的方案。</p>
-                    </div>
-                    <div class="modal-section">
-                        <h4>🙋 我的角色</h4>
-                        <p>独立完成需求定义、功能拆解、信息架构、交互流程、AI协作开发、Firebase数据接入、Vercel部署和持续迭代。项目体现了我从真实需求出发，设计MVP、控制实现范围、验证闭环并持续优化产品体验的能力。</p>
-                    </div>
-                    <div class="modal-section">
-                        <h4>📈 项目成果</h4>
-                        <p>完成一个可公开访问、可注册体验的完整 Web App，覆盖记录、复盘、计划生成和数据管理闭环。</p>
-                        <div class="achievement-tag">公开上线</div>
-                        <div class="achievement-tag">完整产品闭环</div>
-                        <div class="achievement-tag">持续迭代</div>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://haoshijia-iota.vercel.app/" target="_blank" class="project-link demo-link">公开体验</a>
-                        <a href="https://github.com/Faye1007/haoshijia-portfolio" target="_blank" class="project-link github-link">GitHub 仓库</a>
+                        <h4>🏥 医疗健康AI产品用户心智调研</h4>
+                        <p>参与某头部互联网医疗健康AI产品用户心智调研，支持14场焦点访谈（每场约6人，覆盖18-60岁用户），独立主持1场；从用户表达中提炼"产品认知不足、AI建议可信度需建立"等洞察。</p>
                     </div>
                 `
             },
             'growth-system': {
-                title: 'Growth Insight System | 个人成长洞察系统',
-                date: '2026年5月 - 持续迭代',
+                title: 'AI工具应用',
+                date: '好食家 / Growth Insight System',
                 content: `
                     <div class="modal-section">
-                        <h4>🎯 产品定位</h4>
-                        <p>围绕"记录 -> 统计 -> 复盘 -> 建议 -> 调整"搭建的个人成长洞察系统，不是单纯的待办或日记工具，而是一个把任务、习惯、日程、情绪、事件、灵感、纪念日等生活数据统一管理的人生管理工作台。</p>
+                        <h4>🍽️ 好食家 | 减脂记录与复盘 Web App</h4>
+                        <p>围绕"记录→复盘→下周计划"的减脂记录产品，帮助用户看见情绪、场景和行为之间的关系。使用OpenCode、Claude Code和Codex辅助完成需求分析、前端开发、Firebase接入与Vercel部署。</p>
+                        <div class="project-links">
+                            <a href="https://haoshijia-iota.vercel.app/" target="_blank" class="project-link demo-link">公开体验</a>
+                            <a href="https://github.com/Faye1007/haoshijia-portfolio" target="_blank" class="project-link github-link">GitHub</a>
+                        </div>
                     </div>
                     <div class="modal-section">
-                        <h4>🤖 AI Coding 实现路径</h4>
-                        <p>使用OpenCode、Claude Code和Codex辅助完成需求分析、PRD、架构设计、前端开发、数据库建模与部署上线。技术栈为 Next.js App Router + Supabase Postgres + Drizzle ORM + Recharts，AI 通过 OpenAI-compatible adapter 接入，支持低成本模型切换。</p>
-                    </div>
-                    <div class="modal-section">
-                        <h4>🧩 核心功能</h4>
-                        <ul>
-                            <li>每日工作台：任务管理、习惯打卡、日程记录、随手记录</li>
-                            <li>数据可视化：任务完成率、习惯趋势、情绪统计等图表</li>
-                            <li>AI 复盘：每日/每周/月度复盘，程序先做统计，AI 只负责解释和建议</li>
-                            <li>个人说明书：长期背景资料，为 AI 复盘提供个性化上下文</li>
-                            <li>场景工具箱：情绪复盘、压力整理、明日计划等拆解工具</li>
-                            <li>纪念日与礼物记录、Markdown 导出、全局搜索</li>
-                        </ul>
-                    </div>
-                    <div class="modal-section">
-                        <h4>⚖️ 产品取舍</h4>
-                        <p>第一版优先验证核心闭环：用户能否持续记录、能否形成复盘、能否得到下一步计划。AI 不替代简单录入，只在复盘节点介入；程序能算的统计不交给 AI，控制成本和隐私风险。</p>
-                    </div>
-                    <div class="modal-section">
-                        <h4>🙋 我的角色</h4>
-                        <p>独立完成需求定义、产品原则设定、功能拆解、信息架构、数据库设计、AI 协作开发、Supabase 部署和持续迭代。项目体现了我从真实需求出发，设计 MVP、控制实现范围、验证闭环并持续优化的能力。</p>
-                    </div>
-                    <div class="modal-section">
-                        <h4>📈 项目成果</h4>
-                        <p>完成一个已部署上线、支持公开体验的完整 Web App，覆盖记录、统计、复盘、建议和数据管理闭环。</p>
-                        <div class="achievement-tag">公开上线</div>
-                        <div class="achievement-tag">完整产品闭环</div>
-                        <div class="achievement-tag">持续迭代</div>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://growth-insight-system.onrender.com/checklist" target="_blank" class="project-link demo-link">公开体验</a>
-                        <a href="https://github.com/Faye1007/growth-insight-system-portfolio" target="_blank" class="project-link github-link">GitHub 仓库</a>
+                        <h4>📊 Growth Insight System | 个人成长洞察系统</h4>
+                        <p>把任务、习惯、日程、情绪、事件等生活数据统一管理的人生管理工作台。使用Next.js + Supabase + Drizzle ORM搭建，AI通过OpenAI-compatible adapter接入，支持低成本模型切换。</p>
+                        <div class="project-links">
+                            <a href="https://growth-insight-system.onrender.com/checklist" target="_blank" class="project-link demo-link">公开体验</a>
+                            <a href="https://github.com/Faye1007/growth-insight-system-portfolio" target="_blank" class="project-link github-link">GitHub</a>
+                        </div>
                     </div>
                 `
             },
@@ -3264,21 +3103,15 @@
                 content: `
                     <div class="modal-section">
                         <h4>🎯 期望方向</h4>
-                        <p>产品运营 / 内容运营 / 用户研究 / 市场策划</p>
+                        <p>内容运营 / 用户研究 / 市场营销 / 产品策划</p>
                     </div>
                     <div class="modal-section">
                         <h4>💼 我的优势</h4>
-                        <ul>
-                            <li>心理学专业背景，深入理解用户行为与需求</li>
-                            <li>AI工具深度实践经验，能将AI能力落地到实际工作流程</li>
-                            <li>内容创作与用户研究双重能力，既懂表达也懂分析</li>
-                            <li>从0到1的项目经验，具备独立解决问题能力</li>
-                        </ul>
+                        <p>心理学专业背景，深入理解用户行为与需求；AI工具深度实践经验，能将AI能力落地到实际工作流程；内容创作与用户研究双重能力，既懂表达也懂分析；从0到1的项目经验，具备独立解决问题能力。</p>
                     </div>
                     <div class="modal-section contact-highlight">
                         <h4>📮 联系方式</h4>
-                        <p>邮箱：TILAPIA1007@163.COM</p>
-                        <p>电话：+86 131 4440 1070</p>
+                        <p>邮箱：TILAPIA1007@163.COM · 电话：+86 131 4440 1070</p>
                         <p>GitHub：<a href="https://github.com/Faye1007" target="_blank">github.com/Faye1007</a></p>
                     </div>
                 `
@@ -3288,25 +3121,20 @@
         // Planet data for modal
         const planetData = {
             'ai': {
-                title: '🤖 AI+运营',
-                subtitle: 'AI Coding 产品 Demo / Coze 内容工作流 / 医疗AI用户研究 / 个人效率系统',
+                title: '🤖 AI工具应用',
+                subtitle: '小红书AI内容助手 / 减脂记录App / 个人成长系统',
                 content: `
                     <div class="modal-section">
-                        <h4>🤖 项目一：AI驱动的小红书内容运营项目</h4>
-                        <p><strong>项目定位：</strong>面向内容运营中选题分散、素材整理耗时、产出不稳定的问题，基于 Coze 搭建 AI 辅助内容生产流程。</p>
+                        <h4>📝 项目一：小红书AI内容运营助手</h4>
+                        <p><strong>项目定位：</strong>围绕裸辞求职记录场景，搭建"素材记录→数据存储→笔记生成→人工优化"的AI辅助内容生产流程。</p>
                     </div>
                     <div class="modal-section">
                         <h4>🔁 流程与实现</h4>
-                        <ul>
-                            <li>搭建“素材记录 -> 数据存储 -> 图片解析 -> 笔记生成 -> 人工优化”的内容生产流程</li>
-                            <li>使用Coze工作流、Coze 2.5 Agent、Skill、飞书CLI与飞书多维表格完成流程联动</li>
-                            <li>持续迭代干货输出、图片上传、文案库和风格学习机制，并用发布复盘反推Prompt结构</li>
-                        </ul>
+                        <p>使用Coze工作流、Agent、Skill、飞书CLI与飞书多维表格完成流程搭建；迭代V1.0-V1.2.1版本，完成基础生成、干货输出强化、图片修复、发布文案库与风格学习机制。</p>
                     </div>
                     <div class="modal-section">
                         <h4>📈 项目成果</h4>
-                        <p>对比手动/AI辅助各16篇笔记，单篇创作时间由45-60分钟降至约10分钟；同时复盘发现，内容表现仍取决于选题价值、标题兑现和互动设计。</p>
-                        <div class="achievement-tag">手动/AI各16篇对比</div>
+                        <p>对比手动/AI辅助各16篇笔记，单篇创作时间由45-60分钟降至约10分钟；复盘发现AI提升效率但无法替代选题价值判断，据此调整运营策略。</p>
                         <div class="achievement-tag">约10分钟/篇</div>
                     </div>
                     <div class="project-links">
@@ -3314,27 +3142,11 @@
                     </div>
                     <div class="modal-section">
                         <h4>🍱 项目二：好食家减脂记录与复盘产品</h4>
-                        <p><strong>项目定位：</strong>围绕“记录 -> 复盘 -> 下周计划”搭建减脂记录与复盘 Web App，帮助用户看见情绪、场景和行为之间的关系。</p>
+                        <p><strong>项目定位：</strong>围绕"记录→复盘→下周计划"搭建减脂记录与复盘 Web App，帮助用户看见情绪、场景和行为之间的关系。</p>
                     </div>
                     <div class="modal-section">
                         <h4>🤖 AI Coding 与核心设计</h4>
-                        <ul>
-                            <li>使用OpenCode、Claude Code和Codex辅助完成需求分析、PRD、功能拆解、前端开发、Firebase接入与Vercel部署</li>
-                            <li>把称重、饮食、运动和复盘收敛为仪表盘任务，降低每日使用门槛</li>
-                            <li>在饮食记录中加入饥饿程度、触发原因和情绪状态，为复盘提供依据</li>
-                            <li>基于记录生成日复盘、周复盘，并用食材库存生成可执行的一周菜单</li>
-                        </ul>
-                    </div>
-                    <div class="modal-section">
-                        <h4>⚖️ 产品取舍</h4>
-                        <p>第一版没有追求医疗级营养计算或 AI 图像识别，而是优先验证“持续记录、形成复盘、得到下一步计划”的核心闭环。</p>
-                    </div>
-                    <div class="modal-section">
-                        <h4>🙋 我的角色</h4>
-                        <p>独立完成需求定义、功能拆解、信息架构、交互流程、前端实现、Firebase 数据接入、Vercel 部署和持续迭代。</p>
-                        <div class="achievement-tag">公开上线</div>
-                        <div class="achievement-tag">完整产品闭环</div>
-                        <div class="achievement-tag">持续迭代</div>
+                        <p>使用OpenCode、Claude Code和Codex辅助完成需求分析、PRD、功能拆解、前端开发、Firebase接入与Vercel部署。把称重、饮食、运动和复盘收敛为仪表盘任务，降低每日使用门槛；在饮食记录中加入饥饿程度、触发原因和情绪状态，为复盘提供依据。</p>
                     </div>
                     <div class="project-links">
                         <a href="https://haoshijia-iota.vercel.app/" target="_blank" class="project-link demo-link">公开体验</a>
@@ -3342,60 +3154,19 @@
                     </div>
                     <div class="modal-section">
                         <h4>🌱 项目三：Growth Insight System 个人成长洞察系统</h4>
-                        <p><strong>项目定位：</strong>围绕"记录→统计→复盘→建议→调整"搭建的个人成长洞察系统，不是单纯的待办或日记工具，而是把任务、习惯、日程、情绪、事件、灵感、纪念日等生活数据统一管理的人生管理工作台。</p>
+                        <p><strong>项目定位：</strong>把任务、习惯、日程、情绪、事件等生活数据统一管理的人生管理工作台。</p>
                     </div>
                     <div class="modal-section">
                         <h4>🤖 AI Coding 与核心设计</h4>
-                        <ul>
-                            <li>使用OpenCode、Claude Code和Codex辅助完成需求分析、PRD、架构设计、前端开发、数据库建模与部署上线</li>
-                            <li>技术栈：Next.js App Router + Supabase Postgres + Drizzle ORM + Recharts</li>
-                            <li>AI 通过 OpenAI-compatible adapter 接入，支持低成本模型切换，只在复盘节点介入</li>
-                            <li>程序负责基础统计和可视化，AI 只负责解释和建议，控制成本和隐私风险</li>
-                        </ul>
-                    </div>
-                    <div class="modal-section">
-                        <h4>🧩 核心功能</h4>
-                        <ul>
-                            <li>每日工作台：任务管理、习惯打卡、日程记录、随手记录</li>
-                            <li>数据可视化：任务完成率、习惯趋势、情绪统计等图表</li>
-                            <li>AI 复盘：每日/每周/月度复盘，发送前可预览将发送内容</li>
-                            <li>个人说明书：长期背景资料，为 AI 复盘提供个性化上下文</li>
-                            <li>场景工具箱：情绪复盘、压力整理、明日计划等拆解工具</li>
-                            <li>纪念日与礼物记录、Markdown 导出、全局搜索</li>
-                        </ul>
-                    </div>
-                    <div class="modal-section">
-                        <h4>⚖️ 产品取舍</h4>
-                        <p>第一版优先验证核心闭环：用户能否持续记录、能否形成复盘、能否得到下一步计划。AI 不替代简单录入，只在复盘节点介入；未配置 AI 时普通功能不受影响。</p>
-                    </div>
-                    <div class="modal-section">
-                        <h4>🙋 我的角色</h4>
-                        <p>独立完成需求定义、产品原则设定、功能拆解、信息架构、数据库设计、AI 协作开发、Supabase 部署和持续迭代。</p>
-                        <div class="achievement-tag">公开上线</div>
-                        <div class="achievement-tag">完整产品闭环</div>
-                        <div class="achievement-tag">持续迭代</div>
+                        <p>使用Next.js + Supabase + Drizzle ORM搭建，AI通过OpenAI-compatible adapter接入，支持低成本模型切换，只在复盘节点介入；程序负责基础统计和可视化，AI只负责解释和建议。</p>
                     </div>
                     <div class="project-links">
                         <a href="https://growth-insight-system.onrender.com/checklist" target="_blank" class="project-link demo-link">公开体验</a>
                         <a href="https://github.com/Faye1007/growth-insight-system-portfolio" target="_blank" class="project-link github-link">GitHub 仓库</a>
                     </div>
                     <div class="modal-section">
-                        <h4>🩺 医疗健康AI产品用户心智调研</h4>
-                        <p>参与某头部互联网医疗健康AI产品用户心智调研，支持14场焦点访谈资料并独立主持1场；围绕产品认知、AI可信度和用户教育问题沉淀洞察，让AI实践不只停留在工具使用，也覆盖用户理解和产品传播判断。</p>
-                        <div class="achievement-tag">14场访谈资料支持</div>
-                        <div class="achievement-tag">独立主持1场</div>
-                    </div>
-                    <div class="modal-section">
-                        <h4>🗂️ 个人效率与知识管理AI工作流</h4>
-                        <p>设计成长计划/人生笔记Skill，并基于Obsidian搭建求职工作台；借助Coze 2.5 Agent、飞书多维表格和双向链接，实现日常记录、复盘、岗位筛选和简历素材沉淀。</p>
-                    </div>
-                    <div class="modal-section">
                         <h4>💡 共性能力总结</h4>
-                        <ul>
-                            <li>能从真实场景定义问题</li>
-                            <li>能把 AI 能力拆进具体流程</li>
-                            <li>能用数据、体验和人工判断控制质量风险</li>
-                        </ul>
+                        <p>能从真实场景定义问题；能把AI能力拆进具体流程；能用数据、体验和人工判断控制质量风险。</p>
                     </div>
                 `
             },
@@ -3507,19 +3278,22 @@
                                     <div class="work-desc">创意策划+脚本+拍摄</div>
                                 </div>
                             </a>
+                            <a href="https://www.bilibili.com/video/BV1n14y1C7Xx" target="_blank" class="work-item">
+                                <div class="work-img">
+                                    <img src="https://user15728.cn.imgto.link/public/20260701/image.avif" alt="B站游戏视频">
+                                </div>
+                                <div class="work-content">
+                                    <div class="work-title">B站游戏内容创作</div>
+                                    <div class="work-desc">11条视频，最高播放886</div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                     <div class="modal-section">
                         <h4>🛠️ 技术能力</h4>
-                        <ul>
-                            <li>脚本创作：从资料查阅到分镜设计</li>
-                            <li>白板动画：VideoScribe独立制作</li>
-                            <li>拍摄统筹：演员招募、现场调度</li>
-                            <li>后期剪辑：剪映、Premiere</li>
-                        </ul>
+                        <p>脚本创作（资料查阅到分镜设计）、白板动画（VideoScribe独立制作）、拍摄统筹（演员招募、现场调度）、后期剪辑（剪映、Premiere）</p>
                     </div>
                     <div class="achievement-tag">全国决赛入围</div>
-                    <div class="achievement-tag">研讨会发言展示</div>
                 `
             },
             'design': {
@@ -3538,7 +3312,7 @@
                                     <div class="work-desc">8篇推文+封面设计</div>
                                 </div>
                             </a>
-                            <a href="https://user4707.cn.imgto.link/public/20260316/0a5d96e39a0dfd75d1dcccc27f0549e8.avif" target="_blank" class="work-item">
+                            <a href="https://imgur.la/image/0a5d96e39a0dfd75d1dcccc27f0549e8.SvI7Pv" target="_blank" class="work-item">
                                 <div class="work-img">
                                     <img src="https://user4707.cn.imgto.link/public/20260316/0a5d96e39a0dfd75d1dcccc27f0549e8.avif" alt="丁香之火">
                                 </div>
@@ -3547,7 +3321,7 @@
                                     <div class="work-desc">89人参与的核心视觉</div>
                                 </div>
                             </a>
-                            <a href="https://user4707.cn.imgto.link/public/20260316/820de9a886034e089168f60bb21e7ea2.avif" target="_blank" class="work-item">
+                            <a href="https://imgur.la/image/820de9a886034e089168f60bb21e7ea2.SvIBky" target="_blank" class="work-item">
                                 <div class="work-img">
                                     <img src="https://user4707.cn.imgto.link/public/20260316/820de9a886034e089168f60bb21e7ea2.avif" alt="会议海报">
                                 </div>
@@ -3556,7 +3330,7 @@
                                     <div class="work-desc">高校性教育会议视觉设计</div>
                                 </div>
                             </a>
-                            <a href="https://user4707.cn.imgto.link/public/20260316/018222773d2303aac0ddc0bf76595f68.avif" target="_blank" class="work-item">
+                            <a href="https://imgur.la/image/018222773d2303aac0ddc0bf76595f68.SvImvF" target="_blank" class="work-item">
                                 <div class="work-img">
                                     <img src="https://user4707.cn.imgto.link/public/20260316/018222773d2303aac0ddc0bf76595f68.avif" alt="PPT设计">
                                 </div>
@@ -3572,7 +3346,6 @@
                         <p>Canva、Photoshop、Procreate、Xmind</p>
                     </div>
                     <div class="achievement-tag">优秀志愿者</div>
-                    <div class="achievement-tag">8+排版作品</div>
                 `
             },
             'event': {
@@ -3619,7 +3392,7 @@
                 `
             },
             'research': {
-                title: '🔬 用户洞察',
+                title: '🔬 用户研究',
                 subtitle: '定性与定量研究结合，深入理解用户需求',
                 content: `
                     <div class="modal-section">
@@ -3884,15 +3657,15 @@
         const testResults = {
             creative: {
                 icon: "🎨",
-                type: "灵感爆破型",
-                desc: "我擅长从0到1创造，用AI工具快速验证想法。如果你需要一个能不断产出新鲜创意、快速把概念变成原型的人，我就是你的最佳选择。",
+                type: "内容创作型",
+                desc: "我擅长把想法变成内容，从公众号推文、视觉海报到视频制作，能独立完成从策划到交付的全流程；同时会用AI工具提升效率，让内容生产更快更稳。",
                 evidence: [
-                    { text: "用AI Coding（Claude Code、Codex）独立搭建个人作品集网站", types: ["creative", "executive"] },
-                    { text: "Coze搭建内容生成工作流，实现内容采集-生成-优化闭环", types: ["creative", "analytical"] },
-                    { text: "运营小红书账号，验证对比人工与AI内容效果", types: ["creative", "analytical"] },
-                    { text: "独立制作心理科普白板动画《乐观偏差》，入围全国决赛", types: ["creative", "empathetic"] }
+                    { text: "搭建小红书AI内容助手，单篇创作时间从45分钟降至10分钟", types: ["creative", "analytical"] },
+                    { text: "完成公众号推文6篇、Avoice项目排版8篇，覆盖科普、性别议题等多领域", types: ["creative"] },
+                    { text: "独立制作心理科普白板动画《乐观偏差》，入围全国决赛", types: ["creative", "empathetic"] },
+                    { text: "使用Canva、秀米、剪映完成海报设计、图文排版与视频剪辑", types: ["creative", "executive"] }
                 ],
-                scenario: "你需要快速产出大量创意内容、搭建AI工作流、或者用创新的方式解决传统问题的时候"
+                scenario: "你需要产出公众号推文、设计宣传海报、制作视频内容、或者搭建AI辅助的内容生产流程的时候"
             },
             analytical: {
                 icon: "📊",
@@ -3950,7 +3723,7 @@
             document.getElementById('questionCounter').textContent = `${currentQuestion + 1} / ${testQuestions.length}`;
             document.getElementById('questionText').textContent = q.question;
             document.getElementById('progressFill').style.width = `${((currentQuestion) / testQuestions.length) * 100}%`;
-            document.getElementById('optionsHint').textContent = '可选2-3个，点击确认提交';
+            document.getElementById('optionsHint').textContent = '可选1-3个，点击确认提交';
 
             const optionsContainer = document.getElementById('optionsContainer');
             optionsContainer.innerHTML = '';
@@ -3989,7 +3762,7 @@
 
             // 显示/隐藏确认按钮
             const confirmBtn = document.getElementById('confirmBtn');
-            if (selectedOptions.length >= 2) {
+            if (selectedOptions.length >= 1) {
                 confirmBtn.style.display = 'block';
             } else {
                 confirmBtn.style.display = 'none';
@@ -4136,33 +3909,33 @@
 
             // 揭示顺序定义
             const timelineSequence = [
-                { stage: 0.0, nodes: ['future'], paths: [] },
-                { stage: 0.10, nodes: ['guizhou'], paths: ['path-main-axis'] },
-                { stage: 0.20, nodes: ['harbin'], paths: [] },
-                { stage: 0.28, nodes: ['research-group'], paths: ['path-harbin-research'] },
-                { stage: 0.35, nodes: ['hotline'], paths: ['path-harbin-hotline'] },
+                { stage: 0.0, nodes: ['guizhou'], paths: [] },
+                { stage: 0.12, nodes: ['harbin'], paths: ['path-main-axis'] },
+                { stage: 0.22, nodes: ['tianao'], paths: [] },
+                { stage: 0.30, nodes: ['research-group'], paths: ['path-harbin-research'] },
+                { stage: 0.36, nodes: ['hotline'], paths: ['path-harbin-hotline'] },
                 { stage: 0.42, nodes: ['hospital'], paths: ['path-harbin-hospital'] },
                 { stage: 0.48, nodes: ['activities'], paths: ['path-harbin-activities'] },
-                { stage: 0.55, nodes: ['avoice'], paths: ['path-harbin-avoice'] },
-                { stage: 0.65, nodes: ['tianao'], paths: [] },
-                { stage: 0.78, nodes: ['ai-project', 'haoshijia'], paths: ['path-future-ai', 'path-future-haoshijia'] },
-                { stage: 0.85, nodes: ['growth-system'], paths: ['path-future-growth'] },
-                { stage: 0.90, nodes: [], paths: [], orbits: true }
+                { stage: 0.54, nodes: ['avoice'], paths: ['path-harbin-avoice'] },
+                { stage: 0.62, nodes: ['future'], paths: [] },
+                { stage: 0.72, nodes: ['ai-project', 'haoshijia'], paths: ['path-future-ai', 'path-future-haoshijia'] },
+                { stage: 0.80, nodes: ['growth-system'], paths: ['path-future-growth'] },
+                { stage: 0.93, nodes: [], paths: [], orbits: true }
             ];
 
             // 节点tooltip数据
             const nodeTooltips = {
-                'future': '正在寻找新机会 · AI产品/运营',
+                'future': '正在寻找新机会 · AI工具实践应用',
                 'guizhou': '2017-2021 · 生物科学本科，专业前10%',
                 'harbin': '2022-2025 · 应用心理硕士，专业前1%',
                 'research-group': '2022-2025 · 性健康研究与教育转化',
-                'hotline': '2023-2024 · 12355心理热线实习生',
-                'hospital': '2023-2024 · 第一专科医院临床观察',
+                'hotline': '2023 · 12355心理热线实习生',
+                'hospital': '2024 · 第一专科医院临床观察',
                 'activities': '2022-2025 · 校园活动策划与执行',
-                'avoice': '2023 · 海外华人女性公益内容协作',
-                'ai-project': '2024-2025 · Coze工作流搭建实践',
-                'haoshijia': '2024-2025 · 减脂记录与复盘产品',
-                'growth-system': '2026 · 个人成长洞察系统',
+                'avoice': '2023-2025 · 海外华人女性公益内容协作',
+                'ai-project': '小红书AI内容运营助手',
+                'haoshijia': '用户研究 · 定性定量/毕业论文/用户心智调研',
+                'growth-system': 'AI工具应用 · 好食家/Growth Insight',
                 'tianao': '2025-2026 · 中成药市场内容与流程管理'
             };
 
