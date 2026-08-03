@@ -126,9 +126,6 @@
             font-weight: 700;
             font-family: "Playfair Display", serif;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, var(--accent-rose), var(--accent-violet));
-            -webkit-background-clip: text;
-            background-clip: text;
             color: transparent;
         }
 
@@ -2707,7 +2704,8 @@
                     });
                     // 启动打字机效果
                     const heroTitle = document.getElementById('heroTitle');
-                    if (heroTitle) {
+                    if (heroTitle && heroTitle.dataset.typewriterQueued !== 'true') {
+                        heroTitle.dataset.typewriterQueued = 'true';
                         setTimeout(() => typeWriter(heroTitle, '罗  菲 Faye.', 160), 300);
                     }
                 }, 200);
@@ -3490,21 +3488,28 @@
 
         // 打字机效果 - 带字符微浮动
         function typeWriter(element, text, speed = 150) {
+            if (element.typeWriterTimer) {
+                clearTimeout(element.typeWriterTimer);
+            }
+            const runId = (element.typeWriterRunId || 0) + 1;
+            element.typeWriterRunId = runId;
             let i = 0;
             element.classList.add('typing-cursor');
             element.innerHTML = '';
             function type() {
+                if (element.typeWriterRunId !== runId) return;
                 if (i < text.length) {
                     const char = text.charAt(i);
                     const span = document.createElement('span');
                     span.className = 'char';
                     span.style.setProperty('--char-index', i);
-                    span.textContent = char === ' ' ? ' ' : char;
+                    span.textContent = char === ' ' ? '\u00A0' : char;
                     element.appendChild(span);
                     i++;
-                    setTimeout(type, speed);
+                    element.typeWriterTimer = setTimeout(type, speed);
                 } else {
                     element.classList.remove('typing-cursor');
+                    element.typeWriterTimer = null;
                 }
             }
             type();
